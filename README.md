@@ -40,7 +40,7 @@ La aplicación estará organizada de la siguiente forma:
 ## Funcionamiento
 El servidor en www.c9.io tiene control mediante git, conectado al repositorio anteriormente comentado. En cada nueva conexión al servidor se deberá hacer __pull__ para comprobar que no hay nuevos cambios. Por otra parte, antes de desconectar del servidor, se deberá hacer __push__ para evitar pérdidas de datos.
 
-En ambos caso, se preguntará por el usuario de GitLab y la contraseña. En estos poner vuestro usuario y contraseña de usuario, funciona correctamente.
+En ambos caso, se preguntará por el usuario de GitHub y la contraseña. En estos poner vuestro usuario y contraseña de usuario, funciona correctamente.
 
 Recomiendo que los archivos HTML y demás los modifiquéis y vayáis probando de forma local o en una nueva rama del Git hasta que vayamos conectando mejor la base de datos y creando las clases de la aplicación. Esto es para evitar la sobrecarga del servidor. 
 
