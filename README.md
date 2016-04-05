@@ -15,7 +15,7 @@ Este el repositorio que utilizaremos para todo el código de la aplicación web,
 
 En la sección _Tecnologías_ de Trello están todas las cuentas utilizadas con el usuario común con el que nos hemos registrado, aunque lo normal es que no tengáis que usar la mayoría. Por otro lado:
 
-* Se necesitará una cuenta de GitHub para modificar el código de la web. Podéis poner el __nombre de usuario__ de la cuenta por Telegram o dejar un comentario en el apartado del Trello.
+* Se necesitará una cuenta de GitHub para modificar el código de la web. Podéis poner el __nombre de usuario__ de la cuenta por Telegram o dejar un comentario en el apartado del Trello. Si os haceis una cuenta de universitario os dan más ventajas y tardan poco.
 * Es recomendable una cuenta de www.c9.io para probar los avances realizados. Si os la hacéis poner el __nombre de usuario__ de la cuenta por Telegram o dejar un comentario en el apartado del Trello.
 * Para back sería recomendable tener a mano la cuenta de www.heroku.com para realizar nuevas builds de la aplicación si así lo requiere alguno.
 
