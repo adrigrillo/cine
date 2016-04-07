@@ -58,3 +58,6 @@ Para ejecutar correctamente el comando será:
 
     python main.py runserver -h 0.0.0.0 -p 8080
     
+
+## NOTAS
+* Se ha instalado bootstrap que será necesario. [Documentación](https://pythonhosted.org/Flask-Bootstrap/)
