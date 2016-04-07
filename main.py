@@ -1,15 +1,21 @@
-from flask import Flask
+from flask import Flask, render_template
+from flask.ext.script import Manager
 import os
 
 app = Flask(__name__)
-app.debug = True
+
+manager = Manager(app)
+
 
 @app.route('/')
-
 def index():
-    return 'Hola, bienvenidos al rediseño de Entradas.com'
+    return render_template('index.html')
+
+
+@app.route('/user/<name>')
+def user(name):
+    return render_template('user.html', name=name)
 
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 8080))
-    host = os.getenv('IP', '0.0.0.0')
-    app.run(port=port, host=host)
+    manager.run()
+
