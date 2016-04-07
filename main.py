@@ -6,7 +6,15 @@ app = Flask(__name__)
 
 manager = Manager(app)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return 'PAGINA NO ENCONTRADA', 404
 
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return 'ERROR 500 bitch', 500
+    
 @app.route('/')
 def index():
     return render_template('index.html')
