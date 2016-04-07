@@ -44,4 +44,17 @@ En ambos caso, se preguntará por el usuario de GitHub y la contraseña. En esto
 
 Recomiendo que los archivos HTML y demás los modifiquéis y vayáis probando de forma local o en una nueva rama del Git hasta que vayamos conectando mejor la base de datos y creando las clases de la aplicación. Esto es para evitar la sobrecarga del servidor. 
 
+### Funcionamieno de c9.io
+Lo primero que hay que hacer al entrar en la pagina para que todo funcione es escribir en la terminal:
 
+    workon cine
+
+Para ejecutar correctamente la aplicación siempre debe estar escrito el puerto y la dirección IP del host.
+
+* Host: 0.0.0.0
+* Puerto: 8080
+
+Para ejecutar correctamente el comando será:
+
+    python main.py runserver -h 0.0.0.0 -p 8080
+    
