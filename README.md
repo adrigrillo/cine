@@ -22,20 +22,18 @@ En la sección _Tecnologías_ de Trello están todas las cuentas utilizadas con 
 ## Estructura
 
 La aplicación estará organizada de la siguiente forma:
-
-    app/
-        __init__.py
-        views.py
-        models.py
-        forms.py
-        static/ ** Aquí irán el css, imágenes, etc **
-        templates/ ** Aquí iran los html de la aplicación **
-    data/
-    requirements.txt
-    Procfile
-    runtime.txt
-    config.py
-    run.py
+  
+    |- static/ 
+    |--- ** Aquí irán el css, imágenes, etc **
+    |- templates/ 
+    |--- ** Aquí iran los html de la aplicación **
+    |- data/
+    |--- ** Datos de MongoDB **
+    |- main.py ** Lo que hace funcionar al server **
+    |- requirements.txt ** Paquetes instalados **
+    |- Procfile ** Necesario hosting **
+    |- runtime.txt ** Necesario hosting **
+    
 
 ## Funcionamiento
 El servidor en www.c9.io tiene control mediante git, conectado al repositorio anteriormente comentado. En cada nueva conexión al servidor se deberá hacer __pull__ para comprobar que no hay nuevos cambios. Por otra parte, antes de desconectar del servidor, se deberá hacer __push__ para evitar pérdidas de datos.
@@ -57,7 +55,10 @@ Para ejecutar correctamente la aplicación siempre debe estar escrito el puerto 
 Para ejecutar correctamente el comando será:
 
     python main.py runserver -h 0.0.0.0 -p 8080
+
+Cada vez que se instala un paquete, hay que añadirlo al _requirements.txt_ para ello solo hay que ejecutar el siguiente comando.
     
+    pip freeze > requirements.txt
 
 ## NOTAS
 * Se ha instalado bootstrap que será necesario. [Documentación](https://pythonhosted.org/Flask-Bootstrap/)
