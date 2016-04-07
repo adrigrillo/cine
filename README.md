@@ -47,6 +47,7 @@ Lo primero que hay que hacer al entrar en la pagina para que todo funcione es es
 
     workon cine
 
+Posteriormente se ha de actualizar el git en el servidor con _git pull_, por si alguien ha subido algo, que se actualice y se pueda mostrar en la página.
 Para ejecutar correctamente la aplicación siempre debe estar escrito el puerto y la dirección IP del host.
 
 * Host: 0.0.0.0
