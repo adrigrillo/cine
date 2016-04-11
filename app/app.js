@@ -1,15 +1,11 @@
 (function() {
 
 	// Declare app level module which depends on views, and components
-	var cine = angular.module("cine", ["firebase"]);
-	cine.factory("obtenerDatos", ["$firebaseArray", function($firebaseArray){
-		var ref = new Firebase("https://cinedsi.firebaseio.com/peliculas");
-		return $firebaseArray(ref);
-	}]);
+	var cine = angular.module("cine", ["firebase", "database"]);
 
-	cine.controller("verPeliculas", ["$scope", "obtenerDatos", function($scope, obtenerDatos) {
-    	console.log('Array de firebase: %O', obtenerDatos);
-    	$scope.peliculas = obtenerDatos;
+	cine.controller("verPeliculas", ["$scope", "obtenerPeliculas", function($scope, obtenerPeliculas) {
+    	$scope.peliculas = obtenerPeliculas;
+        //En caso de error se mete una película genérica
     	$scope.peliculas.$loaded(function() {
       		if ($scope.peliculas.length === 0) {
         		$scope.peliculas.$add({
@@ -19,7 +15,6 @@
 		        });
       		}
     	});
-    	console.log('Array de final: %O', $scope.peliculas);
 	}]);
 
 })();
