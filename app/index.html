@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="cine">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cine | Entradas.com</title>
+  <link rel="icon" type="image/gif" href="images/favicon.gif" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS de la página -->
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <!-- Modulos cargados -->
+  <script src="app.js"></script>
+  <script src="database.js"></script>
+</head>
+<body>
+  Quillo las pelis:
+  <div ng-controller="verPeliculas as peliculas">
+    <ul>
+      <li ng-repeat="pelicula in peliculas">{{pelicula.titulo}}: {{pelicula.duracion}} minutos </li>
+    </ul>
+  </div>
+  <div ng-controller='verCines as cines'>
+    <ul>
+      <li ng-repeat="cine in cines">{{cine.nombre}}: {{cine.coordenadas}} </li>
+    </ul>
+  </div>
+</body>
+</html>
