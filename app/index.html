@@ -31,7 +31,12 @@
   Quillo las pelis:
   <div ng-controller="verPeliculas as peliculas">
     <ul>
-      <li ng-repeat="pelicula in peliculas">{{pelicula.titulo}}: {{pelicula.year}}</li>
+      <li ng-repeat="pelicula in peliculas">{{pelicula.titulo}}: {{pelicula.duracion}} minutos </li>
+    </ul>
+  </div>
+  <div ng-controller='verCines as cines'>
+    <ul>
+      <li ng-repeat="cine in cines">{{cine.coordenadas}}: {{pelicula.nombre}}</li>
     </ul>
   </div>
 </body>

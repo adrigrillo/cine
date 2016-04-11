@@ -7,4 +7,10 @@
 		var ref = new Firebase("https://cinedsi.firebaseio.com/peliculas");
 		return $firebaseArray(ref);
 	}]);
+
+	// Metodo para obtener los datos de los cines, devuelve un array con las cines
+	cine.factory("obtenerCines", ["$firebaseArray", function($firebaseArray){
+		var ref = new Firebase("https://cinedsi.firebaseio.com/cines");
+		return $firebaseArray(ref);
+	}]);
 })();
