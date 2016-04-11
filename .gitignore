@@ -61,11 +61,11 @@ target/
 #Ipython Notebook
 .ipynb_checkpoints
 
-#carpeta 
+#carpeta
 logs/*
 !.gitkeep
 node_modules/
 bower_components/
 tmp
-.DS_Store
+*.DS_Store
 .idea
