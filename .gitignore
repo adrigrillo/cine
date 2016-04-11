@@ -65,7 +65,6 @@ target/
 logs/*
 !.gitkeep
 node_modules/
-!app/bower_components/
 bower_components/
 tmp
 *.DS_Store
