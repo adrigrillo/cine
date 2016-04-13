@@ -114,5 +114,95 @@
       "sipnosis": "Una mujer tiene un accidente de coche, la joven queda inconsciente. Cuando se recupera y se despierta, ve que está encerrada en un sótano junto a un hombre mayor y otro joven. El más mayor le informa que el mundo ha sufrido un cataclismo y que la Tierra se ha vuelto inhabitable y él le ha salvado de morir debido a un ataque químico. Sin embargo, la mujer no le cree y hará todo lo posible por encontrar una salida. Al principio los hombres parecen agradables, poco a poco la historia se irá volviendo oscura, provocando una salvaje huida hacia lo desconocido ya que la joven querrá saber cuánto de verdad ha dicho su supuesto salvador. Producida por J.J. Abrams y dirigida por Dan Trachtenberg, es considerada una secuela espiritual de 'Monstruoso (Cloverfield)' no sólo por la similitud de títulos, sino porque también estará ambientada en el mismo tiempo que la cinta de 2008.",
       "year" : 2016
     }
+  },
+  "sesiones" : {
+    "uno" : {
+      "hora" : "15:00",
+      "pelicula" : {
+        "zootropolis" : true,
+        "elnovato" : true,
+        "kungfupanda" : true
+      },
+      "cine" : {
+        "cinecallao" : true,
+        "cinesaparquesur" : true,
+        "cinesaprincipepio" : true
+      }
+    },
+    "dos" : {
+      "hora" : "16:20",
+      "pelicula" : {
+        "zootropolis" : true,
+        "elnovato" : true,
+        "kungfupanda" : true
+      },
+      "cine" : {
+        "yelmocines" : true
+      }
+    },
+    "tres" : {
+      "hora" : "17:10",
+      "pelicula" : {
+        "zootropolis" : true,
+        "elnovato" : true,
+        "kungfupanda" : true
+      },
+      "cine" : {
+        "cinecallao" : true,
+        "cinesaparquesur" : true,
+        "cinesaprincipepio" : true
+      }
+    },
+    "cuatro" : {
+      "hora" : "17:40",
+      "pelicula" : {
+        "batmanvsuperman" : true,
+        "altamira" : true,
+        "callecloverfield" : true,
+        "elnovato" : true
+      },
+      "cine" : {
+        "cinecallao" : true,
+        "cinesaparquesur" : true,
+        "cinesaprincipepio" : true
+      }
+    },
+    "cinco" : {
+      "hora" : "18:50",
+      "pelicula" : {
+        "batmanvsuperman" : true,
+        "altamira" : true,
+        "callecloverfield" : true,
+        "elnovato" : true
+      },
+      "cine" : {
+        "yelmoalcorcon" : true
+      }
+    },
+    "seis" : {
+      "hora" : "21:00",
+      "pelicula" : {
+        "altamira" : true,
+        "callecloverfield" : true
+      },
+      "cine" : {
+        "cinecallao" : true,
+        "cinesaparquesur" : true,
+        "cinesaprincipepio" : true
+      }
+
+    },
+    "siete" : {
+      "hora" : "22:30",
+      "pelicula" : {
+        "batmanvsuperman" : true
+      },
+      "cine" : {
+        "cinecallao" : true,
+        "cinesaparquesur" : true,
+        "cinesaprincipepio" : true,
+        "yelmoalcorcon" : true
+      }
+    }
   }
 }
