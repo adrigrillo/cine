@@ -1,7 +1,9 @@
 (function() {
 
 	// Declare app level module which depends on views, and components
-	var cine = angular.module("cine", ["firebase", "database"]);
+	var cine = angular.module("cine", ["firebase", "database", "user"]);
+
+
 
     /* Guarda como un array los datos de las películas obtenidas.
         Por ejemplo, si usamos "ng-controller = verPeliculas as peliculas" devuelve el array de todas
