@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -26,8 +27,43 @@
   <!-- Modulos cargados -->
   <script src="app.js"></script>
   <script src="database.js"></script>
+  <script src="users/users.js"></script>
 </head>
-<body>
+<body ng-cloak>
+  <div ng-controller="mainController">
+    <div>
+      <!-- ToolBar - BEGIN -->
+      <!-- <md-toolbar class="md-hue-2"> -->
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <!-- <md-button class="md-icon-button" ng-disabled="true"> -->
+          <md-button class="md-icon-button" ng-disabled="false">
+            <!-- <md-icon md-svg-icon="img/icons/menu.svg"></md-icon> -->
+            <!-- <i class="material-icons md-light">menu</i> -->
+            <!-- <md-icon md-font-icon="menu" aria-label="Navigation"></md-icon> -->
+            <md-icon> menu </md-icon>
+          </md-button>
+          <h1>
+            <span>{{ company }}</span>
+          </h1>
+          <span flex></span>
+          <md-button class="md-icon-button">
+            <md-icon>search</md-icon>
+          </md-button>
+        </div>
+        <!-- Tabs - BEGIN -->
+        <md-tabs md-stretch-tabs="always">  <!-- Que ocupen todo -->
+          <md-tab>{{tab1}}</md-tab>
+          <md-tab>{{tab2}}</md-tab>
+        </md-tabs>
+        <!-- Tabs - End -->
+      </md-toolbar>
+    </div>
+    <!-- ToolBar - END -->
+
+
+
+  </div>
   Quillo las pelis:
   <div ng-controller="verPeliculas as peliculas">
     <ul>

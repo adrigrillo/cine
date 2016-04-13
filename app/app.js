@@ -1,8 +1,23 @@
 (function() {
 
 	// Declare app level module which depends on views, and components
-	var cine = angular.module("cine", ["firebase", "database", "user"]);
+	var cine = angular.module("cine", ["ngMaterial","firebase", "database", "user"]);
 
+    /* Configurar tema */
+    cine.config(function($mdThemingProvider) {
+        $mdThemingProvider.theme("default")                   /* color palette */
+            .primaryPalette("indigo")
+            .accentPalette("yellow")
+            .warnPalette("orange");
+        }
+    );
+
+    /* Controlador de las tabs */
+    cine.controller('mainController', function($scope) {
+        $scope.company = 'Entradas.com';
+        $scope.tab1 = 'Películas';
+        $scope.tab2 = 'Cines';
+    });
 
 
     /* Guarda como un array los datos de las películas obtenidas.
