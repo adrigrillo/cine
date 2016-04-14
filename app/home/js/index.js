@@ -1,8 +1,9 @@
 $(document).ready(function() {
   $('.carousel').slick({
-    infinite: true,
+    accessibility: false,
     slidesToShow: 5,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
+    swipeToSlide: true,
     adaptiveHeight: true,
     infinite: false,
     dots: true
