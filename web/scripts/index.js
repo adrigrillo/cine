@@ -5,10 +5,10 @@ $(document).ready(function() {
     respondTo: 'min',
     swipeToSlide: true,
     slidesToShow: 5,
-    slidesToScroll: 2,
+    slidesToScroll: 4,
     adaptiveHeight: true,
-    dots: false
-
+    dots: false,
+    lazyLoad: 'progressive' 
     // more info: https://github.com/kenwheeler/slick/
   });
 });
