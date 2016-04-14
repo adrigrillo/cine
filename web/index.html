@@ -7,13 +7,21 @@
   <title>Cine | Entradas.com</title>
   <link rel="icon" type="image/gif" href="images/favicon.gif" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!-- CSS de la página -->
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/default.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- carrousel -->
+  <link rel="stylesheet" type="text/css" href="css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+
   <!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
+  <script src="bower_components/jQuery/jquery-1.12.3.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>
@@ -25,10 +33,16 @@
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <!-- Carrousel -->
+  <script src="scripts/slick.min.js"></script>
+  <script src="scripts/index.js"></script>
+
+
   <!-- Modulos cargados -->
   <script src="scripts/app.js"></script>
   <script src="scripts/database.js"></script>
   <script src="users/users.js"></script>
+
 </head>
 
 <body ng-cloak="" ng-controller="mainController">
@@ -37,9 +51,6 @@
   <md-toolbar class="md-toolbar-tools">
     <!-- <md-button class="md-icon-button" ng-disabled="true"> -->
     <md-button class="md-icon-button" ng-disabled="false">
-      <!-- <md-icon md-svg-icon="img/icons/menu.svg"></md-icon> -->
-      <!-- <i class="material-icons md-light">menu</i> -->
-      <!-- <md-icon md-font-icon="menu" aria-label="Navigation"></md-icon> -->
       <md-icon> menu </md-icon>
     </md-button>
     <h1>
@@ -51,10 +62,10 @@
     </md-button>
   </md-toolbar>
   <!-- Tabs - BEGIN -->
-  <md-tabs md-stretch-tabs="always" md-dynamic-height="" md-border-bottom="" class="indexTabs">
+  <md-tabs md-stretch-tabs="always" md-dynamic-height="" md-border-bottom="" class="indexTabs md-primary ">">
     <!-- Que ocupen todo -->
     <md-tab label="{{tab1}}">
-      <md-content class="md-padding" layout="row" ng-controller="verPeliculas as peliculas" layout-wrap>
+      <!-- <md-content class="md-padding" layout="row" ng-controller="verPeliculas as peliculas" layout-wrap>
         <md-card class="cards" ng-repeat="pelicula in peliculas">
           <img src="{{pelicula.imagen}}" class="md-card-image" alt="portada">
           <md-card-title>
@@ -67,9 +78,57 @@
             <md-button>Más informacion</md-button>
             <md-button class="md-raised md-primary">Ver película</md-button>
           </md-card-actions>
-        </md-card>
+        </md-card> -->
+      <md-content class="md-padding noOverflow" layout="row" ng-controller="verPeliculas as peliculas" layout-wrap>
+
+        <div class="md-title titulo">
+          Categoria
+        </div>
+        <div class="carrouselContainer">
+          <div>
+            <div class="carousel">
+              <div class="pelicula">
+                <img src="images/altamira.jpg" class="caratula md-whiteframe-2dp">
+              </div>
+              <div class="pelicula">
+                <img src="images/elnovato.jpg" class="caratula md-whiteframe-2dp">
+              </div>
+              <!-- Repeticion -->
+              <div class="pelicula">
+                <img src="images/elnovato.jpg" class="caratula md-whiteframe-2dp">
+              </div>
+              <div class="pelicula">
+                <img src="images/elnovato.jpg" class="caratula md-whiteframe-2dp">
+              </div>
+              <div class="pelicula">
+                <img src="images/elnovato.jpg" class="caratula md-whiteframe-2dp">
+              </div>
+              <div class="pelicula">
+                <img src="images/elnovato.jpg" class="caratula md-whiteframe-2dp">
+              </div>
+              <div class="pelicula">
+                <img src="images/elnovato.jpg" class="caratula md-whiteframe-2dp">
+              </div>
+              <div class="pelicula">
+                <img src="images/elnovato.jpg" class="caratula md-whiteframe-2dp">
+              </div>
+              <div class="pelicula">
+                <img src="images/elnovato.jpg" class="caratula md-whiteframe-2dp">
+              </div>
+              <div class="pelicula">
+                <img src="images/elnovato.jpg" class="caratula md-whiteframe-2dp">
+              </div>
+              <div class="pelicula">
+                <img src="images/elnovato.jpg" class="caratula md-whiteframe-2dp">
+              </div>
+              <!-- Repeticion -->
+            </div>
+          </div>
+        </div>
+
       </md-content>
     </md-tab>
+
     <md-tab label="{{tab2}}">
       <md-content class="md-padding" ng-controller="verCines as cines">
         <md-list layout="row" layout-wrap>
