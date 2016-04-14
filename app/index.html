@@ -29,51 +29,43 @@
   <script src="database.js"></script>
   <script src="users/users.js"></script>
 </head>
-<body ng-cloak>
-  <div ng-controller="mainController">
-    <div>
-      <!-- ToolBar - BEGIN -->
-      <!-- <md-toolbar class="md-hue-2"> -->
-      <md-toolbar>
-        <div class="md-toolbar-tools">
-          <!-- <md-button class="md-icon-button" ng-disabled="true"> -->
-          <md-button class="md-icon-button" ng-disabled="false">
-            <!-- <md-icon md-svg-icon="img/icons/menu.svg"></md-icon> -->
-            <!-- <i class="material-icons md-light">menu</i> -->
-            <!-- <md-icon md-font-icon="menu" aria-label="Navigation"></md-icon> -->
-            <md-icon> menu </md-icon>
-          </md-button>
-          <h1>
-            <span>{{ company }}</span>
-          </h1>
-          <span flex></span>
-          <md-button class="md-icon-button">
-            <md-icon>search</md-icon>
-          </md-button>
-        </div>
-        <!-- Tabs - BEGIN -->
-        <md-tabs md-stretch-tabs="always">  <!-- Que ocupen todo -->
-          <md-tab>{{tab1}}</md-tab>
-          <md-tab>{{tab2}}</md-tab>
-        </md-tabs>
-        <!-- Tabs - End -->
-      </md-toolbar>
+<body ng-cloak ng-controller="mainController">
+  <!-- ToolBar - BEGIN -->
+  <!-- <md-toolbar class="md-hue-2"> -->
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <!-- <md-button class="md-icon-button" ng-disabled="true"> -->
+      <md-button class="md-icon-button" ng-disabled="false">
+        <!-- <md-icon md-svg-icon="img/icons/menu.svg"></md-icon> -->
+        <!-- <i class="material-icons md-light">menu</i> -->
+        <!-- <md-icon md-font-icon="menu" aria-label="Navigation"></md-icon> -->
+        <md-icon> menu </md-icon>
+      </md-button>
+      <h1>
+        <span>{{company}}</span>
+      </h1>
+      <span flex></span>
+      <md-button class="md-icon-button">
+        <md-icon>search</md-icon>
+      </md-button>
     </div>
-    <!-- ToolBar - END -->
-
-
-
-  </div>
-  Quillo las pelis:
-  <div ng-controller="verPeliculas as peliculas">
-    <ul>
-      <li ng-repeat="pelicula in peliculas">{{pelicula.titulo}}: {{pelicula.duracion}} minutos </li>
-    </ul>
-  </div>
-  <div ng-controller='verCines as cines'>
-    <ul>
-      <li ng-repeat="cine in cines">{{cine.nombre}}: {{cine.coordenadas}} </li>
-    </ul>
-  </div>
+  </md-toolbar>
+  <!-- Tabs - BEGIN -->
+  <md-tabs md-stretch-tabs="always" md-dynamic-height="" md-border-bottom="">  <!-- Que ocupen todo -->
+    <md-tab label="{{tab1}}">
+      <md-content class="md-padding" ng-controller="verPeliculas as peliculas">
+        <ul>
+          <li ng-repeat="pelicula in peliculas">{{pelicula.titulo}}: {{pelicula.duracion}} minutos </li>
+        </ul>
+      </md-content>
+    </md-tab>
+    <md-tab label="{{tab2}}">
+      <md-content class="md-padding" ng-controller="verCines as cines">
+        <ul>
+          <li ng-repeat="cine in cines">{{cine.nombre}}: {{cine.coordenadas}} </li>
+       </ul>
+      </md-content>
+    </md-tab>
+  </md-tabs>
 </body>
 </html>

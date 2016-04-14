@@ -1,18 +1,1 @@
 /* app css stylesheet */
-
-/* Header */
-
-.toolbardemoBasicUsage md-toolbar md-icon.md-default-theme {
-    color: white;
-}
-
-/* Tabs */
-.tabsHeader md-tab-content {
-  background-color: #000000;
-}
-
-/*
-md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
-    color: blue !important;
-    background-color:red !important;
-}*/
