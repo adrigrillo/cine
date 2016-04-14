@@ -8,17 +8,37 @@
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
   <!-- CSS propio -->
   <link rel="stylesheet" href="css/default.css">
+  <!-- CSS Adri -->
+  <!-- CSS de la página -->
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+
   <!-- Icons set-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/slick.css" />
   <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+
+  <!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
   <!-- jQuery - Necesario para Owl carrousel-->
   <script src="js/plugins/jQuery/jquery-1.12.3.js"></script>
   <script src="scripts/slick.min.js"></script>
   <script src="js/index.js"></script>
 </head>
 
-<body ng-app="BlankApp" ng-cloak>
+<body ng-app="cine" ng-cloak>
   <!--Your HTML content here - Begin-->
   <div ng-controller="mainController">
     <!-- <div md-theme="custom" md-theme-watch="true"> -->
@@ -44,12 +64,29 @@
     <!-- Tabs - BEGIN -->
     <md-tabs md-stretch-tabs="always" class="md-primary md-whiteframe-4dp">
       <!-- Que ocupen todo -->
-      <md-tab>{{tab1}}</md-tab>
+      <md-tab label="{{tab1}}">
+        <md-content class="md-padding" layout="row" ng-controller="verPeliculas as peliculas" layout-wrap>
+          <md-card class="cards" ng-repeat="pelicula in peliculas">
+            <img src="{{pelicula.imagen}}" class="md-card-image" alt="portada">
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">{{pelicula.titulo}}</span>
+                <span class="md-subhead">{{pelicula.duracion}} minutos</span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+              <md-button>Más informacion</md-button>
+              <md-button class="md-raised md-primary">Ver película</md-button>
+            </md-card-actions>
+          </md-card>
+        </md-content>
+      </md-tab>
+
       <md-tab>{{tab2}}</md-tab>
     </md-tabs>
     <!-- Tabs - End -->
 
-    <div class="cuerpo">
+    <!-- <div class="cuerpo">
       <div class="md-title titulo">
         Categoria
       </div>
@@ -88,10 +125,10 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
 
-      <!-- <div class="carrousel">
+    <!-- <div class="carrousel">
         <div class="md-title titulo">
           Categoria
         </div>
@@ -112,7 +149,7 @@
           </div>
         </div>
       </div> -->
-    </div>
+  </div>
 
 
   </div>
