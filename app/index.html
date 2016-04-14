@@ -69,20 +69,17 @@
       </md-content>
     </md-tab>
     <md-tab label="{{tab2}}">
-      <md-content class="md-padding" layout="row" ng-controller="verCines as peliculas" layout-wrap>
-        <md-card class="cards" ng-repeat="cine in cines">
-          <img src="{{pelicula.imagen}}" class="md-card-image" alt="portada">
-            <md-card-title>
-              <md-card-title-text>
-                <span class="md-headline">{{pelicula.titulo}}</span>
-                <span class="md-subhead">{{pelicula.duracion}} minutos</span>
-              </md-card-title-text>
-            </md-card-title>
-            <md-card-actions layout="row" layout-align="end center">
-              <md-button>Más informacion</md-button>
-              <md-button class="md-raised md-primary">Ver película</md-button>
-            </md-card-actions>
-        </md-card>
+      <md-content class="md-padding" ng-controller="verCines as cines">
+        <md-list flex>
+          <md-list-item class="md-3-line" ng-repeat="cine in cines" ng-click="null">
+            <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
+            <div class="md-list-item-text" layout="column">
+              <h3>{{cine.nombre}}</h3>
+              <h4>{{cine.encuentra}}</h4>
+              <p>{{cine.direccion}}</p>
+            </div>
+          </md-list-item>
+        <md-list flex>
       </md-content>
     </md-tab>
   </md-tabs>
