@@ -29,41 +29,60 @@
   <script src="database.js"></script>
   <script src="users/users.js"></script>
 </head>
-<body ng-cloak ng-controller="mainController">
+<body ng-cloak="" ng-controller="mainController">
   <!-- ToolBar - BEGIN -->
   <!-- <md-toolbar class="md-hue-2"> -->
-  <md-toolbar>
-    <div class="md-toolbar-tools">
-      <!-- <md-button class="md-icon-button" ng-disabled="true"> -->
-      <md-button class="md-icon-button" ng-disabled="false">
-        <!-- <md-icon md-svg-icon="img/icons/menu.svg"></md-icon> -->
-        <!-- <i class="material-icons md-light">menu</i> -->
-        <!-- <md-icon md-font-icon="menu" aria-label="Navigation"></md-icon> -->
-        <md-icon> menu </md-icon>
-      </md-button>
-      <h1>
-        <span>{{company}}</span>
-      </h1>
-      <span flex></span>
-      <md-button class="md-icon-button">
-        <md-icon>search</md-icon>
-      </md-button>
-    </div>
+  <md-toolbar class="md-toolbar-tools">
+    <!-- <md-button class="md-icon-button" ng-disabled="true"> -->
+    <md-button class="md-icon-button" ng-disabled="false">
+      <!-- <md-icon md-svg-icon="img/icons/menu.svg"></md-icon> -->
+      <!-- <i class="material-icons md-light">menu</i> -->
+      <!-- <md-icon md-font-icon="menu" aria-label="Navigation"></md-icon> -->
+      <md-icon> menu </md-icon>
+    </md-button>
+    <h1>
+      <span>{{company}}</span>
+    </h1>
+    <span flex></span>
+    <md-button class="md-icon-button">
+      <md-icon>search</md-icon>
+    </md-button>
   </md-toolbar>
   <!-- Tabs - BEGIN -->
-  <md-tabs md-stretch-tabs="always" md-dynamic-height="" md-border-bottom="">  <!-- Que ocupen todo -->
+  <md-tabs md-stretch-tabs="always" md-dynamic-height="" md-border-bottom="" class="indexTabs">
+    <!-- Que ocupen todo -->
     <md-tab label="{{tab1}}">
-      <md-content class="md-padding" ng-controller="verPeliculas as peliculas">
-        <ul>
-          <li ng-repeat="pelicula in peliculas">{{pelicula.titulo}}: {{pelicula.duracion}} minutos </li>
-        </ul>
+      <md-content class="md-padding" layout="row" ng-controller="verPeliculas as peliculas" layout-wrap>
+        <md-card class="cards" ng-repeat="pelicula in peliculas">
+          <img src="{{pelicula.imagen}}" class="md-card-image" alt="portada">
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">{{pelicula.titulo}}</span>
+                <span class="md-subhead">{{pelicula.duracion}} minutos</span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+              <md-button>Más informacion</md-button>
+              <md-button class="md-raised md-primary">Ver película</md-button>
+            </md-card-actions>
+        </md-card>
       </md-content>
     </md-tab>
     <md-tab label="{{tab2}}">
-      <md-content class="md-padding" ng-controller="verCines as cines">
-        <ul>
-          <li ng-repeat="cine in cines">{{cine.nombre}}: {{cine.coordenadas}} </li>
-       </ul>
+      <md-content class="md-padding" layout="row" ng-controller="verCines as peliculas" layout-wrap>
+        <md-card class="cards" ng-repeat="cine in cines">
+          <img src="{{pelicula.imagen}}" class="md-card-image" alt="portada">
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">{{pelicula.titulo}}</span>
+                <span class="md-subhead">{{pelicula.duracion}} minutos</span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+              <md-button>Más informacion</md-button>
+              <md-button class="md-raised md-primary">Ver película</md-button>
+            </md-card-actions>
+        </md-card>
       </md-content>
     </md-tab>
   </md-tabs>
