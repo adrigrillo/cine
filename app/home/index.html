@@ -1,0 +1,152 @@
+<html lang="es">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Castellano -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="css/default.css">
+  <!-- Icons set-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+  <!-- jQuery - Necesario para Owl carrousel-->
+  <script src="js/plugins/jQuery/jquery-1.12.3.js"></script>
+  <script src="scripts/slick.min.js"></script>
+  <script src="js/index.js"></script>
+</head>
+
+<body ng-app="BlankApp" ng-cloak>
+  <!--Your HTML content here - Begin-->
+  <div ng-controller="mainController">
+    <!-- <div md-theme="custom" md-theme-watch="true"> -->
+    <div>
+      <!-- ToolBar - BEGIN -->
+      <md-toolbar class="md-primary md-raised">
+        <div class="md-toolbar-tools">
+          <md-button class="md-icon-button" ng-disabled="false">
+            <md-icon> menu </md-icon>
+          </md-button>
+          <h1>
+            <span>{{ company }}</span>
+          </h1>
+          <span flex></span>
+          <md-button class="md-icon-button">
+            <md-icon>search</md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+    </div>
+    <!-- ToolBar - END -->
+
+    <!-- Tabs - BEGIN -->
+    <md-tabs md-stretch-tabs="always" class="md-primary md-whiteframe-4dp">
+      <!-- Que ocupen todo -->
+      <md-tab>{{tab1}}</md-tab>
+      <md-tab>{{tab2}}</md-tab>
+    </md-tabs>
+    <!-- Tabs - End -->
+
+    <div class="cuerpo">
+      <div class="md-title titulo">
+        Categoria
+      </div>
+      <div class="carrouselContainer">
+        <div>
+          <div class="carousel">
+            <div class="pelicula">
+              <img src="{{ caratula }}" class="caratula md-whiteframe-2dp">
+            </div>
+            <div class="pelicula">
+              <img src="{{ caratula }}" class="caratula md-whiteframe-2dp">
+            </div>
+            <div class="pelicula">
+              <img src="{{ caratula }}" class="caratula md-whiteframe-2dp">
+            </div>
+            <div class="pelicula">
+              <img src="{{ caratula }}" class="caratula md-whiteframe-2dp">
+            </div>
+            <div class="pelicula">
+              <img src="{{ caratula }}" class="caratula md-whiteframe-2dp">
+            </div>
+            <div class="pelicula">
+              <img src="{{ caratula }}" class="caratula md-whiteframe-2dp">
+            </div>
+            <div class="pelicula">
+              <img src="{{ caratula }}" class="caratula md-whiteframe-2dp">
+            </div>
+            <div class="pelicula">
+              <img src="{{ caratula }}" class="caratula md-whiteframe-2dp">
+            </div>
+            <div class="pelicula">
+              <img src="{{ caratula }}" class="caratula md-whiteframe-2dp">
+            </div>
+            <div class="pelicula">
+              <img src="{{ caratula }}" class="caratula md-whiteframe-2dp">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- <div class="carrousel">
+        <div class="md-title titulo">
+          Categoria
+        </div>
+        <div class="pelicula">
+          <img ng-src="{{ caratula }}" class="caratula md-whiteframe-2dp">
+          <div class="infoPelicula">
+            <md-button class="md-icon-button">
+              <md-icon style="color: #ffffff">info</md-icon>
+            </md-button>
+          </div>
+        </div>
+        <div class="pelicula">
+          <img ng-src="{{ caratula }}" class="caratula md-whiteframe-2dp">
+          <div class="infoPelicula">
+            <md-button class="md-icon-button">
+              <md-icon style="color: #ffffff">info</md-icon>
+            </md-button>
+          </div>
+        </div>
+      </div> -->
+    </div>
+
+
+  </div>
+
+  <!--Your HTML content here - END-->
+
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+
+  <!-- Modules -->
+  <script src="js/app.js"></script>
+
+  <!-- Controllers -->
+  <script src="js/controllers/mainController.js"></script>
+
+  <!-- Your application bootstrap  -->
+  <!--<script type="text/javascript">
+    /**
+     * You must include the dependency on 'ngMaterial'
+     */
+    angular.module('BlankApp', ['ngMaterial']);
+  </script>-->
+
+</body>
+
+</html>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
+-->
