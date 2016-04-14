@@ -70,8 +70,8 @@
     </md-tab>
     <md-tab label="{{tab2}}">
       <md-content class="md-padding" ng-controller="verCines as cines">
-        <md-list flex>
-          <md-list-item class="md-3-line" ng-repeat="cine in cines" ng-click="null">
+        <md-list layout="row" layout-wrap>
+          <md-list-item class="md-3-line" layout="row" layout-xs="column" ng-repeat="cine in cines" ng-click="null">
             <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
             <div class="md-list-item-text" layout="column">
               <h3>{{cine.nombre}}</h3>
