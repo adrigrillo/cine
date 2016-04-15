@@ -1,10 +1,13 @@
 .cuerpo {
   /*height: 100em;*/
-  background-color: #E8EAF6;
+  /*background-color: #E8EAF6;*/
   padding-top: 1em;
   padding-left: 1em;
   padding-right: 1em;
+  padding-bottom: 1em;
 }
+
+
 
 .noOverflow {
   overflow: hidden;

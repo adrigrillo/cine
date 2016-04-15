@@ -62,64 +62,27 @@
       <md-icon>search</md-icon>
     </md-button>
   </md-toolbar>
-  <!-- Tabs - BEGIN -->
-  <md-tabs md-stretch-tabs="always" md-dynamic-height="" md-border-bottom="" class="indexTabs md-primary ">
-    <!-- Que ocupen todo -->
-    <md-tab label="{{tab1}}">
-      <!-- <md-content class="md-padding" layout="row" ng-controller="verPeliculas as peliculas" layout-wrap>
-        <md-card class="cards" ng-repeat="pelicula in peliculas">
-          <img src="{{pelicula.imagen}}" class="md-card-image" alt="portada">
-          <md-card-title>
-            <md-card-title-text>
-              <span class="md-headline">{{pelicula.titulo}}</span>
-              <span class="md-subhead">{{pelicula.duracion}} minutos</span>
-            </md-card-title-text>
-          </md-card-title>
-          <md-card-actions layout="row" layout-align="end center">
-            <md-button>Más informacion</md-button>
-            <md-button class="md-raised md-primary">Ver película</md-button>
-          </md-card-actions>
-        </md-card> -->
-      <md-content class="md-padding noOverflow" layout="row" ng-controller="verPeliculas as peliculas" layout-wrap >
-
-
-
-        <div class="md-title titulo">
-          Categoria
-        </div>
-        <div class="carrouselContainer">
-          <div>
-            <!-- <div class="carousel"> -->
-            <!-- <slick init-onload=true data="peliculas"> -->
-              <slick slides-to-show=3 slides-to-scroll=3 init-onload=true data="peliculas" swipeToSlide=true infinite=true  accessibility=false infinite=false respondTo='min' dots=false lazyLoad='progressive' >
-
-              <div class="pelicula" ng-repeat="pelicula in peliculas">
-                <img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
-              </div>
-
-            </slick>
-            <!-- </div> -->
-          </div>
-        </div>
-
-      </md-content>
-    </md-tab>
-
-    <md-tab label="{{tab2}}">
-      <md-content class="md-padding" ng-controller="verCines as cines">
-        <md-list layout="row" layout-wrap>
-          <md-list-item class="md-3-line" layout="row" layout-xs="column" ng-repeat="cine in cines" ng-click="null">
-            <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine" />
-            <div class="md-list-item-text" layout="column">
-              <h3>{{cine.nombre}}</h3>
-              <h4>{{cine.encuentra}}</h4>
-              <p>{{cine.direccion}}</p>
-            </div>
-          </md-list-item>
-          <md-list flex>
-      </md-content>
-    </md-tab>
-  </md-tabs>
+  <!--
+   Barra de progreso valores: [0, 100]. Considerar seleccionar la pelicula completa un paso
+   1 - Selección Pelicula / Cine    25%
+   2 - Selección Cine / Película    50%
+   3 - Selección Sesión y Butacas   75%
+   4 - Pago                         100%
+  -->
+  <md-progress-linear md-mode="determinate" value="25" class="md-warn"></md-progress-linear>
+  <md-content class="cuerpo md-primary">
+    <!-- Tu código aquí - BEGIN-->
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nibh lectus, bibendum id eleifend et, tempus cursus urna. Cras cursus diam sed massa egestas molestie. In volutpat posuere mattis. Nullam non tellus magna. Nam molestie massa erat, a consectetur
+      felis ultrices ut. Fusce justo magna, interdum vel volutpat quis, consequat eget massa. Quisque elementum risus et leo porttitor, id bibendum purus tincidunt. Donec non tellus id nisl faucibus hendrerit eget id lacus. Maecenas sodales tristique
+      porta. Suspendisse nec odio eu ante vulputate aliquet. Quisque sodales, ex nec porttitor aliquam, lacus mi interdum ex, nec semper leo ante in ex. Praesent augue eros, egestas vel arcu nec, rhoncus elementum sem. In id semper turpis. Ut posuere
+      a augue id rutrum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec id nisl justo. Ut sit amet imperdiet eros. Nam vel tempor lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+      ridiculus mus. In malesuada ante a condimentum lacinia. Praesent non porttitor libero, sagittis sagittis nisi. Phasellus ipsum ipsum, vestibulum eget ante nec, fermentum elementum purus. Suspendisse potenti. Cum sociis natoque penatibus et magnis
+      dis parturient montes, nascetur ridiculus mus. Proin consectetur pretium leo eu varius. Nulla lobortis urna at dui consectetur, suscipit ultrices turpis finibus. Sed egestas ultricies hendrerit. Nam pulvinar, neque id fringilla pulvinar, eros tellus
+      vulputate purus, quis gravida libero erat vitae diam.
+    </p>
+    <!-- Tu código aquí - END-->
+  </md-content>
 </body>
 
 </html>

@@ -8,7 +8,11 @@
         $mdThemingProvider.theme("default")                   /* color palette */
             .primaryPalette("indigo")
             .accentPalette("yellow")
-            .warnPalette("orange");
+            .warnPalette("amber")
+						.backgroundPalette('indigo',{
+							'default': '50'
+						}
+					);
         }
     );
 
