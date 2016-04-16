@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="cine">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cine | Entradas.com</title>
+  <link rel="icon" type="image/png" href="images/e_roboto.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS de la página -->
+  <link rel="stylesheet" href="../bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="../bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/default.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- carrousel -->
+  <link rel="stylesheet" type="text/css" href="../css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="../css/slick-theme.css" />
+
+  <!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
+  <script src="../bower_components/jQuery/jquery-1.12.3.js"></script>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/angular-animate/angular-animate.js"></script>
+  <script src="../bower_components/angular-aria/angular-aria.js"></script>
+  <script src="../bower_components/angular-messages/angular-messages.js"></script>
+  <script src="../bower_components/angular-material/angular-material.js"></script>
+  <script src="../bower_components/firebase/firebase.js"></script>
+  <script src="../bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="../components/version/version.js"></script>
+  <script src="../components/version/version-directive.js"></script>
+  <script src="../components/version/interpolate-filter.js"></script>
+  <script src="../bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <!-- Carrousel -->
+  <!-- <script src="scripts/slick.min.js"></script> -->
+  <script src="../scripts/slick-carousel/slick/slick.js"></script>
+  <script src="../scripts/index.js"></script>
+  <script src="../scripts/angular-slick/slick.js"></script>
+
+  <!-- Modulos cargados -->
+  <script src="../scripts/app.js"></script>
+  <script src="../scripts/database.js"></script>
+  <script src="../users/users.js"></script>
+
+</head>
+
+<body ng-cloak="" ng-controller="mainController">
+  <!-- ToolBar - BEGIN -->
+  <!-- <md-toolbar class="md-hue-2"> -->
+  <md-toolbar class="md-toolbar-tools">
+    <!-- <md-button class="md-icon-button" ng-disabled="true"> -->
+    <md-button class="md-icon-button" ng-disabled="false">
+      <md-icon> menu </md-icon>
+    </md-button>
+    <h1>
+      <span>{{company}}</span>
+    </h1>
+    <span flex></span>
+    <md-button class="md-icon-button">
+      <md-icon>search</md-icon>
+    </md-button>
+  </md-toolbar>
+
+  <!--
+   Barra de progreso valores: [0, 100]. Considerar seleccionar la pelicula completa un paso
+   1 - Selección Pelicula / Cine    25%
+   2 - Selección Cine / Película    50%
+   3 - Selección Sesión y Butacas   75%
+   4 - Pago                         100%
+  -->
+  <md-progress-linear md-mode="determinate" value="75" class="md-warn"></md-progress-linear>
+  <md-content class="cuerpo md-primary">
+    <!-- Tu código aquí - BEGIN-->
+    <header class="md-title titulo">
+      Formulario de pago
+    </header>
+    <section>
+    <div ng-controller="DemoCtrl" layout="column" ng-cloak class="md-inline-form">
+        <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+          <div>
+            <md-input-container>
+              <label>Nombre</label>
+              <input ng-model="user.nombre">
+            </md-input-container>
+            <md-input-container>
+              <label>Apellidos</label>
+              <input ng-model="user.apellidos" type="email">
+            </md-input-container>
+            <md-input-container>
+            <label>Email</label>
+            <input ng-model="user.email" type="email">
+            </md-input-container>
+
+          </div>
+        </md-content>
+        <md-content layout-padding>
+          <div>
+            <form name="userForm">
+
+              <md-input-container class="md-block">
+                <label>Address</label>
+                <input ng-model="user.address">
+              </md-input-container>
+
+              <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>City</label>
+                  <input ng-model="user.city">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Provincia</label>
+                  <md-select ng-model="user.provincia">
+                    <md-option ng-repeat="prov in provincias" value="{{prov.abbrev}}">
+                      {{prov.abbrev}}
+                    </md-option>
+                  </md-select>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Postal Code</label>
+                  <input name="postalCode" ng-model="user.postalCode" placeholder="12345"
+                         required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+                  <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
+                    <div ng-message="required" class="my-message">You must supply a postal code.</div>
+                    <div ng-message="pattern" class="my-message">That doesn't look like a valid postal
+                      code.
+                    </div>
+                  </div>
+                  </md-input-container>
+                </div>
+
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Forma de pago</label>
+                        <md-input-container>
+                            <md-switch ng-model="modopago">{{modopago ? "Tarjeta" : "PayPal"}}</md-switch>
+                            <div class="hint" ng-hide="modopago">Se redirigira a la pagina de PayPal para realizar el pago</div>
+                    </md-input-container>
+
+                    </md-input-container>
+
+                <div ng-show="modopago">
+                    <md-input-container class="md-block" flex-gt-sm>
+                      <label>Número de Tarjeta</label>
+                      <input name="postalCode" ng-model="user.tarjeta" placeholder="XXXXXXXXXXXXXXXX"
+                             required ng-pattern="/^[0-9]{16}$/" md-maxlength="16">
+                      <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
+                        <div ng-message="required" class="my-message">You must supply a card number.</div>
+                        <div ng-message="pattern" class="my-message">That doesn't look like a valid card number.</div>
+                      </div>
+                    </md-input-container>
+                    <div>
+                        <label>Fecha de vencimiento</label>
+                        <md-input-container class="md-block" flex-gt-sm>
+                          <label>Año</label>
+                          <md-select ng-model="user.ano">
+                            <md-option ng-repeat="ano in anos" value="{{ano.abbrev}}">
+                              {{ano.abbrev}}
+                            </md-option>
+                          </md-select>
+                        </md-input-container>
+
+
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Mes</label>
+                            <md-select ng-model="user.mes">
+                              <md-option ng-repeat="mes in meses" value="{{mes.abbrev}}">
+                                {{mes.abbrev}}
+                              </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <md-input-container class="md-block" flex-gt-sm>
+                      <label>CSC</label>
+                      <input name="postalCode" ng-model="user.csc" placeholder="XXX"
+                             required ng-pattern="/^[0-9]{3}$/" md-maxlength="3">
+                      <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
+                        <div ng-message="required" class="my-message">You must supply a csc code.</div>
+                        <div ng-message="pattern" class="my-message">a valid card number is like XXX.</div>
+                      </div>
+                </div>
+
+            </form>
+          </div>
+        </md-content>
+    </div>
+  </section>
+
+  </md-content>
+</body>
+
+</html>
