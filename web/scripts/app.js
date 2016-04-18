@@ -1,7 +1,7 @@
 (function() {
 
 	// Declare app level module which depends on views, and components
-	var cine = angular.module("cine", ["ngMaterial","firebase", "database", "user", "slick"]);
+	var cine = angular.module("cine", ["ngMaterial","firebase", "database", "user"]);
 
     /* Configurar tema */
     cine.config(function($mdThemingProvider) {
