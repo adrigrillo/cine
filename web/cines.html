@@ -47,20 +47,44 @@
 </head>
 <body ng-cloak="">
   <div layout="row" class="md-padding">
-    <md-list flex="33" hide-xs>
+    <md-list flex="25" hide-xs>
       Hellou
     </md-list>
-    <md-list ng-controller="verCines as cines">
-      <md-list-item class="md-3-line" layout="row" ng-repeat="cine in cines" ng-click="null">
-            <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine" />
+    <md-list flex-xs="100" flex="35" ng-controller="verCines as cines">
+      <md-list-item aria-label="callao" class="md-3-line" layout="row" ng-click="nombreCine('cinecallao')">
+            <img ng-src="{{cines[0].imagen}}" class="md-avatar" alt="Foto cine" />
             <div class="md-list-item-text" layout="column">
-              <h3>{{cine.nombre}}</h3>
-              <h4>{{cine.encuentra}}</h4>
-              <p>{{cine.direccion}}</p>
+              <h3>{{cines[0].nombre}}</h3>
+              <h4>{{cines[0].encuentra}}</h4>
+              <p>{{cines[0].direccion}}</p>
+            </div>
+      </md-list-item>
+      <md-list-item aria-label="callao" class="md-3-line" layout="row" ng-click="null">
+            <img ng-src="{{cines[1].imagen}}" class="md-avatar" alt="Foto cine" />
+            <div class="md-list-item-text" layout="column">
+              <h3>{{cines[1].nombre}}</h3>
+              <h4>{{cines[1].encuentra}}</h4>
+              <p>{{cines[1].direccion}}</p>
+            </div>
+      </md-list-item>
+      <md-list-item aria-label="callao" class="md-3-line" layout="row" ng-click="null">
+            <img ng-src="{{cines[2].imagen}}" class="md-avatar" alt="Foto cine" />
+            <div class="md-list-item-text" layout="column">
+              <h3>{{cines[2].nombre}}</h3>
+              <h4>{{cines[2].encuentra}}</h4>
+              <p>{{cines[2].direccion}}</p>
+            </div>
+      </md-list-item>
+      <md-list-item aria-label="callao" class="md-3-line" layout="row" ng-click="null">
+            <img ng-src="{{cines[3].imagen}}" class="md-avatar" alt="Foto cine" />
+            <div class="md-list-item-text" layout="column">
+              <h3>{{cines[3].nombre}}</h3>
+              <h4>{{cines[3].encuentra}}</h4>
+              <p>{{cines[3].direccion}}</p>
             </div>
       </md-list-item>
     </md-list>
-    <md-list flex-gt-sm="66" flex="33" hide-xs>
+    <md-list flex="45" hide-xs>
       me
     </md-list>
   </div>

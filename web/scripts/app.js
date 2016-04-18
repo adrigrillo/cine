@@ -26,7 +26,8 @@
     /* Guarda como un array los datos de las películas obtenidas.
         Por ejemplo, si usamos "ng-controller = verPeliculas as peliculas" devuelve el array de todas
         las películas en 'peliculas' pudiendo acceder a las posiciones como peliculas[0] y dentro de
-        esto a los atributos 'peliculas[0].titulo' */
+        esto a los atributos 'peliculas[0].titulo'
+    */
 	cine.controller("verPeliculas", ["$scope", "obtenerPeliculas", function($scope, obtenerPeliculas) {
     	$scope.peliculas = obtenerPeliculas;
         //En caso de error se informa por consola
@@ -37,14 +38,29 @@
     	});
 	}]);
 
+    // Guarda un array de datos de todos los cines obtenidos
     cine.controller("verCines", ["$scope", "obtenerCines", function($scope, obtenerCines) {
         $scope.cines = obtenerCines;
         //En caso de error se informa por consola
-        $scope.cines.$loaded(function() {
-            if ($scope.cines.length === 0) {
+        $scope.cines.$loaded(function(){
+            if ($scope.cines.length === 0){
                 console.error("No se han obtenido datos");
             }
         });
+    }]);
+
+    // Guarda en un objeto el cine requerido
+    cine.controller("verCine", ["$scope", "cine", function($scope, cine) {
+        function nombreCine(nombre){
+            $scope.cine = cine(nombre);
+            console.error("Ha entrado");
+            $scope.cine.$loaded(function(){
+                console.error("Ha funcionado");
+                if ($scope.cines === null){
+                    console.error("No se han obtenido datos");
+                }
+            });
+        }
     }]);
 
 })();
