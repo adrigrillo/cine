@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="cine">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cine | Entradas.com</title>
+  <link rel="icon" type="image/png" href="images/e_roboto.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS de la página -->
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/default.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- carrousel -->
+  <link rel="stylesheet" type="text/css" href="css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+
+  <!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
+  <script src="bower_components/jQuery/jquery-1.12.3.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <!-- Carrousel -->
+  <!-- <script src="scripts/slick.min.js"></script> -->
+  <script src="scripts/slick-carousel/slick/slick.js"></script>
+  <script src="scripts/angular-slick/slick.js"></script>
+  <script src="scripts/index.js"></script>
+
+  <!-- Modulos cargados -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/database.js"></script>
+  <script src="users/users.js"></script>
+
+</head>
+<body ng-cloak="">
+  <div layout="row" class="md-padding">
+    <md-list flex="33" hide-xs>
+      Hellou
+    </md-list>
+    <md-list ng-controller="verCines as cines">
+      <md-list-item class="md-3-line" layout="row" ng-repeat="cine in cines" ng-click="null">
+            <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine" />
+            <div class="md-list-item-text" layout="column">
+              <h3>{{cine.nombre}}</h3>
+              <h4>{{cine.encuentra}}</h4>
+              <p>{{cine.direccion}}</p>
+            </div>
+      </md-list-item>
+    </md-list>
+    <md-list flex-gt-sm="66" flex="33" hide-xs>
+      me
+    </md-list>
+  </div>
+</body>
+
+</html>
