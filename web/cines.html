@@ -16,12 +16,7 @@
   <link rel="stylesheet" href="css/default.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <!-- carrousel -->
-  <link rel="stylesheet" type="text/css" href="css/slick.css" />
-  <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
-
   <!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
-  <script src="bower_components/jQuery/jquery-1.12.3.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>
@@ -33,60 +28,120 @@
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-  <!-- Carrousel -->
-  <!-- <script src="scripts/slick.min.js"></script> -->
-  <script src="scripts/slick-carousel/slick/slick.js"></script>
-  <script src="scripts/angular-slick/slick.js"></script>
-  <script src="scripts/index.js"></script>
 
   <!-- Modulos cargados -->
   <script src="scripts/app.js"></script>
   <script src="scripts/database.js"></script>
-  <script src="users/users.js"></script>
 
 </head>
 <body ng-cloak="">
+  <!-- COLUMNA DE DECISION DE CINES A MOSTRAR -->
   <div layout="row" class="md-padding">
-    <md-list flex="25" hide-xs>
-      Hellou
-    </md-list>
-    <md-list flex-xs="100" flex="35" ng-controller="verCines as cines">
-      <md-list-item aria-label="callao" class="md-3-line" layout="row" ng-click="nombreCine('cinecallao')">
-            <img ng-src="{{cines[0].imagen}}" class="md-avatar" alt="Foto cine" />
-            <div class="md-list-item-text" layout="column">
-              <h3>{{cines[0].nombre}}</h3>
-              <h4>{{cines[0].encuentra}}</h4>
-              <p>{{cines[0].direccion}}</p>
-            </div>
-      </md-list-item>
-      <md-list-item aria-label="callao" class="md-3-line" layout="row" ng-click="null">
-            <img ng-src="{{cines[1].imagen}}" class="md-avatar" alt="Foto cine" />
-            <div class="md-list-item-text" layout="column">
-              <h3>{{cines[1].nombre}}</h3>
-              <h4>{{cines[1].encuentra}}</h4>
-              <p>{{cines[1].direccion}}</p>
-            </div>
-      </md-list-item>
-      <md-list-item aria-label="callao" class="md-3-line" layout="row" ng-click="null">
-            <img ng-src="{{cines[2].imagen}}" class="md-avatar" alt="Foto cine" />
-            <div class="md-list-item-text" layout="column">
-              <h3>{{cines[2].nombre}}</h3>
-              <h4>{{cines[2].encuentra}}</h4>
-              <p>{{cines[2].direccion}}</p>
-            </div>
-      </md-list-item>
-      <md-list-item aria-label="callao" class="md-3-line" layout="row" ng-click="null">
-            <img ng-src="{{cines[3].imagen}}" class="md-avatar" alt="Foto cine" />
-            <div class="md-list-item-text" layout="column">
-              <h3>{{cines[3].nombre}}</h3>
-              <h4>{{cines[3].encuentra}}</h4>
-              <p>{{cines[3].direccion}}</p>
-            </div>
-      </md-list-item>
-    </md-list>
-    <md-list flex="45" hide-xs>
+    <div flex="25" hide-xs>
+      <md-subheader md-no-sticky>
+        <span id="cine-titulo">CATEGORIAS</span>
+      </md-subheader>
+      <md-divider></md-divider>
+      <md-list>
+        <md-list-item class="secondary-button-padding" ng-click="mostrar = 0">
+          <i class="material-icons cine-ico">favorite</i>
+          <p>Favoritos</p>
+        </md-list-item>
+        <md-divider ng-if="!$last"></md-divider>
+        <md-list-item class="secondary-button-padding" ng-click="mostrar = 1">
+          <i class="material-icons cine-ico">near_me</i>
+          <p>Cercanos</p>
+        </md-list-item>
+        <md-divider ng-if="!$last"></md-divider>
+        <md-list-item class="secondary-button-padding" ng-click="mostrar = 2">
+          <i class="material-icons cine-ico">star_rate</i>
+          <p>Mejor valorados</p>
+        </md-list-item>
+      </md-list>
+    </div>
+
+    <!-- COLUMNA DE LISTA DE CINES DISPONIBLES -->
+    <div flex-xs="100" flex="35">
+      <md-subheader md-no-sticky>
+        <span id="cine-titulo">CATEGORIAS</span>
+      </md-subheader>
+      <md-divider></md-divider>
+
+      <!-- LISTA DE CINES MAS CERCANOS -->
+      <md-list ng-controller="verCines as cines">
+        <md-list-item aria-label="callao" class="md-3-line" layout="row" ng-click="tab = 1">
+              <img ng-src="{{cines[0].imagen}}" class="md-avatar" alt="Foto cine" />
+              <div class="md-list-item-text" layout="column">
+                <h3>{{cines[0].nombre}}</h3>
+                <h4>{{cines[0].encuentra}}</h4>
+                <p>{{cines[0].direccion}}</p>
+              </div>
+        </md-list-item>
+        <md-list-item aria-label="parquesur" class="md-3-line" layout="row" ng-click="tab = 2">
+              <img ng-src="{{cines[1].imagen}}" class="md-avatar" alt="Foto cine" />
+              <div class="md-list-item-text" layout="column">
+                <h3>{{cines[1].nombre}}</h3>
+                <h4>{{cines[1].encuentra}}</h4>
+                <p>{{cines[1].direccion}}</p>
+              </div>
+        </md-list-item>
+        <md-list-item aria-label="principepio" class="md-3-line" layout="row" ng-click="tab = 3">
+              <img ng-src="{{cines[2].imagen}}" class="md-avatar" alt="Foto cine" />
+              <div class="md-list-item-text" layout="column">
+                <h3>{{cines[2].nombre}}</h3>
+                <h4>{{cines[2].encuentra}}</h4>
+                <p>{{cines[2].direccion}}</p>
+              </div>
+        </md-list-item>
+        <md-list-item aria-label="tresaguas" class="md-3-line" layout="row" ng-click="tab = 4">
+              <img ng-src="{{cines[3].imagen}}" class="md-avatar" alt="Foto cine" />
+              <div class="md-list-item-text" layout="column">
+                <h3>{{cines[3].nombre}}</h3>
+                <h4>{{cines[3].encuentra}}</h4>
+                <p>{{cines[3].direccion}}</p>
+              </div>
+        </md-list-item>
+      </md-list>
+
+      <!-- LISTA DE CINES MEJOR VALORADOS -->
+      <md-list ng-controller="verCines as cines">
+        <md-list-item aria-label="callao" class="md-3-line" layout="row" ng-click="tab = 1">
+              <img ng-src="{{cines[0].imagen}}" class="md-avatar" alt="Foto cine" />
+              <div class="md-list-item-text" layout="column">
+                <h3>{{cines[0].nombre}}</h3>
+                <h4>{{cines[0].encuentra}}</h4>
+                <p>{{cines[0].direccion}}</p>
+              </div>
+        </md-list-item>
+        <md-list-item aria-label="parquesur" class="md-3-line" layout="row" ng-click="tab = 2">
+              <img ng-src="{{cines[1].imagen}}" class="md-avatar" alt="Foto cine" />
+              <div class="md-list-item-text" layout="column">
+                <h3>{{cines[1].nombre}}</h3>
+                <h4>{{cines[1].encuentra}}</h4>
+                <p>{{cines[1].direccion}}</p>
+              </div>
+        </md-list-item>
+        <md-list-item aria-label="principepio" class="md-3-line" layout="row" ng-click="tab = 3">
+              <img ng-src="{{cines[2].imagen}}" class="md-avatar" alt="Foto cine" />
+              <div class="md-list-item-text" layout="column">
+                <h3>{{cines[2].nombre}}</h3>
+                <h4>{{cines[2].encuentra}}</h4>
+                <p>{{cines[2].direccion}}</p>
+              </div>
+        </md-list-item>
+        <md-list-item aria-label="tresaguas" class="md-3-line" layout="row" ng-click="tab = 4">
+              <img ng-src="{{cines[3].imagen}}" class="md-avatar" alt="Foto cine" />
+              <div class="md-list-item-text" layout="column">
+                <h3>{{cines[3].nombre}}</h3>
+                <h4>{{cines[3].encuentra}}</h4>
+                <p>{{cines[3].direccion}}</p>
+              </div>
+        </md-list-item>
+      </md-list>
+    </div>
+    <md-content flex="45" hide-xs>
       me
-    </md-list>
+    </md-content>
   </div>
 </body>
 

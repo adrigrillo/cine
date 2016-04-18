@@ -2,3 +2,14 @@
 .cards{
 	width: 300px;
 }
+
+/*
+*
+*	CSS PAGINA CINES
+*	cines.html
+*
+*/
+.cine-ico{
+	padding-right: 5px;
+	max-width: 24px !important;
+}
