@@ -36,24 +36,24 @@
 </head>
 <body ng-cloak="">
   <!-- COLUMNA DE DECISION DE CINES A MOSTRAR -->
-  <div layout="row" class="md-padding">
+  <div layout="row" class="md-padding" ng-controller="verCines as cines">
     <div flex="25" hide-xs>
       <md-subheader md-no-sticky>
         <span id="cine-titulo">CATEGORIAS</span>
       </md-subheader>
       <md-divider></md-divider>
-      <md-list ng-init="mostrar = 1">
-        <md-list-item class="secondary-button-padding" ng-click="mostrar = 0">
+      <md-list ng-init="mostrar = 2">
+        <md-list-item class="secondary-button-padding" ng-click="mostrar = 1">
           <i class="material-icons cine-ico">favorite</i>
           <p>Favoritos</p>
         </md-list-item>
         <md-divider ng-if="!$last"></md-divider>
-        <md-list-item class="secondary-button-padding" ng-click="mostrar = 1">
+        <md-list-item class="secondary-button-padding" ng-click="mostrar = 2">
           <i class="material-icons cine-ico">near_me</i>
           <p>Cercanos</p>
         </md-list-item>
         <md-divider ng-if="!$last"></md-divider>
-        <md-list-item class="secondary-button-padding" ng-click="mostrar = 2">
+        <md-list-item class="secondary-button-padding" ng-click="mostrar = 3">
           <i class="material-icons cine-ico">star_rate</i>
           <p>Mejor valorados</p>
         </md-list-item>
@@ -68,10 +68,9 @@
       <md-divider></md-divider>
 
       <!-- LISTA DE CINES MAS CERCANOS -->
-      <md-list ng-controller="verCines as cines">
-        <md-list-item ng-show="mostrar === 1" class="md-3-line" layout="row" layout-xs="column"
-          ng-repeat="cine in cines" ng-click="null">
-            <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine" />
+      <md-list ng-show="mostrar === 2" ng-repeat="cine in cines" ng-init="i=$index;">
+        <md-list-item ng-click="$parent.detalle = i;" class="md-3-line" layout="row" layout-xs="column">
+            <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
             <div class="md-list-item-text" layout="column">
               <h3>{{cine.nombre}}</h3>
               <h4>{{cine.encuentra}}</h4>
@@ -81,10 +80,9 @@
       </md-list>
 
       <!-- LISTA DE CINES MEJOR VALORADOS -->
-      <md-list ng-controller="verCines as cines">
-        <md-list-item ng-show="mostrar === 2 "class="md-3-line" layout="row" layout-xs="column"
-          ng-repeat="cine in cines | orderBy:'valoracion':reverse" ng-click="null">
-            <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine" />
+      <md-list ng-show="mostrar === 3" ng-repeat="cine in cines | orderBy:'-valoracion'" ng-init="i=$index;">
+        <md-list-item ng-click="$parent.detalle = i;" class="md-3-line" layout="row" layout-xs="column" >
+            <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
             <div class="md-list-item-text" layout="column">
               <h3>{{cine.nombre}}</h3>
               <h4>{{cine.encuentra}}</h4>
@@ -94,7 +92,10 @@
       </md-list>
     </div>
     <md-content flex="45" hide-xs>
-      me
+      <div ng-show="detalle === 0">CINE 0</div>
+      <div ng-show="detalle === 1">CINE 1</div>
+      <div ng-show="detalle === 2">CINE 2</div>
+      <div ng-show="detalle === 3">CINE 3</div>
     </md-content>
   </div>
 </body>
