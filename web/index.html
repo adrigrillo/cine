@@ -17,8 +17,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- carrousel -->
-  <link rel="stylesheet" type="text/css" href="css/slick.css" />
-  <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="css/slick.css" /> -->
+  <!-- <link rel="stylesheet" type="text/css" href="css/slick-theme.css" /> -->
 
   <!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
   <script src="bower_components/jQuery/jquery-1.12.3.js"></script>
@@ -35,9 +35,9 @@
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <!-- Carrousel -->
   <!-- <script src="scripts/slick.min.js"></script> -->
-  <script src="scripts/slick-carousel/slick/slick.js"></script>
-  <script src="scripts/angular-slick/slick.js"></script>
-  <script src="scripts/index.js"></script>
+  <!-- <script src="scripts/slick-carousel/slick/slick.js"></script> -->
+  <!-- <script src="scripts/angular-slick/slick.js"></script> -->
+  <!-- <script src="scripts/index.js"></script> -->
 
   <!-- Modulos cargados -->
   <script src="scripts/app.js"></script>
@@ -80,26 +80,49 @@
             <md-button class="md-raised md-primary">Ver película</md-button>
           </md-card-actions>
         </md-card> -->
-      <md-content class="md-padding noOverflow" layout="row" ng-controller="verPeliculas as peliculas" layout-wrap >
-
-        <div class="md-title titulo">
-          Categoria
-        </div>
-        <div class="carrouselContainer">
-          <div>
-            <!-- <div class="carousel"> -->
-            <!-- <slick init-onload=true data="peliculas"> -->
-              <slick slides-to-show=3 slides-to-scroll=3 init-onload=true data="peliculas" swipeToSlide=true infinite=true  accessibility=false infinite=false respondTo='min' dots=false lazyLoad='progressive' >
-
+      <md-content class="md-padding noOverflow" layout="row" ng-controller="verPeliculas as peliculas" layout-wrap>
+        <!-- <div class="fullScreen"> -->
+          <div class="md-title titulo">
+            Destacados
+          </div>
+          <div class="carrouselContainer">
+            <div class="horizontalScroll">
+              <!-- <div class="carousel"> -->
+              <!-- <slick init-onload=true data="peliculas"> -->
+              <!-- <slick slides-to-show=3 slides-to-scroll=3 init-onload=true data="peliculas" swipeToSlide=true infinite=true  accessibility=false infinite=false respondTo='min' dots=false lazyLoad='progressive' > -->
               <div class="pelicula" ng-repeat="pelicula in peliculas">
                 <img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
+                <div class="infoPelicula">
+                  <md-button class="md-icon-button">
+                    <md-icon style="color: #ffffff">info</md-icon>
+                  </md-button>
+                </div>
+                <!-- </slick> -->
+                <!-- </div> -->
               </div>
+            </div>
 
-            </slick>
+            <div class="md-title titulo">
+              Recomendados
+            </div>
+            <div class="carrouselContainer">
+              <div class="horizontalScroll">
+                <!-- <div class="carousel"> -->
+                <!-- <slick init-onload=true data="peliculas"> -->
+                <!-- <slick slides-to-show=3 slides-to-scroll=3 init-onload=true data="peliculas" swipeToSlide=true infinite=true  accessibility=false infinite=false respondTo='min' dots=false lazyLoad='progressive' > -->
+                <div class="pelicula" ng-repeat="pelicula in peliculas">
+                  <img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
+                  <!-- Info button -->
+                  <div class="infoPelicula">
+                    <md-button class="md-icon-button">
+                      <md-icon style="color: #ffffff">info</md-icon>
+                    </md-button>
+                  </div>
+                  <!-- </slick> -->
+                  <!-- </div> -->
+                </div>
+              </div>
             <!-- </div> -->
-          </div>
-        </div>
-
       </md-content>
     </md-tab>
 

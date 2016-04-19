@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="cine">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cine | Entradas.com</title>
+  <link rel="icon" type="image/png" href="images/e_roboto.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS de la página -->
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/default.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <!-- Modulos cargados -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/database.js"></script>
+
+</head>
+<body ng-cloak="">
+  <!-- COLUMNA DE DECISION DE CINES A MOSTRAR -->
+  <div layout="row" class="md-padding" ng-controller="verCines as cines">
+    <div flex="25" hide-xs>
+      <md-subheader md-no-sticky>
+        <span id="cine-titulo">CATEGORIAS</span>
+      </md-subheader>
+      <md-divider></md-divider>
+      <md-list ng-init="mostrar = 2">
+        <md-list-item class="secondary-button-padding" ng-click="mostrar = 1">
+          <i class="material-icons cine-ico">favorite</i>
+          <p>Favoritos</p>
+        </md-list-item>
+        <md-divider ng-if="!$last"></md-divider>
+        <md-list-item class="secondary-button-padding" ng-click="mostrar = 2">
+          <i class="material-icons cine-ico">near_me</i>
+          <p>Cercanos</p>
+        </md-list-item>
+        <md-divider ng-if="!$last"></md-divider>
+        <md-list-item class="secondary-button-padding" ng-click="mostrar = 3">
+          <i class="material-icons cine-ico">star_rate</i>
+          <p>Mejor valorados</p>
+        </md-list-item>
+      </md-list>
+    </div>
+
+    <!-- COLUMNA DE LISTA DE CINES DISPONIBLES -->
+    <div flex-xs="100" flex="35">
+      <md-subheader md-no-sticky>
+        <span id="cine-titulo">CATEGORIAS</span>
+      </md-subheader>
+      <md-divider></md-divider>
+
+      <!-- LISTA DE CINES MAS CERCANOS -->
+      <md-list ng-show="mostrar === 2" ng-repeat="cine in cines" ng-init="i=$index;">
+        <md-list-item ng-click="$parent.detalle = i;" class="md-3-line" layout="row" layout-xs="column">
+            <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
+            <div class="md-list-item-text" layout="column">
+              <h3>{{cine.nombre}}</h3>
+              <h4>{{cine.encuentra}}</h4>
+              <p>{{cine.direccion}}</p>
+            </div>
+        </md-list-item>
+      </md-list>
+
+      <!-- LISTA DE CINES MEJOR VALORADOS -->
+      <md-list ng-show="mostrar === 3" ng-repeat="cine in cines | orderBy:'-valoracion'" ng-init="i=$index;">
+        <md-list-item ng-click="$parent.detalle = i;" class="md-3-line" layout="row" layout-xs="column" >
+            <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
+            <div class="md-list-item-text" layout="column">
+              <h3>{{cine.nombre}}</h3>
+              <h4>{{cine.encuentra}}</h4>
+              <p>{{cine.direccion}}</p>
+            </div>
+        </md-list-item>
+      </md-list>
+    </div>
+    <md-content flex="45" hide-xs>
+      <div ng-show="logic(mostar, detalle)===1">CINE 0</div>
+      <div ng-show="detalle === 1">CINE 1</div>
+      <div ng-show="detalle === 2">CINE 2</div>
+      <div ng-show="detalle === 3">CINE 3</div>
+    </md-content>
+  </div>
+</body>
+
+</html>
