@@ -15,7 +15,8 @@
 
 .titulo {
   color: #5C6BC0;               /* Indigo 400 */
-  padding-bottom: 0.5em;
+  padding-bottom: 0.3em;
+  padding-top: 0.7em;
 }
 
 /*.carrousel{
@@ -23,9 +24,16 @@
   padding-left: 2em;
 }*/
 
+.horizontalScroll{
+  width: auto;
+  height:auto;;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  box-sizing:border-box;
+}
+
 .carrouselContainer{
-  margin-left: auto;;
-  margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
   height: auto;
@@ -39,6 +47,9 @@
 
 .pelicula {
   /*padding-left: 1em;*/
+  display: inline-block;
+  vertical-align: middle;
+
   padding-right: 1em;
   height: auto;
   width: 200px;

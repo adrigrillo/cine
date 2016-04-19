@@ -80,22 +80,36 @@
             <md-button class="md-raised md-primary">Ver película</md-button>
           </md-card-actions>
         </md-card> -->
-      <md-content class="md-padding noOverflow" layout="row" ng-controller="verPeliculas as peliculas" layout-wrap >
+      <md-content class="md-padding noOverflow" layout="row" ng-controller="verPeliculas as peliculas" layout-wrap>
 
         <div class="md-title titulo">
-          Categoria
+          Destacados
         </div>
         <div class="carrouselContainer">
-          <div>
+          <div class="horizontalScroll">
             <!-- <div class="carousel"> -->
             <!-- <slick init-onload=true data="peliculas"> -->
-              <slick slides-to-show=3 slides-to-scroll=3 init-onload=true data="peliculas" swipeToSlide=true infinite=true  accessibility=false infinite=false respondTo='min' dots=false lazyLoad='progressive' >
+            <!-- <slick slides-to-show=3 slides-to-scroll=3 init-onload=true data="peliculas" swipeToSlide=true infinite=true  accessibility=false infinite=false respondTo='min' dots=false lazyLoad='progressive' > -->
+            <div class="pelicula" ng-repeat="pelicula in peliculas">
+              <img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
+            </div>
+            <!-- </slick> -->
+            <!-- </div> -->
+          </div>
+        </div>
 
-              <div class="pelicula" ng-repeat="pelicula in peliculas">
-                <img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
-              </div>
-
-            </slick>
+        <div class="md-title titulo">
+          Recomendados
+        </div>
+        <div class="carrouselContainer">
+          <div class="horizontalScroll">
+            <!-- <div class="carousel"> -->
+            <!-- <slick init-onload=true data="peliculas"> -->
+            <!-- <slick slides-to-show=3 slides-to-scroll=3 init-onload=true data="peliculas" swipeToSlide=true infinite=true  accessibility=false infinite=false respondTo='min' dots=false lazyLoad='progressive' > -->
+            <div class="pelicula" ng-repeat="pelicula in peliculas">
+              <img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
+            </div>
+            <!-- </slick> -->
             <!-- </div> -->
           </div>
         </div>
