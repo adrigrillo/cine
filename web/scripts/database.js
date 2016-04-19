@@ -13,4 +13,15 @@
 		var ref = new Firebase("https://cinedsi.firebaseio.com/cines");
 		return $firebaseArray(ref);
 	}]);
+
+	//Metodo para obtener un solo cine, devuelve un objeto cine
+	cine.factory("cine", ["$firebaseObject", function($firebaseObject){
+		//Retornamos el objeto con el nombre indicado
+    	return function sacarCine(name){
+			var ref = new Firebase("https://cinedsi.firebaseio.com/cines");
+			var profileRef = ref.child(name);
+		    return $firebaseObject(profileRef);
+    	};
+  	}
+]);
 })();
