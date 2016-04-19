@@ -92,7 +92,7 @@
       </md-list>
     </div>
     <md-content flex="45" hide-xs>
-      <div ng-show="detalle === 0">CINE 0</div>
+      <div ng-show="logic(mostar, detalle)===1">CINE 0</div>
       <div ng-show="detalle === 1">CINE 1</div>
       <div ng-show="detalle === 2">CINE 2</div>
       <div ng-show="detalle === 3">CINE 3</div>
