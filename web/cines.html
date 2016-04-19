@@ -80,7 +80,7 @@
       </md-list>
 
       <!-- LISTA DE CINES MEJOR VALORADOS -->
-      <md-list ng-show="mostrar === 3" ng-repeat="cine in cines | orderBy:'-valoracion'" ng-init="i=$index;">
+      <md-list ng-show="mostrar === 3" ng-repeat="cine in cines | orderBy:'-valoracion'" ng-init="i=$index+4;">
         <md-list-item ng-click="$parent.detalle = i;" class="md-3-line" layout="row" layout-xs="column" >
             <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
             <div class="md-list-item-text" layout="column">
@@ -92,10 +92,10 @@
       </md-list>
     </div>
     <md-content flex="45" hide-xs>
-      <div ng-show="logic(mostar, detalle)===1">CINE 0</div>
-      <div ng-show="detalle === 1">CINE 1</div>
-      <div ng-show="detalle === 2">CINE 2</div>
-      <div ng-show="detalle === 3">CINE 3</div>
+      <div ng-show="detalle === 0 || detalle === 5">CINE 0</div>
+      <div ng-show="detalle === 1 || detalle === 4">CINE 1</div>
+      <div ng-show="detalle === 2 || detalle === 6">CINE 2</div>
+      <div ng-show="detalle === 3 || detalle === 7">CINE 3</div>
     </md-content>
   </div>
 </body>

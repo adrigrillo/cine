@@ -62,14 +62,4 @@
             });
         }
     }]);
-
-    function logic(a, b){
-        console.alert("Entra aunque sea");
-        var mostrar = a;
-        var detalle = b;
-        if (mostrar === 2 && detalle === 0 || mostrar === 3 && detalle === 1){
-            return 1;
-        }
-    }
-
 })();
