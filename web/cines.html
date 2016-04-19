@@ -42,7 +42,7 @@
         <span id="cine-titulo">CATEGORIAS</span>
       </md-subheader>
       <md-divider></md-divider>
-      <md-list>
+      <md-list ng-init="mostrar = 1">
         <md-list-item class="secondary-button-padding" ng-click="mostrar = 0">
           <i class="material-icons cine-ico">favorite</i>
           <p>Favoritos</p>
@@ -69,73 +69,27 @@
 
       <!-- LISTA DE CINES MAS CERCANOS -->
       <md-list ng-controller="verCines as cines">
-        <md-list-item aria-label="callao" class="md-3-line" layout="row" ng-click="tab = 1">
-              <img ng-src="{{cines[0].imagen}}" class="md-avatar" alt="Foto cine" />
-              <div class="md-list-item-text" layout="column">
-                <h3>{{cines[0].nombre}}</h3>
-                <h4>{{cines[0].encuentra}}</h4>
-                <p>{{cines[0].direccion}}</p>
-              </div>
-        </md-list-item>
-        <md-list-item aria-label="parquesur" class="md-3-line" layout="row" ng-click="tab = 2">
-              <img ng-src="{{cines[1].imagen}}" class="md-avatar" alt="Foto cine" />
-              <div class="md-list-item-text" layout="column">
-                <h3>{{cines[1].nombre}}</h3>
-                <h4>{{cines[1].encuentra}}</h4>
-                <p>{{cines[1].direccion}}</p>
-              </div>
-        </md-list-item>
-        <md-list-item aria-label="principepio" class="md-3-line" layout="row" ng-click="tab = 3">
-              <img ng-src="{{cines[2].imagen}}" class="md-avatar" alt="Foto cine" />
-              <div class="md-list-item-text" layout="column">
-                <h3>{{cines[2].nombre}}</h3>
-                <h4>{{cines[2].encuentra}}</h4>
-                <p>{{cines[2].direccion}}</p>
-              </div>
-        </md-list-item>
-        <md-list-item aria-label="tresaguas" class="md-3-line" layout="row" ng-click="tab = 4">
-              <img ng-src="{{cines[3].imagen}}" class="md-avatar" alt="Foto cine" />
-              <div class="md-list-item-text" layout="column">
-                <h3>{{cines[3].nombre}}</h3>
-                <h4>{{cines[3].encuentra}}</h4>
-                <p>{{cines[3].direccion}}</p>
-              </div>
+        <md-list-item ng-show="mostrar === 1" class="md-3-line" layout="row" layout-xs="column"
+          ng-repeat="cine in cines" ng-click="null">
+            <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine" />
+            <div class="md-list-item-text" layout="column">
+              <h3>{{cine.nombre}}</h3>
+              <h4>{{cine.encuentra}}</h4>
+              <p>{{cine.direccion}}</p>
+            </div>
         </md-list-item>
       </md-list>
 
       <!-- LISTA DE CINES MEJOR VALORADOS -->
       <md-list ng-controller="verCines as cines">
-        <md-list-item aria-label="callao" class="md-3-line" layout="row" ng-click="tab = 1">
-              <img ng-src="{{cines[0].imagen}}" class="md-avatar" alt="Foto cine" />
-              <div class="md-list-item-text" layout="column">
-                <h3>{{cines[0].nombre}}</h3>
-                <h4>{{cines[0].encuentra}}</h4>
-                <p>{{cines[0].direccion}}</p>
-              </div>
-        </md-list-item>
-        <md-list-item aria-label="parquesur" class="md-3-line" layout="row" ng-click="tab = 2">
-              <img ng-src="{{cines[1].imagen}}" class="md-avatar" alt="Foto cine" />
-              <div class="md-list-item-text" layout="column">
-                <h3>{{cines[1].nombre}}</h3>
-                <h4>{{cines[1].encuentra}}</h4>
-                <p>{{cines[1].direccion}}</p>
-              </div>
-        </md-list-item>
-        <md-list-item aria-label="principepio" class="md-3-line" layout="row" ng-click="tab = 3">
-              <img ng-src="{{cines[2].imagen}}" class="md-avatar" alt="Foto cine" />
-              <div class="md-list-item-text" layout="column">
-                <h3>{{cines[2].nombre}}</h3>
-                <h4>{{cines[2].encuentra}}</h4>
-                <p>{{cines[2].direccion}}</p>
-              </div>
-        </md-list-item>
-        <md-list-item aria-label="tresaguas" class="md-3-line" layout="row" ng-click="tab = 4">
-              <img ng-src="{{cines[3].imagen}}" class="md-avatar" alt="Foto cine" />
-              <div class="md-list-item-text" layout="column">
-                <h3>{{cines[3].nombre}}</h3>
-                <h4>{{cines[3].encuentra}}</h4>
-                <p>{{cines[3].direccion}}</p>
-              </div>
+        <md-list-item ng-show="mostrar === 2 "class="md-3-line" layout="row" layout-xs="column"
+          ng-repeat="cine in cines | orderBy:'valoracion':reverse" ng-click="null">
+            <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine" />
+            <div class="md-list-item-text" layout="column">
+              <h3>{{cine.nombre}}</h3>
+              <h4>{{cine.encuentra}}</h4>
+              <p>{{cine.direccion}}</p>
+            </div>
         </md-list-item>
       </md-list>
     </div>
