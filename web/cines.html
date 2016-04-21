@@ -39,7 +39,7 @@
   <div layout="row" class="md-padding" ng-controller="verCines as cines">
     <div flex="25" hide-xs>
       <md-subheader md-no-sticky>
-        <span id="cine-titulo">CATEGORIAS</span>
+        <span>Categorias</span>
       </md-subheader>
       <md-divider></md-divider>
       <md-list ng-init="mostrar = 2">
@@ -63,34 +63,93 @@
     <!-- COLUMNA DE LISTA DE CINES DISPONIBLES -->
     <div flex-xs="100" flex="35">
       <md-subheader md-no-sticky>
-        <span id="cine-titulo">CATEGORIAS</span>
+        <span>Cines</span>
       </md-subheader>
       <md-divider></md-divider>
 
       <!-- LISTA DE CINES MAS CERCANOS -->
-      <md-list ng-show="mostrar === 2" ng-repeat="cine in cines" ng-init="i=$index;">
+      <md-list ng-show="mostrar === 2" ng-repeat="cine in cines" ng-init="i=$index;" layout-align="start center">
         <md-list-item ng-click="$parent.detalle = i;" class="md-3-line" layout="row" layout-xs="column">
             <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
-            <div class="md-list-item-text" layout="column">
+            <div class="md-list-item-text">
               <h3>{{cine.nombre}}</h3>
               <h4>{{cine.encuentra}}</h4>
               <p>{{cine.direccion}}</p>
             </div>
+            <md-button class="md-icon-button md-secondary" aria-label="info" hide-gt-xs ng-init="!card"
+              ng-click="card=!card">
+              <i class="material-icons">info_outline</i>
+            </md-button>
         </md-list-item>
+
+        <!-- DIV DE INFORMACION -->
+        <md-content hide-gt-xs ng-show="card">
+          <div>
+            <img ng-src="{{cine.mapa}}" alt="mapa" class="mapa">
+          </div>
+          <md-toolbar>
+            <div class="md-toolbar-tools">
+              <md-button class="md-fab md-mini md-warn md-hue" aria-label="Favorito" ng-init="!liked"
+                ng-click="liked=!liked">
+                <i class="material-icons pink1 cine-fab mini" ng-show="liked">favorite</i>
+                <i class="material-icons pink1 cine-fab mini" ng-show="!liked">favorite_border</i>
+              </md-button>
+              <span flex=""></span>
+              <h2>
+                <span>{{cine.nombre}}</span>
+              </h2>
+              <span flex=""></span>
+              <md-button class="md-fab md-hue-3" aria-label="Select">
+                <i class="material-icons md-36 cine-fab">done</i>
+              </md-button>
+            </div>
+          </md-toolbar>
+          <div>
+            <md-content>
+              <md-subheader class="md-primary">
+                Información
+              </md-subheader>
+              <md-list>
+                <md-list-item>
+                  <i class="material-icons cine-ico">place</i>
+                  <a target="_blank" ng-href="{{cine.llegar}}">
+                    {{cine.direccion}}
+                  </a>
+                </md-list-item>
+                <md-list-item>
+                  <i class="material-icons cine-ico">link</i>
+                  <a target="_blank" ng-href="{{cine.paginaweb}}">
+                    {{cine.paginaweb}}
+                  </a>
+                </md-list-item>
+                <md-list-item>
+                  <i class="material-icons cine-ico">phone</i>
+                  <p>{{cine.telefono}}</p>
+                </md-list-item>
+              </md-list>
+            </md-content>
+          </div>
+        </md-content>
       </md-list>
 
       <!-- LISTA DE CINES MEJOR VALORADOS -->
-      <md-list ng-show="mostrar === 3" ng-repeat="cine in cines | orderBy:'-valoracion'" ng-init="i=$index+4;">
+      <md-list ng-show="mostrar === 3" ng-repeat="cine in cines | orderBy:'-valoracion'" ng-init="i=$index+4;"
+        layout-align="start center">
         <md-list-item ng-click="$parent.detalle = i;" class="md-3-line" layout="row" layout-xs="column" >
             <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
-            <div class="md-list-item-text" layout="column">
+            <div class="md-list-item-text">
               <h3>{{cine.nombre}}</h3>
               <h4>{{cine.encuentra}}</h4>
               <p>{{cine.direccion}}</p>
             </div>
+            <md-button class="md-icon-button" aria-label="info" hide-gt-xs>
+              <i class="material-icons">info_outline</i>
+            </md-button>
         </md-list-item>
       </md-list>
     </div>
+
+    <!-- CONTENIDO DE LA INFORMACION -->
     <md-content flex="45" hide-xs ng-init="detalle=0">
       <div>
         <img ng-show="detalle === 0 || detalle === 5" ng-src="{{cines[0].mapa}}" alt="mapa" class="mapa">
