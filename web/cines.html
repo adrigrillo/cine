@@ -94,12 +94,35 @@
       </md-list>
     </div>
     <md-content flex="45" hide-xs>
-      <div ng-show="detalle === 0 || detalle === 5">
-        <ng-map center="[40.74, -74.18]"></ng-map>
+      <div>
+        <img ng-src="{{cines[0].mapa}}" alt="mapa" class="mapa">
       </div>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <md-button class="md-fab md-mini md-warn md-hue" aria-label="Favorito" ng-init="!liked"
+            ng-click="liked=!liked">
+            <i class="material-icons pink1 cine-fab mini" ng-show="liked">favorite</i>
+            <i class="material-icons pink1 cine-fab mini" ng-show="!liked">favorite_border</i>
+          </md-button>
+          <span flex=""></span>
+          <h2>
+            <span ng-show="detalle === 0 || detalle === 5">{{cines[0].nombre}}</span>
+            <span ng-show="detalle === 1 || detalle === 4">{{cines[1].nombre}}</span>
+            <span ng-show="detalle === 2 || detalle === 6">{{cines[2].nombre}}</span>
+            <span ng-show="detalle === 3 || detalle === 7">{{cines[3].nombre}}</span>
+          </h2>
+          <span flex=""></span>
+          <md-button class="md-fab md-hue-3" aria-label="Select">
+            <i class="material-icons md-36 cine-fab">done</i>
+          </md-button>
+        </div>
+      </md-toolbar>
+      <!--
+      <div ng-show="detalle === 0 || detalle === 5">CINE 0</div>
       <div ng-show="detalle === 1 || detalle === 4">CINE 1</div>
       <div ng-show="detalle === 2 || detalle === 6">CINE 2</div>
       <div ng-show="detalle === 3 || detalle === 7">CINE 3</div>
+      -->
     </md-content>
   </div>
 </body>

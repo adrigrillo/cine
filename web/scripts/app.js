@@ -8,13 +8,12 @@
         $mdThemingProvider.theme("default")                   /* color palette */
             .primaryPalette("indigo")
             .accentPalette("yellow")
-            .warnPalette("amber")
-						.backgroundPalette('indigo',{
-							'default': '50'
-						}
-					);
-        }
-    );
+            .warnPalette("pink")
+			.backgroundPalette('indigo',{
+				'default': '50'
+			}
+		);
+    });
 
     /* Controlador de las tabs */
     cine.controller('mainController', function($scope) {
@@ -62,15 +61,6 @@
             });
         }
     }]);
-
-    //Controlador de los mapas de la aplicacion
-    app.controller('MyController', function(NgMap) {
-        NgMap.getMap().then(function(map){
-            console.log(map.getCenter());
-            console.log('markers', map.markers);
-            console.log('shapes', map.shapes);
-        });
-    });
 
     // Controlador para los pagos de la aplicación
     cine.controller('DemoCtrl', function($scope) {
