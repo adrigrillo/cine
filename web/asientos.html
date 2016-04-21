@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/default.css">
+  <link rel="stylesheet" href="css/asientos.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
@@ -68,39 +69,36 @@
 <div ng-cloak>
 	<md-content>
 		<md-tabs md-dynamic-height md-border-bottom>
-			<md-tab label="one">
+			<md-tab label="Sesión 1" >
 				<md-content class="md-padding">
-					<h1 class="md-display-2">Tab One</h1>
-					<p>Soy la tabla 1</p> 
+					<h1 class="md-display-2">Sesión 1</h1>
+            <p> SESIÓN 1 </p>             
+            <div ng-controller="SelectAsyncController" layout="column" layout-align="center center" style="padding:40px" ng-cloak>
+              <p>Select can call an arbitrary function on show. If this function returns a promise, it will display a loading indicator while it is being resolved:</p>
+              <div layout="column" layout-align="center center">
+              <md-select placeholder="Assign to user" ng-model="user" md-on-open="loadUsers()" style="min-width: 200px;">
+              <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
+              </md-select>
+              <p class="md-caption">You have assigned the task to: {{ user ? user.name : 'No one yet' }}</p>
+              </div>
+            </div>
+
+
 				</md-content>
 			</md-tab>
 
-			<md-tab label="two">
+			<md-tab label="Sesión 2">
 				<md-content class="md-padding">
-				  <h1 class="md-display-2">Tab Two</h1>
-				  <p>Soy la tabla 2</p>
-				  <md-input-container class="md-block" flex-gt-sm>
-						  <label>Provincia</label>
-						  <md-select ng-model="user.provincia">
-							<md-option ng-repeat="prov in provincias" value="{{prov.abbrev}}">
-							  {{prov.abbrev}}
-							</md-option>
-						  </md-select>
-					</md-input-container>
+				  <h1 class="md-display-2">Sesión 2</h1>
+				  <p>SESIÓN 2</p>
+				 
 				</md-content>
 			</md-tab>
-			<md-tab label="three">
+			<md-tab label="Sesión 3">
 				<md-content class="md-padding">
-				  <h1 class="md-display-2">Tab Three</h1>
-				  <p>Soy la tabla 3</p>
-					<md-input-container class="md-block" flex-gt-sm>
-						  <label>Provincia</label>
-						  <md-select ng-model="user.provincia">
-							<md-option ng-repeat="prov in provincias" value="{{prov.abbrev}}">
-							  {{prov.abbrev}}
-							</md-option>
-						  </md-select>
-					</md-input-container>		  
+				  <h1 class="md-display-2">Sesión 3</h1>
+				  <p>SESIÓN 3</p>
+					  
 				</md-content>
 			</md-tab>
 		</md-tabs>
