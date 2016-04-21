@@ -66,20 +66,22 @@
       Seleccionar sesión y butacas
     </div>
 	
-<div ng-cloak>
+<div>
 	<md-content>
 		<md-tabs md-dynamic-height md-border-bottom>
 			<md-tab label="Sesión 1" >
 				<md-content class="md-padding">
-					<h1 class="md-display-2">Sesión 1</h1>
-            <p> SESIÓN 1 </p>             
-            <div ng-controller="SelectAsyncController" layout="column" layout-align="center center" style="padding:40px" ng-cloak>
-              <p>Select can call an arbitrary function on show. If this function returns a promise, it will display a loading indicator while it is being resolved:</p>
-              <div layout="column" layout-align="center center">
-              <md-select placeholder="Assign to user" ng-model="user" md-on-open="loadUsers()" style="min-width: 200px;">
+					<h1 class="md-display-2">Sesión 1</h1>            
+            <!--<div layout="column" ng-cloak>-->
+        <div layout="column" ng-controller='asientos' ng-cloak>
+              <p>Seleccíona el número de asientos</p>
+              <div layout="column">
+              <md-select placeholder="asientos" ng-model="user" md-on-open="loadUsers()">
               <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
               </md-select>
-              <p class="md-caption">You have assigned the task to: {{ user ? user.name : 'No one yet' }}</p>
+              <p class="md-caption">El número de asientos elegido es: {{ user ? user.name : 'No ha seleccionado ninguno' }}</p>
+
+
               </div>
             </div>
 
@@ -90,8 +92,681 @@
 			<md-tab label="Sesión 2">
 				<md-content class="md-padding">
 				  <h1 class="md-display-2">Sesión 2</h1>
-				  <p>SESIÓN 2</p>
-				 
+				  
+				  <form>
+            Selecciona el número de butacas &nbsp;&nbsp;<select ng-model="myVar">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+            </select>
+          </form>
+
+          <div ng-switch="myVar == '1' || myVar == '2' || myVar == '3' || myVar == '4' || myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
+            <div ng-switch-when="true">
+               <h2>Asiento 1</h2>
+               <form>
+              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila1">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+            </select>
+          </form>
+          <br>
+          <form>
+              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna1">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+              <option value="11">16
+              <option value="12">17
+              <option value="13">18
+              <option value="14">19
+              <option value="15">20
+              <option value="11">21
+              <option value="12">22
+              <option value="13">23
+              <option value="14">24
+              <option value="15">25
+              <option value="11">26
+              <option value="12">27
+              <option value="13">28
+              <option value="14">29
+              <option value="15">30
+            </select>
+          </form>
+            </div>
+          </div>
+          <div ng-switch="myVar == '2' || myVar == '3' || myVar == '4' || myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
+            <div ng-switch-when="true">
+               <h1>Asiento 2</h1>
+               <form>
+              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila2">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+            </select>
+          </form>
+          <br>
+          <form>
+              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna2">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+              <option value="11">16
+              <option value="12">17
+              <option value="13">18
+              <option value="14">19
+              <option value="15">20
+              <option value="11">21
+              <option value="12">22
+              <option value="13">23
+              <option value="14">24
+              <option value="15">25
+              <option value="11">26
+              <option value="12">27
+              <option value="13">28
+              <option value="14">29
+              <option value="15">30
+            </select>
+          </form>
+            </div>
+          </div> 
+          <div ng-switch=" myVar == '3' || myVar == '4' || myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
+            <div ng-switch-when="true">
+               <h1>Asiento 3</h1>
+               <form>
+              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila3">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+            </select>
+          </form>
+          <br>
+          <form>
+              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna3">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+              <option value="11">16
+              <option value="12">17
+              <option value="13">18
+              <option value="14">19
+              <option value="15">20
+              <option value="11">21
+              <option value="12">22
+              <option value="13">23
+              <option value="14">24
+              <option value="15">25
+              <option value="11">26
+              <option value="12">27
+              <option value="13">28
+              <option value="14">29
+              <option value="15">30
+            </select>
+          </form>
+            </div>
+          </div>
+          <div ng-switch="myVar == '4' || myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
+            <div ng-switch-when="true">
+               <h1>Asiento 4</h1>
+               <form>
+              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila4">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+            </select>
+          </form>
+          <br>
+          <form>
+              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna4">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+              <option value="11">16
+              <option value="12">17
+              <option value="13">18
+              <option value="14">19
+              <option value="15">20
+              <option value="11">21
+              <option value="12">22
+              <option value="13">23
+              <option value="14">24
+              <option value="15">25
+              <option value="11">26
+              <option value="12">27
+              <option value="13">28
+              <option value="14">29
+              <option value="15">30
+            </select>
+          </form>
+            </div>
+          </div> 
+          <div ng-switch="myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
+            <div ng-switch-when="true">
+               <h1>Asiento 5</h1>
+               <form>
+              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila5">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+            </select>
+          </form>
+          <br>
+          <form>
+              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna5">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+              <option value="11">16
+              <option value="12">17
+              <option value="13">18
+              <option value="14">19
+              <option value="15">20
+              <option value="11">21
+              <option value="12">22
+              <option value="13">23
+              <option value="14">24
+              <option value="15">25
+              <option value="11">26
+              <option value="12">27
+              <option value="13">28
+              <option value="14">29
+              <option value="15">30
+            </select>
+          </form>
+            </div>
+          </div>
+          <div ng-switch="myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
+            <div ng-switch-when="true">
+               <h1>Asiento 6</h1>
+               <form>
+              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila6">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+            </select>
+          </form>
+          <br>
+          <form>
+              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna6">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+              <option value="11">16
+              <option value="12">17
+              <option value="13">18
+              <option value="14">19
+              <option value="15">20
+              <option value="11">21
+              <option value="12">22
+              <option value="13">23
+              <option value="14">24
+              <option value="15">25
+              <option value="11">26
+              <option value="12">27
+              <option value="13">28
+              <option value="14">29
+              <option value="15">30
+            </select>
+          </form>
+            </div>
+          </div>
+          <div ng-switch="myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
+            <div ng-switch-when="true">
+               <h1>Asiento 7</h1>
+               <form>
+              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila7">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+            </select>
+          </form>
+          <br>
+          <form>
+              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna7">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+              <option value="11">16
+              <option value="12">17
+              <option value="13">18
+              <option value="14">19
+              <option value="15">20
+              <option value="11">21
+              <option value="12">22
+              <option value="13">23
+              <option value="14">24
+              <option value="15">25
+              <option value="11">26
+              <option value="12">27
+              <option value="13">28
+              <option value="14">29
+              <option value="15">30
+            </select>
+          </form>
+            </div>
+          </div>
+          <div ng-switch="myVar == '8' || myVar == '9' || myVar == '10'">
+            <div ng-switch-when="true">
+               <h1>Asiento 8</h1>
+               <form>
+              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila8">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+            </select>
+          </form>
+          <br>
+          <form>
+              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna8">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+              <option value="11">16
+              <option value="12">17
+              <option value="13">18
+              <option value="14">19
+              <option value="15">20
+              <option value="11">21
+              <option value="12">22
+              <option value="13">23
+              <option value="14">24
+              <option value="15">25
+              <option value="11">26
+              <option value="12">27
+              <option value="13">28
+              <option value="14">29
+              <option value="15">30
+            </select>
+          </form>
+            </div>
+          </div>
+          <div ng-switch="myVar == '9' || myVar == '10'">
+            <div ng-switch-when="true">
+               <h1>Asiento 9</h1>
+               <form>
+              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila9">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+            </select>
+          </form>
+          <br>
+          <form>
+              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna9">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+              <option value="11">16
+              <option value="12">17
+              <option value="13">18
+              <option value="14">19
+              <option value="15">20
+              <option value="11">21
+              <option value="12">22
+              <option value="13">23
+              <option value="14">24
+              <option value="15">25
+              <option value="11">26
+              <option value="12">27
+              <option value="13">28
+              <option value="14">29
+              <option value="15">30
+            </select>
+          </form>
+            </div>
+          </div>
+          <div ng-switch="myVar == '10'">
+            <div ng-switch-when="true">
+               <h1>Asiento 10</h1>
+               <form>
+              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila10">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+            </select>
+          </form>
+          <br>
+          <form>
+              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna10">
+              <option value="">
+              <option value="1">1
+              <option value="2">2
+              <option value="3">3
+              <option value="4">4
+              <option value="5">5
+              <option value="6">6
+              <option value="7">7
+              <option value="8">8
+              <option value="9">9
+              <option value="10">10
+              <option value="11">11
+              <option value="12">12
+              <option value="13">13
+              <option value="14">14
+              <option value="15">15
+              <option value="11">16
+              <option value="12">17
+              <option value="13">18
+              <option value="14">19
+              <option value="15">20
+              <option value="11">21
+              <option value="12">22
+              <option value="13">23
+              <option value="14">24
+              <option value="15">25
+              <option value="11">26
+              <option value="12">27
+              <option value="13">28
+              <option value="14">29
+              <option value="15">30
+            </select>
+          </form>
+            </div>
+          </div> 
+          <!--<div ng-switch="myVar == '3' || myVar == '4'">
+            <div ng-switch-when="true">
+               <h1>Ha seleccionado 1 entrada</h1>
+               <p>Bienvenido, forever alone</p>
+            </div>
+          </div> 
+          <div ng-switch="myVar == '4' || myVar == '5'">
+            <div ng-switch-when="true">
+               <h1>Ha seleccionado 1 entrada</h1>
+               <p>Bienvenido, forever alone</p>
+            </div>
+          </div> 
+          <div ng-switch="myVar == '5' || myVar == '6'">
+            <div ng-switch-when="true">
+               <h1>Ha seleccionado 1 entrada</h1>
+               <p>Bienvenido, forever alone</p>
+            </div>
+          </div> 
+          <div ng-switch="myVar == '6' || myVar == '7'">
+            <div ng-switch-when="true">
+               <h1>Ha seleccionado 1 entrada</h1>
+               <p>Bienvenido, forever alone</p>
+            </div>
+          </div> 
+          <div ng-switch="myVar == '7' || myVar == '8'">
+            <div ng-switch-when="true">
+               <h1>Ha seleccionado 1 entrada</h1>
+               <p>Bienvenido, forever alone</p>
+            </div>
+          </div> 
+          <div ng-switch="myVar == '8' || myVar == '9'">
+            <div ng-switch-when="true">
+               <h1>Ha seleccionado 1 entrada</h1>
+               <p>Bienvenido, forever alone</p>
+            </div>
+          </div> 
+          <div ng-switch="myVar == '9' || myVar ='10'">
+            <div ng-switch-when="true">
+               <h1>Ha seleccionado 1 entrada</h1>
+               <p>Bienvenido, forever alone</p>
+            </div>
+          </div> 
+          <div ng-switch="myVar ='10'">
+            <div ng-switch-when="true">
+               <h1>Ha seleccionado 10 entrada</h1>
+               <p>Bienvenido, forever alone</p>
+            </div>
+          </div> -->
 				</md-content>
 			</md-tab>
 			<md-tab label="Sesión 3">
