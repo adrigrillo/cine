@@ -30,11 +30,12 @@
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 
   <!-- Modulos cargados -->
+  <script src="scripts/asientos.js"></script>
   <script src="scripts/app.js"></script>
   <script src="scripts/database.js"></script>
 </head>
 
-<body ng-cloak="">
+<body>
   <!-- ToolBar - BEGIN -->
   <!-- <md-toolbar class="md-hue-2"> -->
   <md-toolbar class="md-toolbar-tools">
@@ -57,23 +58,57 @@
    3 - Selección Sesión y Butacas   75%
    4 - Pago                         100%
   -->
-  <md-progress-linear md-mode="determinate" value="25" class="md-warn"></md-progress-linear>
+  <md-progress-linear md-mode="determinate" value="75" class="md-warn"></md-progress-linear>
   <md-content class="cuerpo md-primary">
     <!-- Tu código aquí - BEGIN-->
     <div class="md-title titulo">
-      Esto es un título
+      Seleccionar sesión y butacas
     </div>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nibh lectus, bibendum id eleifend et, tempus cursus urna. Cras cursus diam sed massa egestas molestie. In volutpat posuere mattis. Nullam non tellus magna. Nam molestie massa erat, a consectetur
-      felis ultrices ut. Fusce justo magna, interdum vel volutpat quis, consequat eget massa. Quisque elementum risus et leo porttitor, id bibendum purus tincidunt. Donec non tellus id nisl faucibus hendrerit eget id lacus. Maecenas sodales tristique
-      porta. Suspendisse nec odio eu ante vulputate aliquet. Quisque sodales, ex nec porttitor aliquam, lacus mi interdum ex, nec semper leo ante in ex. Praesent augue eros, egestas vel arcu nec, rhoncus elementum sem. In id semper turpis. Ut posuere
-      a augue id rutrum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec id nisl justo. Ut sit amet imperdiet eros. Nam vel tempor lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-      ridiculus mus. In malesuada ante a condimentum lacinia. Praesent non porttitor libero, sagittis sagittis nisi. Phasellus ipsum ipsum, vestibulum eget ante nec, fermentum elementum purus. Suspendisse potenti. Cum sociis natoque penatibus et magnis
-      dis parturient montes, nascetur ridiculus mus. Proin consectetur pretium leo eu varius. Nulla lobortis urna at dui consectetur, suscipit ultrices turpis finibus. Sed egestas ultricies hendrerit. Nam pulvinar, neque id fringilla pulvinar, eros tellus
-      vulputate purus, quis gravida libero erat vitae diam.
-    </p>
+	
+<div ng-cloak>
+	<md-content>
+		<md-tabs md-dynamic-height md-border-bottom>
+			<md-tab label="one">
+				<md-content class="md-padding">
+					<h1 class="md-display-2">Tab One</h1>
+					<p>Soy la tabla 1</p> 
+				</md-content>
+			</md-tab>
+
+			<md-tab label="two">
+				<md-content class="md-padding">
+				  <h1 class="md-display-2">Tab Two</h1>
+				  <p>Soy la tabla 2</p>
+				  <md-input-container class="md-block" flex-gt-sm>
+						  <label>Provincia</label>
+						  <md-select ng-model="user.provincia">
+							<md-option ng-repeat="prov in provincias" value="{{prov.abbrev}}">
+							  {{prov.abbrev}}
+							</md-option>
+						  </md-select>
+					</md-input-container>
+				</md-content>
+			</md-tab>
+			<md-tab label="three">
+				<md-content class="md-padding">
+				  <h1 class="md-display-2">Tab Three</h1>
+				  <p>Soy la tabla 3</p>
+					<md-input-container class="md-block" flex-gt-sm>
+						  <label>Provincia</label>
+						  <md-select ng-model="user.provincia">
+							<md-option ng-repeat="prov in provincias" value="{{prov.abbrev}}">
+							  {{prov.abbrev}}
+							</md-option>
+						  </md-select>
+					</md-input-container>		  
+				</md-content>
+			</md-tab>
+		</md-tabs>
+	</md-content>
+</div>
     <!-- Tu código aquí - END-->
   </md-content>
+
 </body>
 
 </html>
