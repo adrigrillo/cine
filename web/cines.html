@@ -24,6 +24,8 @@
   <script src="bower_components/angular-material/angular-material.js"></script>
   <script src="bower_components/firebase/firebase.js"></script>
   <script src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="http://maps.google.com/maps/api/js"></script>
+  <script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
@@ -92,7 +94,9 @@
       </md-list>
     </div>
     <md-content flex="45" hide-xs>
-      <div ng-show="detalle === 0 || detalle === 5">CINE 0</div>
+      <div ng-show="detalle === 0 || detalle === 5">
+        <ng-map center="[40.74, -74.18]"></ng-map>
+      </div>
       <div ng-show="detalle === 1 || detalle === 4">CINE 1</div>
       <div ng-show="detalle === 2 || detalle === 6">CINE 2</div>
       <div ng-show="detalle === 3 || detalle === 7">CINE 3</div>

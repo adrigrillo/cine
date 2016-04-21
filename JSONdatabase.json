@@ -8,6 +8,7 @@
       "coordenadas": [40.357891, -3.833199],
       "valoracion": 3,
       "imagen": "images/yelmo.jpg",
+      "mapa": "images/yelmoAlcorcon.png",
       "paginaweb": "http://www.yelmocines.es/",
       "llegar": "https://www.google.es/maps/dir/''/Centro+Comercial+Tres+Aguas,+Av.+San+Mart%C3%ADn+de+Valdeiglesias,+24,+28922+Alcorc%C3%B3n,+Madrid/@40.3579194,-3.9032498,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0xd418ed2782d33db:0x96e5f2d80d40956a!2m2!1d-3.8332099!2d40.3579405",
       "peliculas": {
@@ -32,6 +33,7 @@
       "coordenadas": [40.338801, -3.731264],
       "valoracion": 5,
       "imagen": "images/cinesa.jpg",
+      "mapa": "images/cinesaParquesur.png",
       "paginaweb": "http://www.cinesa.es/Cines/Parquesur",
       "llegar": "https://www.google.es/maps/dir/''/Centro+Comercial+Parquesur,+Av.+Gran+Breta%C3%B1a,+s%2Fn,+28916+Legan%C3%A9s,+Madrid/data=!4m5!4m4!1m0!1m2!1m1!1s0xd42275047e25d57:0x919fe7e80d2cc25e?sa=X&ved=0ahUKEwjIo9fks4bMAhXJShQKHToPAo8QiBMIGigBMAY",
       "peliculas": {
@@ -58,6 +60,7 @@
       "coordenadas": [40.422256, -3.720739],
       "valoracion": 4,
       "imagen": "images/cinesa.jpg",
+      "mapa": "images/cinesaPio.png",
       "paginaweb": "http://www.cinesa.es/Cines/Principe-Pio",
       "llegar": "https://www.google.es/maps/dir//Cinesa,+Estaci%C3%B3n+Pr%C3%ADncipe+P%C3%ADo,+Centro+Comercial+Pr%C3%ADncipe+P%C3%ADo,+Paseo+de+la+Florida,+2,+28008+Madrid/@40.4222678,-3.7229436,17z/data=!3m1!5s0xd42287287163bb7:0xd9f4d09c5f9b61b2!4m13!1m4!3m3!1s0xd422812ccf061d1:0xae6550e1ef47da01!2sCinesa!3b1!4m7!1m0!1m5!1m1!1s0xd422812ccf061d1:0xae6550e1ef47da01!2m2!1d-3.7207496!2d40.4222637",
       "peliculas": {
@@ -84,6 +87,7 @@
       "coordenadas": [40.419953, -3.706032],
       "valoracion": 4,
       "imagen": "images/callao.jpg",
+      "mapa": "images/cineCallao.png",
       "paginaweb": "http://callaocitylights.com/",
       "llegar": "https://www.google.es/maps/dir//Cines+Callao+City+Lights,+Plaza+Callao,+3,+28013+Madrid,+Espa%C3%B1a/@40.4200145,-3.7082799,17z/data=!4m12!1m3!3m2!1s0xd42287c5a7ee40d:0xe0c8b0bec4693207!2sCines+Callao+City+Lights!4m7!1m0!1m5!1m1!1s0xd42287c5a7ee40d:0xe0c8b0bec4693207!2m2!1d-3.7060859!2d40.4200104",
       "peliculas": {
