@@ -91,9 +91,12 @@
         </md-list-item>
       </md-list>
     </div>
-    <md-content flex="45" hide-xs>
+    <md-content flex="45" hide-xs ng-init="detalle=0">
       <div>
-        <img ng-src="{{cines[0].mapa}}" alt="mapa" class="mapa">
+        <img ng-show="detalle === 0 || detalle === 5" ng-src="{{cines[0].mapa}}" alt="mapa" class="mapa">
+        <img ng-show="detalle === 1 || detalle === 4" ng-src="{{cines[1].mapa}}" alt="mapa" class="mapa">
+        <img ng-show="detalle === 2 || detalle === 6" ng-src="{{cines[2].mapa}}" alt="mapa" class="mapa">
+        <img ng-show="detalle === 3 || detalle === 7" ng-src="{{cines[3].mapa}}" alt="mapa" class="mapa">
       </div>
       <md-toolbar>
         <div class="md-toolbar-tools">
@@ -123,33 +126,45 @@
           <md-list>
             <md-list-item>
               <i class="material-icons cine-ico">place</i>
-              <a target="_blank" ng-href="{{cines[0].llegar}}">{{cines[0].direccion}}</a>
+              <a ng-show="detalle === 0 || detalle === 5" target="_blank" ng-href="{{cines[0].llegar}}">
+                {{cines[0].direccion}}
+              </a>
+              <a ng-show="detalle === 1 || detalle === 4" target="_blank" ng-href="{{cines[1].llegar}}">
+                {{cines[1].direccion}}
+              </a>
+              <a ng-show="detalle === 2 || detalle === 6" target="_blank" ng-href="{{cines[2].llegar}}">
+                {{cines[2].direccion}}
+              </a>
+              <a ng-show="detalle === 3 || detalle === 7" target="_blank" ng-href="{{cines[3].llegar}}">
+                {{cines[3].direccion}}
+              </a>
             </md-list-item>
             <md-list-item>
               <i class="material-icons cine-ico">link</i>
-              <a target="_blank" ng-href="{{cines[0].paginaweb}}">{{cines[0].paginaweb}}</a>
+              <a ng-show="detalle === 0 || detalle === 5" target="_blank" ng-href="{{cines[0].paginaweb}}">
+                {{cines[0].paginaweb}}
+              </a>
+              <a ng-show="detalle === 1 || detalle === 4" target="_blank" ng-href="{{cines[0].paginaweb}}">
+                {{cines[1].paginaweb}}
+              </a>
+              <a ng-show="detalle === 2 || detalle === 6" target="_blank" ng-href="{{cines[0].paginaweb}}">
+                {{cines[2].paginaweb}}
+              </a>
+              <a ng-show="detalle === 3 || detalle === 7" target="_blank" ng-href="{{cines[0].paginaweb}}">
+                {{cines[3].paginaweb}}
+              </a>
             </md-list-item>
             <md-list-item>
               <i class="material-icons cine-ico">phone</i>
-              <p>{{cines[0].telefono}}</p>
+              <p ng-show="detalle === 0 || detalle === 5" >{{cines[0].telefono}}</p>
+              <p ng-show="detalle === 1 || detalle === 4" >{{cines[1].telefono}}</p>
+              <p ng-show="detalle === 2 || detalle === 6" >{{cines[2].telefono}}</p>
+              <p ng-show="detalle === 3 || detalle === 7" >{{cines[3].telefono}}</p>
             </md-list-item>
           </md-list>
         </md-content>
-        <md-content>
-          <md-subheader class="md-primary">
-            Presentación
-          </md-subheader>
-        </md-content>
-
       </div>
-      <!--
-      <div ng-show="detalle === 0 || detalle === 5">CINE 0</div>
-      <div ng-show="detalle === 1 || detalle === 4">CINE 1</div>
-      <div ng-show="detalle === 2 || detalle === 6">CINE 2</div>
-      <div ng-show="detalle === 3 || detalle === 7">CINE 3</div>
-      -->
     </md-content>
   </div>
 </body>
-
 </html>
