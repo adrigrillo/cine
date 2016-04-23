@@ -2,60 +2,60 @@
 <html lang="es" ng-app="cine">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Cine | Entradas.com</title>
-  <link rel="icon" type="image/png" href="images/e_roboto.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cine | Entradas.com</title>
+    <link rel="icon" type="image/png" href="images/e_roboto.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- CSS de la página -->
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/default.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS de la página -->
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-animate/angular-animate.js"></script>
-  <script src="bower_components/angular-aria/angular-aria.js"></script>
-  <script src="bower_components/angular-messages/angular-messages.js"></script>
-  <script src="bower_components/angular-material/angular-material.js"></script>
-  <script src="bower_components/firebase/firebase.js"></script>
-  <script src="bower_components/angularfire/dist/angularfire.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 
-  <!-- Modulos cargados -->
-  <script src="scripts/app.js"></script>
-  <script src="scripts/database.js"></script>
+    <!-- Modulos cargados -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/database.js"></script>
 
 </head>
 
 <body ng-cloak="" ng-controller="mainController">
-  <!-- ToolBar - BEGIN -->
-  <!-- <md-toolbar class="md-hue-2"> -->
-  <md-toolbar class="md-toolbar-tools">
-    <!-- <md-button class="md-icon-button" ng-disabled="true"> -->
-    <md-button class="md-icon-button" ng-disabled="false">
-      <md-icon> menu </md-icon>
-    </md-button>
-    <h1>
+    <!-- ToolBar - BEGIN -->
+    <!-- <md-toolbar class="md-hue-2"> -->
+    <md-toolbar class="md-toolbar-tools">
+        <!-- <md-button class="md-icon-button" ng-disabled="true"> -->
+        <md-button class="md-icon-button" ng-disabled="false">
+            <md-icon> menu </md-icon>
+        </md-button>
+        <h1>
       <span>{{company}}</span>
     </h1>
-    <span flex></span>
-    <md-button class="md-icon-button">
-      <md-icon>search</md-icon>
-    </md-button>
-  </md-toolbar>
-  <!-- Tabs - BEGIN -->
-  <md-tabs md-stretch-tabs="always" md-dynamic-height="" md-border-bottom="" class="indexTabs md-primary ">
-    <!-- Que ocupen todo -->
-    <md-tab label="{{tab1}}">
-      <!-- <md-content class="md-padding" layout="row" ng-controller="verPeliculas as peliculas" layout-wrap>
+        <span flex></span>
+        <md-button class="md-icon-button">
+            <md-icon>search</md-icon>
+        </md-button>
+    </md-toolbar>
+    <!-- Tabs - BEGIN -->
+    <md-tabs md-stretch-tabs="always" md-dynamic-height="" md-border-bottom="" class="indexTabs md-primary ">
+        <!-- Que ocupen todo -->
+        <md-tab label="{{tab1}}">
+            <!-- <md-content class="md-padding" layout="row" ng-controller="verPeliculas as peliculas" layout-wrap>
         <md-card class="cards" ng-repeat="pelicula in peliculas">
           <img src="{{pelicula.imagen}}" class="md-card-image" alt="portada">
           <md-card-title>
@@ -69,67 +69,70 @@
             <md-button class="md-raised md-primary">Ver película</md-button>
           </md-card-actions>
         </md-card> -->
-      <md-content class="md-padding noOverflow" layout="row" ng-controller="verPeliculas as peliculas" layout-wrap>
-        <!-- <div class="fullScreen"> -->
-          <div class="md-title titulo">
-            Destacados
-          </div>
-          <div class="carrouselContainer">
-            <div class="horizontalScroll">
-              <!-- <div class="carousel"> -->
-              <!-- <slick init-onload=true data="peliculas"> -->
-              <!-- <slick slides-to-show=3 slides-to-scroll=3 init-onload=true data="peliculas" swipeToSlide=true infinite=true  accessibility=false infinite=false respondTo='min' dots=false lazyLoad='progressive' > -->
-              <div class="pelicula" ng-repeat="pelicula in peliculas">
-                <img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
-                <div class="infoPelicula">
-                  <md-button class="md-icon-button">
-                    <md-icon style="color: #ffffff">info</md-icon>
-                  </md-button>
+            <md-content class="md-padding noOverflow" layout="row" ng-controller="verPeliculas as peliculas" layout-wrap>
+                <!-- <div class="fullScreen"> -->
+                <div class="md-title titulo">
+                    Destacados
                 </div>
-                <!-- </slick> -->
-                <!-- </div> -->
-              </div>
-            </div>
+                <div class="carrouselContainer">
+                    <div class="horizontalScroll">
+                        <!-- <div class="carousel"> -->
+                        <!-- <slick init-onload=true data="peliculas"> -->
+                        <!-- <slick slides-to-show=3 slides-to-scroll=3 init-onload=true data="peliculas" swipeToSlide=true infinite=true  accessibility=false infinite=false respondTo='min' dots=false lazyLoad='progressive' > -->
+                        <div class="pelicula" ng-repeat="pelicula in peliculas">
+                            <img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
+                            <div class="infoPelicula" ng-controller="CuadroInfo" class="md-padding" id="popupContainer" ng-cloak>
+                                <md-button class="md-icon-button" ng-click="showConfirm($event)">
+                                    <md-icon style="color: #ffffff">info</md-icon>
+                                </md-button>
+                            </div>
+                            <!-- </slick> -->
+                            <!-- </div> -->
+                        </div>
+                    </div>
 
-            <div class="md-title titulo">
-              Recomendados
-            </div>
-            <div class="carrouselContainer">
-              <div class="horizontalScroll">
-                <!-- <div class="carousel"> -->
-                <!-- <slick init-onload=true data="peliculas"> -->
-                <!-- <slick slides-to-show=3 slides-to-scroll=3 init-onload=true data="peliculas" swipeToSlide=true infinite=true  accessibility=false infinite=false respondTo='min' dots=false lazyLoad='progressive' > -->
-                <div class="pelicula" ng-repeat="pelicula in peliculas">
-                  <img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
-                  <!-- Info button -->
-                  <div class="infoPelicula">
-                    <md-button class="md-icon-button">
-                      <md-icon style="color: #ffffff">info</md-icon>
-                    </md-button>
-                  </div>
-                  <!-- </slick> -->
-                  <!-- </div> -->
-                </div>
-              </div>
-            <!-- </div> -->
-      </md-content>
-    </md-tab>
+                    <div class="md-title titulo">
+                        Recomendados
+                    </div>
+                    <div class="carrouselContainer">
+                        <div class="horizontalScroll">
+                            <!-- <div class="carousel"> -->
+                            <!-- <slick init-onload=true data="peliculas"> -->
+                            <!-- <slick slides-to-show=3 slides-to-scroll=3 init-onload=true data="peliculas" swipeToSlide=true infinite=true  accessibility=false infinite=false respondTo='min' dots=false lazyLoad='progressive' > -->
+                            <div class="pelicula" ng-repeat="pelicula in peliculas">
+                                <img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
+                                <!-- Info button -->
+                                <div class="infoPelicula" ng-controller="CuadroInfo" class="md-padding" id="popupContainer" ng-cloak>
+                                    <md-button class="md-icon-button" ng-click="showConfirm($event)">
+                                        <md-icon style="color: #ffffff">info</md-icon>
+                                    </md-button>
+                                </div>
+                                <!-- </slick> -->
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                        <!-- </div> -->
+            </md-content>
 
-    <md-tab label="{{tab2}}">
-      <md-content class="md-padding" ng-controller="verCines as cines">
-        <md-list layout="row" layout-wrap>
-          <md-list-item class="md-3-line" layout="row" layout-xs="column" ng-repeat="cine in cines" ng-click="null">
-            <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine" />
-            <div class="md-list-item-text" layout="column">
-              <h3>{{cine.nombre}}</h3>
-              <h4>{{cine.encuentra}}</h4>
-              <p>{{cine.direccion}}</p>
-            </div>
-          </md-list-item>
-          <md-list flex>
-      </md-content>
-    </md-tab>
-  </md-tabs>
+        </md-tab>
+
+
+
+        <md-tab label="{{tab2}}">
+            <md-content class="md-padding" ng-controller="verCines as cines">
+                <md-list layout="row" layout-wrap>
+                    <md-list-item class="md-3-line" layout="row" layout-xs="column" ng-repeat="cine in cines" ng-click="null">
+                        <img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine" />
+                        <div class="md-list-item-text" layout="column">
+                            <h3>{{cine.nombre}}</h3>
+                            <h4>{{cine.encuentra}}</h4>
+                            <p>{{cine.direccion}}</p>
+                        </div>
+                    </md-list-item>
+                    <md-list flex>
+            </md-content>
+        </md-tab>
+    </md-tabs>
 </body>
 
 </html>

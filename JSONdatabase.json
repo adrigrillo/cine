@@ -1,346 +1,346 @@
 {
-  "cines": {
-    "yelmoalcorcon": {
-      "nombre": "Yelmo Cines",
-      "encuentra": "Centro Comercial Tres Aguas",
-      "direccion": "Av. San Martín de Valdeiglesias, 24, 28922 Alcorcón, Madrid",
-      "telefono": "902 22 09 22",
-      "coordenadas": [40.357891, -3.833199],
-      "valoracion": 3,
-      "imagen": "images/yelmo.jpg",
-      "mapa": "images/yelmoAlcorcon.png",
-      "paginaweb": "http://www.yelmocines.es/",
-      "llegar": "https://www.google.es/maps/dir/''/Centro+Comercial+Tres+Aguas,+Av.+San+Mart%C3%ADn+de+Valdeiglesias,+24,+28922+Alcorc%C3%B3n,+Madrid/@40.3579194,-3.9032498,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0xd418ed2782d33db:0x96e5f2d80d40956a!2m2!1d-3.8332099!2d40.3579405",
-      "peliculas": {
-        "zootropolis" : true,
+  "cines" : {
+    "cinecallao" : {
+      "coordenadas" : [ 40.419953, -3.706032 ],
+      "direccion" : "Plaza Callao, 3, 28013 Madrid",
+      "encuentra" : "Plaza de Callao",
+      "imagen" : "images/callao.jpg",
+      "llegar" : "https://www.google.es/maps/dir//Cines+Callao+City+Lights,+Plaza+Callao,+3,+28013+Madrid,+Espa%C3%B1a/@40.4200145,-3.7082799,17z/data=!4m12!1m3!3m2!1s0xd42287c5a7ee40d:0xe0c8b0bec4693207!2sCines+Callao+City+Lights!4m7!1m0!1m5!1m1!1s0xd42287c5a7ee40d:0xe0c8b0bec4693207!2m2!1d-3.7060859!2d40.4200104",
+      "mapa" : "images/cineCallao.png",
+      "nombre" : "Cine Callao City Lights",
+      "paginaweb" : "http://callaocitylights.com/",
+      "peliculas" : {
+        "altamira" : true,
+        "batmanvsuperman" : true,
+        "callecloverfield" : true,
         "elnovato" : true,
         "kungfupanda" : true,
-        "altamira" : true,
-        "callecloverfield" : true,
-        "batmanvsuperman" : true
+        "zootropolis" : true
       },
-      "sesiones": {
-        "dos": true,
+      "sesiones" : {
+        "cuatro" : true,
+        "seis" : true,
+        "siete" : true,
+        "tres" : true,
+        "uno" : true
+      },
+      "telefono" : "915 22 58 01",
+      "valoracion" : 4
+    },
+    "cinesaparquesur" : {
+      "coordenadas" : [ 40.338801, -3.731264 ],
+      "direccion" : "Av. Gran Bretaña, s/n, 28916 Leganés, Madrid",
+      "encuentra" : "Centro Comercial Parquesur",
+      "imagen" : "images/cinesa.jpg",
+      "llegar" : "https://www.google.es/maps/dir/''/Centro+Comercial+Parquesur,+Av.+Gran+Breta%C3%B1a,+s%2Fn,+28916+Legan%C3%A9s,+Madrid/data=!4m5!4m4!1m0!1m2!1m1!1s0xd42275047e25d57:0x919fe7e80d2cc25e?sa=X&ved=0ahUKEwjIo9fks4bMAhXJShQKHToPAo8QiBMIGigBMAY",
+      "mapa" : "images/cinesaParquesur.png",
+      "nombre" : "Cinesa Parquesur 3D",
+      "paginaweb" : "http://www.cinesa.es/Cines/Parquesur",
+      "peliculas" : {
+        "altamira" : true,
+        "batmanvsuperman" : true,
+        "callecloverfield" : true,
+        "elnovato" : true,
+        "kungfupanda" : true,
+        "zootropolis" : true
+      },
+      "sesiones" : {
+        "cuatro" : true,
+        "seis" : true,
+        "siete" : true,
+        "tres" : true,
+        "uno" : true
+      },
+      "telefono" : "902 33 32 31",
+      "valoracion" : 5
+    },
+    "cinesaprincipepio" : {
+      "coordenadas" : [ 40.422256, -3.720739 ],
+      "direccion" : "Estación Príncipe Pío, Centro Comercial Príncipe Pío, Paseo de la Florida, 2, 28008 Madrid",
+      "encuentra" : "Centro Comercial Príncipe Pío",
+      "imagen" : "images/cinesa.jpg",
+      "llegar" : "https://www.google.es/maps/dir//Cinesa,+Estaci%C3%B3n+Pr%C3%ADncipe+P%C3%ADo,+Centro+Comercial+Pr%C3%ADncipe+P%C3%ADo,+Paseo+de+la+Florida,+2,+28008+Madrid/@40.4222678,-3.7229436,17z/data=!3m1!5s0xd42287287163bb7:0xd9f4d09c5f9b61b2!4m13!1m4!3m3!1s0xd422812ccf061d1:0xae6550e1ef47da01!2sCinesa!3b1!4m7!1m0!1m5!1m1!1s0xd422812ccf061d1:0xae6550e1ef47da01!2m2!1d-3.7207496!2d40.4222637",
+      "mapa" : "images/cinesaPio.png",
+      "nombre" : "Cinesa Príncipe Pío",
+      "paginaweb" : "http://www.cinesa.es/Cines/Principe-Pio",
+      "peliculas" : {
+        "altamira" : true,
+        "batmanvsuperman" : true,
+        "callecloverfield" : true,
+        "elnovato" : true,
+        "kungfupanda" : true,
+        "zootropolis" : true
+      },
+      "sesiones" : {
+        "cuatro" : true,
+        "seis" : true,
+        "siete" : true,
+        "tres" : true,
+        "uno" : true
+      },
+      "telefono" : "902 33 32 31",
+      "valoracion" : 4
+    },
+    "yelmoalcorcon" : {
+      "coordenadas" : [ 40.357891, -3.833199 ],
+      "direccion" : "Av. San Martín de Valdeiglesias, 24, 28922 Alcorcón, Madrid",
+      "encuentra" : "Centro Comercial Tres Aguas",
+      "imagen" : "images/yelmo.jpg",
+      "llegar" : "https://www.google.es/maps/dir/''/Centro+Comercial+Tres+Aguas,+Av.+San+Mart%C3%ADn+de+Valdeiglesias,+24,+28922+Alcorc%C3%B3n,+Madrid/@40.3579194,-3.9032498,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0xd418ed2782d33db:0x96e5f2d80d40956a!2m2!1d-3.8332099!2d40.3579405",
+      "mapa" : "images/yelmoAlcorcon.png",
+      "nombre" : "Yelmo Cines",
+      "paginaweb" : "http://www.yelmocines.es/",
+      "peliculas" : {
+        "altamira" : true,
+        "batmanvsuperman" : true,
+        "callecloverfield" : true,
+        "elnovato" : true,
+        "kungfupanda" : true,
+        "zootropolis" : true
+      },
+      "sesiones" : {
         "cinco" : true,
+        "dos" : true,
         "siete" : true
-      }
-    },
-    "cinesaparquesur": {
-      "nombre": "Cinesa Parquesur 3D",
-      "encuentra": "Centro Comercial Parquesur",
-      "direccion": "Av. Gran Bretaña, s/n, 28916 Leganés, Madrid",
-      "telefono": "902 33 32 31",
-      "coordenadas": [40.338801, -3.731264],
-      "valoracion": 5,
-      "imagen": "images/cinesa.jpg",
-      "mapa": "images/cinesaParquesur.png",
-      "paginaweb": "http://www.cinesa.es/Cines/Parquesur",
-      "llegar": "https://www.google.es/maps/dir/''/Centro+Comercial+Parquesur,+Av.+Gran+Breta%C3%B1a,+s%2Fn,+28916+Legan%C3%A9s,+Madrid/data=!4m5!4m4!1m0!1m2!1m1!1s0xd42275047e25d57:0x919fe7e80d2cc25e?sa=X&ved=0ahUKEwjIo9fks4bMAhXJShQKHToPAo8QiBMIGigBMAY",
-      "peliculas": {
-        "zootropolis" : true,
-        "elnovato" : true,
-        "kungfupanda" : true,
-        "altamira" : true,
-        "callecloverfield" : true,
-        "batmanvsuperman" : true
       },
-      "sesiones": {
-        "uno": true,
-        "tres" : true,
-        "cuatro" : true,
-        "seis": true,
-        "siete": true
-      }
-    },
-    "cinesaprincipepio": {
-      "nombre": "Cinesa Príncipe Pío",
-      "encuentra": "Centro Comercial Príncipe Pío",
-      "direccion": "Estación Príncipe Pío, Centro Comercial Príncipe Pío, Paseo de la Florida, 2, 28008 Madrid",
-      "telefono": "902 33 32 31",
-      "coordenadas": [40.422256, -3.720739],
-      "valoracion": 4,
-      "imagen": "images/cinesa.jpg",
-      "mapa": "images/cinesaPio.png",
-      "paginaweb": "http://www.cinesa.es/Cines/Principe-Pio",
-      "llegar": "https://www.google.es/maps/dir//Cinesa,+Estaci%C3%B3n+Pr%C3%ADncipe+P%C3%ADo,+Centro+Comercial+Pr%C3%ADncipe+P%C3%ADo,+Paseo+de+la+Florida,+2,+28008+Madrid/@40.4222678,-3.7229436,17z/data=!3m1!5s0xd42287287163bb7:0xd9f4d09c5f9b61b2!4m13!1m4!3m3!1s0xd422812ccf061d1:0xae6550e1ef47da01!2sCinesa!3b1!4m7!1m0!1m5!1m1!1s0xd422812ccf061d1:0xae6550e1ef47da01!2m2!1d-3.7207496!2d40.4222637",
-      "peliculas": {
-        "zootropolis" : true,
-        "elnovato" : true,
-        "kungfupanda" : true,
-        "altamira" : true,
-        "callecloverfield" : true,
-        "batmanvsuperman" : true
-      },
-      "sesiones": {
-        "uno": true,
-        "tres" : true,
-        "cuatro" : true,
-        "seis": true,
-        "siete": true
-      }
-    },
-    "cinecallao": {
-      "nombre": "Cines Callao City Lights",
-      "encuentra": "Plaza de Callao",
-      "direccion": "Plaza Callao, 3, 28013 Madrid",
-      "telefono": "915 22 58 01",
-      "coordenadas": [40.419953, -3.706032],
-      "valoracion": 4,
-      "imagen": "images/callao.jpg",
-      "mapa": "images/cineCallao.png",
-      "paginaweb": "http://callaocitylights.com/",
-      "llegar": "https://www.google.es/maps/dir//Cines+Callao+City+Lights,+Plaza+Callao,+3,+28013+Madrid,+Espa%C3%B1a/@40.4200145,-3.7082799,17z/data=!4m12!1m3!3m2!1s0xd42287c5a7ee40d:0xe0c8b0bec4693207!2sCines+Callao+City+Lights!4m7!1m0!1m5!1m1!1s0xd42287c5a7ee40d:0xe0c8b0bec4693207!2m2!1d-3.7060859!2d40.4200104",
-      "peliculas": {
-        "zootropolis" : true,
-        "elnovato" : true,
-        "kungfupanda" : true,
-        "altamira" : true,
-        "callecloverfield" : true,
-        "batmanvsuperman" : true
-      },
-      "sesiones": {
-        "uno": true,
-        "tres" : true,
-        "cuatro" : true,
-        "seis": true,
-        "siete": true
-      }
+      "telefono" : "902 22 09 22",
+      "valoracion" : 3
     }
   },
   "peliculas" : {
     "altamira" : {
-      "titulo" : "Altamira",
-      "director": ["Hugh Hudson"],
-      "distribuidora" : "20th Century Fox",
-      "duracion": 97,
-      "genero": ["Drama"],
-      "imagen": "images/altamira.jpg",
-      "pais": "España",
-      "valoracion": 2,
-      "reparto": ["Antonio Banderas", "Golshifteh Farahani", "Nicholas Farrell", "Henry Goodman"],
-      "sipnosis": "Centrada a finales del siglo XIX, este largometraje se centra en un padre, Marcelino, un arqueólogo aficionado que junto a su hija de 9 años descubren algo que provocará un cambio en la visión que se tenía de la historia de la humanidad hasta la fecha: unas pinturas prehistóricas dentro de unas cuevas de las colinas de Santander que, posteriormente, se conocerían como las cuevas de Altamira. Este importante descubrimiento provocó que tanto la Iglesia Católica como la comunidad científica de la época acusara a Marcelino de atacar las creencias cristianas con dicho fraude. Un descubrimiento que provocará una crisis interna en la familia que sólo la redención y el reconocimiento podrá arreglar.",
-      "year" : 2015,
       "cines" : {
         "cinecallao" : true,
         "cinesaparquesur" : true,
-        "cinesaprincipepio": true,
-        "yelmoalcorcon": true
+        "cinesaprincipepio" : true,
+        "yelmoalcorcon" : true
       },
-      "sesiones": {
+      "director" : [ "Hugh Hudson" ],
+      "distribuidora" : "20th Century Fox",
+      "duracion" : 97,
+      "genero" : [ "Drama" ],
+      "imagen" : "images/altamira.jpg",
+      "pais" : "España",
+      "reparto" : [ "Antonio Banderas", "Golshifteh Farahani", "Nicholas Farrell", "Henry Goodman" ],
+      "sesiones" : {
+        "cinco" : true,
         "cuatro" : true,
-        "cinco": true,
-        "seis": true
-      }
+        "seis" : true
+      },
+      "sipnosis" : "Centrada a finales del siglo XIX, este largometraje se centra en un padre, Marcelino, un arqueólogo aficionado que junto a su hija de 9 años descubren algo que provocará un cambio en la visión que se tenía de la historia de la humanidad hasta la fecha: unas pinturas prehistóricas dentro de unas cuevas de las colinas de Santander que, posteriormente, se conocerían como las cuevas de Altamira.",
+      "titulo" : "Altamira",
+      "valoracion" : 2,
+      "year" : 2015
     },
     "batmanvsuperman" : {
-      "titulo" : "Batman v Superman: Dawn of Justice",
-      "director": ["Zack Snyder"],
+      "cines" : {
+        "cinecallao" : true,
+        "cinesaparquesur" : true,
+        "cinesaprincipepio" : true,
+        "yelmoalcorcon" : true
+      },
+      "director" : [ "Zack Snyder" ],
       "distribuidora" : "Warner Bros Pictures",
-      "duracion": 151,
-      "genero": ["Acción", "Fantasía", "Aventura"],
-      "imagen": "images/batmansuperman.jpg",
-      "pais": "EE.UU",
-      "valoracion": 3,
-      "reparto": ["Henry Cavill", "Ben Affleck", "Gal Gadot", "Amy Adams"],
-      "sipnosis": "'Batman v Superman: el amanecer de la justicia' es la secuela de 'El Hombre de Acero', y al mismo tiempo servirá de puente para futuras películas sobre personajes de DC Cómics. Tras los sucesos acaecidos en 'El Hombre de Acero', donde la Tierra sufrió la ira de los enemigos de Superman (Henry Cavill) con muertes y destrucción, una parte de la sociedad tildará al superhéroe de amenaza. Entre ellos estará el otro gran protagonista del film, Batman, al que interpretará por primera vez el actor Ben Affleck. Bruce Wayne, espectador impotente de la destrucción de su mundo, creerá que el kryptoniano es una gran amenaza para la Tierra y que hay que acabar con él. Wonder Woman (Gal Gadot) también participará en el film, será su primera aparición en el cine y estará en medio de la batalla entre ambos superhéroes. Jesse Eisenberg se meterá en la piel del gran villano de la película, Lex Luthor. Zack Snyder será el encargado de dirigir la película tras su buen trabajo en 'El Hombre de Acero'.",
-      "year" : 2016,
-      "cines" : {
-        "cinecallao" : true,
-        "cinesaparquesur" : true,
-        "cinesaprincipepio": true,
-        "yelmoalcorcon": true
-      },
-      "sesiones": {
+      "duracion" : 151,
+      "genero" : [ "Acción", "Fantasía", "Aventura" ],
+      "imagen" : "images/batmansuperman.jpg",
+      "pais" : "EE.UU",
+      "reparto" : [ "Henry Cavill", "Ben Affleck", "Gal Gadot", "Amy Adams" ],
+      "sesiones" : {
+        "cinco" : true,
         "cuatro" : true,
-        "cinco": true,
-        "siete": true
-      }
-    },
-    "zootropolis" : {
-      "titulo" : "Zootrópolis",
-      "director": ["Rich Moore", "Byron Howard", "Jared Bush"],
-      "distribuidora" : "Walt Disney Studios Motion Picture",
-      "duracion": 100,
-      "genero": ["Animación", "Familiar", "Aventura"],
-      "imagen": "images/zootropolis.jpg",
-      "pais": "EE.UU",
-      "valoracion": 5,
-      "reparto": ["Ginnifer Goodwin", "Jason Bateman", "Idris Elba"],
-      "sipnosis": "Este nuevo largometraje narra las aventuras de Judy Hopps (a la que da voz Ginnifer Goodwin), una conejita que quiere ser policía a toda costa y triunfar como agente de la ley en una ciudad en la que los delincuentes pueden tener el doble de su tamaño, ya que en Zootrópolis conviven todo tipo de animales, desde invertebrados e insectos así como mamíferos y reptiles. Tras la desaparición de una nutria, el primer encargo de esta agente de la ley consiste en llevar ante la justicia a Nick Wilde (Jason Bateman), un zorro que es acusado por ser el cabecilla de esta desaparición al ser el único testigo que había en el momento en el que sucedió el crimen. Cuando Judy descubre que Nick esta siendo víctima de una conspiración a la que finalmente se verá arrastrada, se dará cuenta que dos enemigos naturales pueden convertirse en los mejores amigos. Además, este largometraje cuenta con la participación de las voces de grandes actores y actrices de la industria como son Idris Elba, Octavia Spencer, J.K. Simmons o Jim Broadbent. La cantante Shakira también participa prestando su voz a uno de los personajes además de interpretar la canción principal de la película.",
-      "year" : 2016,
-      "cines" : {
-        "cinecallao" : true,
-        "cinesaparquesur" : true,
-        "cinesaprincipepio": true,
-        "yelmoalcorcon": true
+        "siete" : true
       },
-      "sesiones": {
-        "uno" : true,
-        "dos": true,
-        "tres": true
-      }
-    },
-    "kungfupanda" : {
-      "titulo" : "Kung Fu Panda 3",
-      "director": ["Jennifer Yuh", "Alessandro Carloni"],
-      "distribuidora" : "20th Century Fox",
-      "duracion": 95,
-      "genero": ["Animación", "Acción", "Aventura"],
-      "imagen": "images/kungfupanda.jpg",
-      "pais": "EE.UU",
-      "valoracion": 4,
-      "reparto": ["Florentino Fernández"],
-      "sipnosis": "Po vivirá una nueva aventura en la que tendrá que volver a demostrar sus dotes en el arte del kung-fu que ya ha ido perfeccionando en los anteriores proyectos. La historia de esta tercera entrega se centra en la misión que tendrá que emprender Po para vencer a un villano sobrenatural que intentará destruir toda China y a todos los maestros de artes marciales. Po tendrá que entrenar a todo un pueblo y a todos sus hermanos pandas para ganar la batalla final, que será, sin lugar a dudas, la más importante de su vida. Jack Black vuelve a la acción prestando su voz a este simpático panda. También repiten junto a él Angelina Jolie, Dustin Hoffman, Jackie Chan y Lucy Liu ademas de las nuevas incorporaciones al reparto como son Kate Hudson en el papel de Mei Mei y el ganador de un Oscar J.K. Simmons en el papel de Kai.",
-      "year" : 2016,
-      "cines" : {
-        "cinecallao" : true,
-        "cinesaparquesur" : true,
-        "cinesaprincipepio": true,
-        "yelmoalcorcon": true
-      },
-      "sesiones": {
-        "uno" : true,
-        "dos": true,
-        "tres": true
-      }
-    },
-    "elnovato" : {
-      "titulo" : "El novato",
-      "director": ["Rudi Rosenberg"],
-      "distribuidora" : "Karma Films",
-      "duracion": 81,
-      "genero": ["Comedia", "Familiar"],
-      "imagen": "images/elnovato.jpg",
-      "pais": "Francia",
-      "valoracion": 3,
-      "reparto": ["Réphael Ghrenassia", "Joshua Raccah", "Géraldine Martineau", "Guillaume Cloud-Roussel"],
-      "sipnosis": "Una pequeña propuesta fresca que trata temas como el compañerismo y la integración desde un tono de comedia. Benoit, un niño de 14 años acaba de mudarse junto a sus padres y su tío al centro de París. La primera semana de colegio es más complicada de lo que esperaba, no encuentra amigos, se siente marginado, y además el grupo de chicos populares liderados por Charles, se burla de él. Todo esto cambia con la llegada de Johanna, la nueva estudiante sueca con la que empieza a pasar mucho tiempo dentro y fuera del colegio. Sin embargo, Johanna se acerca cada vez más a Charles y sus amigos por lo que Benoit, siguiendo los consejos de su tío, intenta recuperarla. En el camino de la reconquista encontrará la verdadera amistad, y seremos testigos de las aventuras de un pequeño grupo de personajes muy diferentes.",
-      "year" : 2015,
-      "cines" : {
-        "cinecallao" : true,
-        "cinesaparquesur" : true,
-        "cinesaprincipepio": true,
-        "yelmoalcorcon": true
-      },
-      "sesiones": {
-        "uno" : true,
-        "dos": true,
-        "tres": true,
-        "cuatro": true,
-        "cinco": true
-      }
+      "sipnosis" : "Tras los sucesos acaecidos en 'El Hombre de Acero', donde la Tierra sufrió la ira de los enemigos de Superman (Henry Cavill) con muertes y destrucción, una parte de la sociedad tildará al superhéroe de amenaza. Entre ellos estará el otro gran protagonista del film, Batman, al que interpretará por primera vez el actor Ben Affleck.",
+      "titulo" : "Batman v Superman: Dawn of Justice",
+      "valoracion" : 3,
+      "year" : 2016
     },
     "callecloverfield" : {
-      "titulo" : "Calle Cloverfield 10",
-      "director": ["Dan Trachtenberg"],
-      "distribuidora" : "Paramount Pictures",
-      "duracion": 103,
-      "genero": ["Thriller", "Misterio", "Ciencia ficción"],
-      "imagen": "images/callecloverfield.jpg",
-      "pais": "EE.UU",
-      "valoracion": 1,
-      "reparto": ["Mary Elizabeth Winstead", "John Goodman", "John Gallagher Jr.", "Bradley Cooper"],
-      "sipnosis": "Una mujer tiene un accidente de coche, la joven queda inconsciente. Cuando se recupera y se despierta, ve que está encerrada en un sótano junto a un hombre mayor y otro joven. El más mayor le informa que el mundo ha sufrido un cataclismo y que la Tierra se ha vuelto inhabitable y él le ha salvado de morir debido a un ataque químico. Sin embargo, la mujer no le cree y hará todo lo posible por encontrar una salida. Al principio los hombres parecen agradables, poco a poco la historia se irá volviendo oscura, provocando una salvaje huida hacia lo desconocido ya que la joven querrá saber cuánto de verdad ha dicho su supuesto salvador. Producida por J.J. Abrams y dirigida por Dan Trachtenberg, es considerada una secuela espiritual de 'Monstruoso (Cloverfield)' no sólo por la similitud de títulos, sino porque también estará ambientada en el mismo tiempo que la cinta de 2008.",
-      "year" : 2016,
       "cines" : {
         "cinecallao" : true,
         "cinesaparquesur" : true,
-        "cinesaprincipepio": true,
-        "yelmoalcorcon": true
+        "cinesaprincipepio" : true,
+        "yelmoalcorcon" : true
       },
-      "sesiones": {
-        "cuatro": true,
-        "cinco": true,
-        "seis": true
-      }
+      "director" : [ "Dan Trachtenberg" ],
+      "distribuidora" : "Paramount Pictures",
+      "duracion" : 103,
+      "genero" : [ "Thriller", "Misterio", "Ciencia ficción" ],
+      "imagen" : "images/callecloverfield.jpg",
+      "pais" : "EE.UU",
+      "reparto" : [ "Mary Elizabeth Winstead", "John Goodman", "John Gallagher Jr.", "Bradley Cooper" ],
+      "sesiones" : {
+        "cinco" : true,
+        "cuatro" : true,
+        "seis" : true
+      },
+      "sipnosis" : "Una mujer tiene un accidente de coche, y cuando se recupera, ve que está encerrada en un sótano junto a un hombre mayor y otro joven. El más mayor le informa que el mundo ha sufrido un cataclismo y la Tierra se ha vuelto inhabitable. Sin embargo, la mujer no le cree y hará todo lo posible por encontrar una salida.",
+      "titulo" : "Calle Cloverfield 10",
+      "valoracion" : 1,
+      "year" : 2016
+    },
+    "elnovato" : {
+      "cines" : {
+        "cinecallao" : true,
+        "cinesaparquesur" : true,
+        "cinesaprincipepio" : true,
+        "yelmoalcorcon" : true
+      },
+      "director" : [ "Rudi Rosenberg" ],
+      "distribuidora" : "Karma Films",
+      "duracion" : 81,
+      "genero" : [ "Comedia", "Familiar" ],
+      "imagen" : "images/elnovato.jpg",
+      "pais" : "Francia",
+      "reparto" : [ "Réphael Ghrenassia", "Joshua Raccah", "Géraldine Martineau", "Guillaume Cloud-Roussel" ],
+      "sesiones" : {
+        "cinco" : true,
+        "cuatro" : true,
+        "dos" : true,
+        "tres" : true,
+        "uno" : true
+      },
+      "sipnosis" : "Benoit, un niño de 14 años acaba de mudarse junto a sus padres y su tío al centro de París. La primera semana de colegio es más complicada de lo que esperaba, no encuentra amigos, se siente marginado, y además el grupo de chicos populares liderados por Charles, se burla de él. ",
+      "titulo" : "El novato",
+      "valoracion" : 3,
+      "year" : 2015
+    },
+    "kungfupanda" : {
+      "cines" : {
+        "cinecallao" : true,
+        "cinesaparquesur" : true,
+        "cinesaprincipepio" : true,
+        "yelmoalcorcon" : true
+      },
+      "director" : [ "Jennifer Yuh", "Alessandro Carloni" ],
+      "distribuidora" : "20th Century Fox",
+      "duracion" : 95,
+      "genero" : [ "Animación", "Acción", "Aventura" ],
+      "imagen" : "images/kungfupanda.jpg",
+      "pais" : "EE.UU",
+      "reparto" : [ "Florentino Fernández", "Angelina Jolie", "Dustin Hoffman" ],
+      "sesiones" : {
+        "dos" : true,
+        "tres" : true,
+        "uno" : true
+      },
+      "sipnosis" : "Po vivirá una nueva aventura en la que tendrá que volver a demostrar sus dotes en el arte del kung-fu que ya ha ido perfeccionando en los anteriores proyectos. La historia de esta tercera entrega se centra en la misión que tendrá que emprender Po para vencer a un villano sobrenatural que intentará destruir toda China y a todos los maestros de artes marciales.",
+      "titulo" : "Kung Fu Panda 3",
+      "valoracion" : 4,
+      "year" : 2016
+    },
+    "zootropolis" : {
+      "cines" : {
+        "cinecallao" : true,
+        "cinesaparquesur" : true,
+        "cinesaprincipepio" : true,
+        "yelmoalcorcon" : true
+      },
+      "director" : [ "Rich Moore", "Byron Howard", "Jared Bush" ],
+      "distribuidora" : "Walt Disney Studios Motion Picture",
+      "duracion" : 100,
+      "genero" : [ "Animación", "Familiar", "Aventura" ],
+      "imagen" : "images/zootropolis.jpg",
+      "pais" : "EE.UU",
+      "reparto" : [ "Ginnifer Goodwin", "Jason Bateman", "Idris Elba" ],
+      "sesiones" : {
+        "dos" : true,
+        "tres" : true,
+        "uno" : true
+      },
+      "sipnosis" : "Este nuevo largometraje narra las aventuras de Judy Hopps (a la que da voz Ginnifer Goodwin), una conejita que quiere ser policía a toda costa y triunfar como agente de la ley en una ciudad en la que los delincuentes pueden tener el doble de su tamaño, ya que en Zootrópolis conviven todo tipo de animales, desde invertebrados e insectos así como mamíferos y reptiles.",
+      "titulo" : "Zootrópolis",
+      "valoracion" : 5,
+      "year" : 2016
     }
   },
   "sesiones" : {
-    "uno" : {
-      "hora" : "15:00",
-      "pelicula" : {
-        "zootropolis" : true,
-        "elnovato" : true,
-        "kungfupanda" : true
-      },
-      "cine" : {
-        "cinecallao" : true,
-        "cinesaparquesur" : true,
-        "cinesaprincipepio" : true
-      }
-    },
-    "dos" : {
-      "hora" : "16:20",
-      "pelicula" : {
-        "zootropolis" : true,
-        "elnovato" : true,
-        "kungfupanda" : true
-      },
+    "cinco" : {
       "cine" : {
         "yelmoalcorcon" : true
-      }
-    },
-    "tres" : {
-      "hora" : "17:10",
-      "pelicula" : {
-        "zootropolis" : true,
-        "elnovato" : true,
-        "kungfupanda" : true
       },
-      "cine" : {
-        "cinecallao" : true,
-        "cinesaparquesur" : true,
-        "cinesaprincipepio" : true
+      "hora" : "18:50",
+      "pelicula" : {
+        "altamira" : true,
+        "batmanvsuperman" : true,
+        "callecloverfield" : true,
+        "elnovato" : true
       }
     },
     "cuatro" : {
-      "hora" : "17:40",
-      "pelicula" : {
-        "batmanvsuperman" : true,
-        "altamira" : true,
-        "callecloverfield" : true,
-        "elnovato" : true
-      },
       "cine" : {
         "cinecallao" : true,
         "cinesaparquesur" : true,
         "cinesaprincipepio" : true
-      }
-    },
-    "cinco" : {
-      "hora" : "18:50",
+      },
+      "hora" : "17:40",
       "pelicula" : {
-        "batmanvsuperman" : true,
         "altamira" : true,
+        "batmanvsuperman" : true,
         "callecloverfield" : true,
         "elnovato" : true
-      },
+      }
+    },
+    "dos" : {
       "cine" : {
         "yelmoalcorcon" : true
+      },
+      "hora" : "16:20",
+      "pelicula" : {
+        "elnovato" : true,
+        "kungfupanda" : true,
+        "zootropolis" : true
       }
     },
     "seis" : {
+      "cine" : {
+        "cinecallao" : true,
+        "cinesaparquesur" : true,
+        "cinesaprincipepio" : true
+      },
       "hora" : "21:00",
       "pelicula" : {
         "altamira" : true,
         "callecloverfield" : true
-      },
-      "cine" : {
-        "cinecallao" : true,
-        "cinesaparquesur" : true,
-        "cinesaprincipepio" : true
       }
     },
     "siete" : {
-      "hora" : "22:30",
-      "pelicula" : {
-        "batmanvsuperman" : true
-      },
       "cine" : {
         "cinecallao" : true,
         "cinesaparquesur" : true,
         "cinesaprincipepio" : true,
         "yelmoalcorcon" : true
+      },
+      "hora" : "22:30",
+      "pelicula" : {
+        "batmanvsuperman" : true
+      }
+    },
+    "tres" : {
+      "cine" : {
+        "cinecallao" : true,
+        "cinesaparquesur" : true,
+        "cinesaprincipepio" : true
+      },
+      "hora" : "17:10",
+      "pelicula" : {
+        "elnovato" : true,
+        "kungfupanda" : true,
+        "zootropolis" : true
+      }
+    },
+    "uno" : {
+      "cine" : {
+        "cinecallao" : true,
+        "cinesaparquesur" : true,
+        "cinesaprincipepio" : true
+      },
+      "hora" : "15:00",
+      "pelicula" : {
+        "elnovato" : true,
+        "kungfupanda" : true,
+        "zootropolis" : true
       }
     }
   }

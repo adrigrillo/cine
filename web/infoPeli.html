@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="css/infoPeli.css">
+
+<md-dialog aria-label="Info Peliculas" ng-cloak>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h1>Información</h1>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <div class="cabecera">
+                    <div class="imagenYBoton">
+                        <div class="imagen">
+                            <img style="margin: auto; max-width: 100%;" alt="Lush mango tree" src="{{ pelicula.imagen }}">
+                        </div>
+                        <md-button class="md-raised md-warn botonCompra">
+                            Comprar entradas
+                        </md-button>
+                    </div>
+
+                    <div class="datos">
+                        <div class="md-title titulo">{{ pelicula.titulo }}</div>
+                        <div class="md-subhead titulo">Sinopsis: </div>{{ pelicula.sipnosis }}
+                        <div class="md-subhead titulo">Año: </div>{{ pelicula.year }}
+                        <div class="md-subhead titulo">Director: </div>{{ pelicula.director[0] }}
+                        <div class="md-subhead titulo">Reparto: </div>{{ pelicula.reparto[0] }}, {{ pelicula.reparto[1] }}, {{ pelicula.reparto[2] }}
+                    </div>
+
+
+
+                </div>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button ng-click="answer('useful')" style="margin-right:20px;">
+                Cerrar
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
+</md-content>
