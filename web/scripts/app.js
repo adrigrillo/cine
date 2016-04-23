@@ -8,7 +8,7 @@
         $mdThemingProvider.theme("default") /* color palette */
             .primaryPalette("indigo")
             .accentPalette("yellow")
-            .warnPalette("yellow")
+            .warnPalette("pink")
             .backgroundPalette('indigo', {
                 'default': '50'
             });
@@ -61,6 +61,7 @@
         }
     }]);
 
+    // Controlador que muestra la ventana emergente con la informacion de la pelicula
     cine.controller("CuadroInfo", function($scope, $mdDialog, $mdMedia) {
         $scope.status = '  ';
         $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
@@ -73,7 +74,7 @@
                 scope: $scope.$new(),
                 parent: angular.element(document.body),
                 targetEvent: ev,
-            })
+            });
             $mdDialog.show(confirm).then(function() {
                 $scope.status = 'Confirm resolved';
                 $scope.codeRunningBeforeResolve = 'code only runs after resolve';
@@ -81,7 +82,6 @@
 
             $scope.codeRunningBeforeResolve = 'code is running before resolve!';
         };
-
     });
 
     function DialogController($scope, $mdDialog) {

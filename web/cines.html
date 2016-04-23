@@ -83,53 +83,38 @@
         </md-list-item>
 
         <!-- DIV DE INFORMACION -->
-        <md-content hide-gt-xs ng-show="card">
-          <div>
-            <img ng-src="{{cine.mapa}}" alt="mapa" class="mapa">
-          </div>
-          <md-toolbar>
-            <div class="md-toolbar-tools">
-              <md-button class="md-fab md-mini md-warn md-hue" aria-label="Favorito" ng-init="!liked"
-                ng-click="liked=!liked">
-                <i class="material-icons pink1 cine-fab mini" ng-show="liked">favorite</i>
-                <i class="material-icons pink1 cine-fab mini" ng-show="!liked">favorite_border</i>
-              </md-button>
-              <span flex=""></span>
-              <h2>
-                <span>{{cine.nombre}}</span>
-              </h2>
-              <span flex=""></span>
-              <md-button class="md-fab md-hue-3" aria-label="Select">
-                <i class="material-icons md-36 cine-fab">done</i>
-              </md-button>
-            </div>
-          </md-toolbar>
-          <div>
-            <md-content>
-              <md-subheader class="md-primary">
-                Información
-              </md-subheader>
-              <md-list>
-                <md-list-item>
-                  <i class="material-icons cine-ico">place</i>
-                  <a target="_blank" ng-href="{{cine.llegar}}">
-                    {{cine.direccion}}
-                  </a>
-                </md-list-item>
-                <md-list-item>
-                  <i class="material-icons cine-ico">link</i>
-                  <a target="_blank" ng-href="{{cine.paginaweb}}">
-                    {{cine.paginaweb}}
-                  </a>
-                </md-list-item>
-                <md-list-item>
-                  <i class="material-icons cine-ico">phone</i>
-                  <p>{{cine.telefono}}</p>
-                </md-list-item>
-              </md-list>
-            </md-content>
-          </div>
-        </md-content>
+        <md-card hide-gt-xs ng-show="card">
+          <img ng-src="{{cine.mapa}}" alt="mapa" class="md-card-image">
+          <md-card-content layout="row" layout-align="start center">
+            <md-list>
+              <md-list-item>
+                <i class="material-icons cine-ico">place</i>
+                <a target="_blank" ng-href="{{cines[0].llegar}}">
+                  {{cine.direccion}}
+                </a>
+              </md-list-item>
+              <md-list-item>
+                <i class="material-icons cine-ico">link</i>
+                <a target="_blank" ng-href="{{cines[0].paginaweb}}">
+                  {{cine.paginaweb}}
+                </a>
+              </md-list-item>
+              <md-list-item>
+                <i class="material-icons cine-ico">phone</i>
+                <p>{{cine.telefono}}</p>
+              </md-list-item>
+            </md-list>
+          </md-card-content>
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-icon-button" aria-label="Favorite" ng-init="!liked" ng-click="liked=!liked">
+              <i class="material-icons pink2 cine-fab mini" ng-show="liked">favorite</i>
+              <i class="material-icons pink2 cine-fab mini" ng-show="!liked">favorite_border</i>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Llegar">
+              <i class="material-icons blue cine-fab mini">navigation</i>
+            </md-button>
+          </md-card-actions>
+        </md-card>
       </md-list>
 
       <!-- LISTA DE CINES MEJOR VALORADOS -->
