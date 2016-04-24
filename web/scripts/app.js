@@ -14,6 +14,13 @@
             });
     });
 
+    cine.directive('cinesInfo', function(){
+        return{
+            restrict: 'E',
+            templateUrl: 'cines-info.html'
+        };
+    });
+
     /* Controlador de las tabs */
     cine.controller('mainController', function($scope) {
         $scope.company = 'Entradas.com';
