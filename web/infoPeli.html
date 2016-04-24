@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="css/infoPeli.css">
-
 <md-dialog aria-label="Info Peliculas" ng-cloak>
     <form>
         <md-toolbar>
@@ -13,22 +11,22 @@
         </md-toolbar>
         <md-dialog-content>
             <div class="md-dialog-content">
-                <div class="cabecera">
-                    <div class="imagenYBoton">
-                        <div class="imagen">
+                <div class="pop-cabecera">
+                    <div class="pop-imagenYBoton">
+                        <div class="pop-imagen">
                             <img style="margin: auto; max-width: 100%;" alt="Lush mango tree" src="{{ pelicula.imagen }}">
                         </div>
-                        <md-button class="md-raised md-warn botonCompra">
+                        <md-button class="md-raised md-warn pop-botonCompra">
                             Comprar entradas
                         </md-button>
                     </div>
 
-                    <div class="datos">
-                        <div class="md-title titulo">{{ pelicula.titulo }}</div>
-                        <div class="md-subhead titulo">Sinopsis: </div>{{ pelicula.sipnosis }}
-                        <div class="md-subhead titulo">Año: </div>{{ pelicula.year }}
-                        <div class="md-subhead titulo">Director: </div>{{ pelicula.director[0] }}
-                        <div class="md-subhead titulo">Reparto: </div>{{ pelicula.reparto[0] }}, {{ pelicula.reparto[1] }}, {{ pelicula.reparto[2] }}
+                    <div class="pop-datos">
+                        <div class="md-title pop-titulo">{{ pelicula.titulo }}</div>
+                        <div class="md-subhead pop-titulo">Sinopsis: </div>{{ pelicula.sipnosis }}
+                        <div class="md-subhead pop-titulo">Año: </div>{{ pelicula.year }}
+                        <div class="md-subhead pop-titulo">Director: </div>{{ pelicula.director[0] }}
+                        <div class="md-subhead pop-titulo">Reparto: </div>{{ pelicula.reparto[0] }}, {{ pelicula.reparto[1] }}, {{ pelicula.reparto[2] }}
                     </div>
                 </div>
             </div>

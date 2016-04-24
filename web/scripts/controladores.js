@@ -1,37 +1,10 @@
 (function() {
 
     // Declare app level module which depends on views, and components
-    var cine = angular.module("cine", ["ngMaterial", "firebase", "database"]);
-
-    /* Configurar tema */
-    cine.config(function($mdThemingProvider) {
-        $mdThemingProvider.theme("default") /* color palette */
-            .primaryPalette("indigo")
-            .accentPalette("yellow")
-            .warnPalette("pink")
-            .backgroundPalette('indigo', {
-                'default': '50'
-            });
-    });
-
-    /* Directiva para añadir la seccion peliculas a index */
-    cine.directive('listaPeliculas', function(){
-        return{
-            restrict: 'E',
-            templateUrl: 'lista-peliculas.html'
-        };
-    });
-    /* Directiva para añadir la seccion cines a index */
-    cine.directive('listaCines', function(){
-        return{
-            restrict: 'E',
-            templateUrl: 'lista-cines.html'
-        };
-    });
+    var ctrl = angular.module("ctrl", ["ngMaterial", "firebase", "database"]);
 
     /* Controlador de las tabs */
-    cine.controller('mainController', function($scope) {
-        $scope.company = 'Entradas.com';
+    ctrl.controller('tabController', function($scope){
         $scope.tab1 = 'Películas';
         $scope.tab2 = 'Cines';
     });
@@ -41,7 +14,7 @@
         las películas en 'peliculas' pudiendo acceder a las posiciones como peliculas[0] y dentro de
         esto a los atributos 'peliculas[0].titulo'
     */
-    cine.controller("verPeliculas", ["$scope", "obtenerPeliculas", function($scope, obtenerPeliculas) {
+    ctrl.controller("verPeliculas", ["$scope", "obtenerPeliculas", function($scope, obtenerPeliculas) {
         $scope.peliculas = obtenerPeliculas;
         //En caso de error se informa por consola
         $scope.peliculas.$loaded(function() {
@@ -52,7 +25,7 @@
     }]);
 
     // Guarda un array de datos de todos los cines obtenidos
-    cine.controller("verCines", ["$scope", "obtenerCines", function($scope, obtenerCines) {
+    ctrl.controller("verCines", ["$scope", "obtenerCines", function($scope, obtenerCines) {
         $scope.cines = obtenerCines;
         //En caso de error se informa por consola
         $scope.cines.$loaded(function() {
@@ -63,7 +36,7 @@
     }]);
 
     // Guarda en un objeto el cine requerido
-    cine.controller("verCine", ["$scope", "cine", function($scope, cine) {
+    ctrl.controller("verCine", ["$scope", "cine", function($scope, cine) {
         function nombreCine(nombre) {
             $scope.cine = cine(nombre);
             console.error("Ha entrado");
@@ -77,7 +50,7 @@
     }]);
 
     // Controlador que muestra la ventana emergente con la informacion de la pelicula
-    cine.controller("CuadroInfo", function($scope, $mdDialog, $mdMedia) {
+    ctrl.controller("CuadroInfo", function($scope, $mdDialog, $mdMedia) {
         $scope.status = '  ';
         $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
         $scope.showConfirm = function(ev) {
@@ -112,7 +85,7 @@
     }
 
     // Controlador para los pagos de la aplicación
-    cine.controller('DemoCtrl', function($scope) {
+    ctrl.controller('DemoCtrl', function($scope) {
         $scope.user = {
             nombre: 'Developer',
             apellidos: 'Maximun Power ',

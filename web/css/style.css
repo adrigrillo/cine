@@ -1,14 +1,9 @@
-/* app css stylesheet */
-.cards{
-	width: 300px;
-}
-
-/*
+/*********************************************
 *
-*	CSS PAGINA CINES
-*	cines.html
+*	CSS PAGINA LISTA DE CINES
+*	lista-cines.html
 *
-*/
+*********************************************/
 .cine-ico{
 	padding-right: 10px;
 	max-width: 24px !important;
@@ -23,11 +18,145 @@
 	width: 100%;
 }
 
-/*
+
+
+
+
+
+/*********************************************
+*
+*	CSS PAGINA LISTA DE PELICULAS
+*	lista-peliculas.html
+*
+*********************************************/
+.noOverflow {
+	overflow: hidden;
+}
+
+.fullScreen {
+	height: 100vh;
+}
+
+.lp-titulo {
+	color: #5C6BC0;
+	/* Indigo 400 */
+	padding-bottom: 0.3em;
+	padding-top: 0.7em;
+}
+
+.horizontalScroll {
+	width: auto;
+	height: auto;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+	box-sizing: border-box;
+}
+.carrouselContainer {
+	margin-top: 0;
+	margin-bottom: 0;
+	height: auto;
+	width: 100%;
+}
+.carrouselContainer > div {
+	position: relative;
+}
+.pelicula {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 1em;
+	height: auto;
+	width: 200px;
+	z-index: 1;
+}
+.pelicula:hover .infoPelicula {
+	display: block;
+}
+.pelicula > img {
+	width: inherit;
+}
+.infoPelicula {
+	display: none;
+	position: absolute;
+	bottom: 1em;
+	margin-left: 1em;
+	z-index: 10;
+	background-color: #000000;
+	border-radius: 20%;
+	opacity: 0.8;
+}
+
+
+
+
+
+
+/*********************************************
+*
+*	CSS DEL POP-UP DE INFORMACION DE LA PELI
+*	infoPeli.html
+*
+*********************************************/
+.pop-cabecera{
+	width: 600px;
+	height: 550px;
+}
+
+.pop-imagen{
+	float:left;
+	width: 300px;
+	height: auto;
+	z-index: 1;
+}
+
+.pop-imagenYBoton{
+	width:300px;
+	float:left;
+	align-items: center;
+}
+
+.pop-datos{
+	float:left;
+	text-align: center;
+	margin-left: 2em;
+	width : 260px;
+}
+
+.pop-titulo{
+	color: #5C6BC0;
+}
+
+.pop-botonCompra{
+	margin-top: 1em;
+	float:left;
+	width: 280px;
+}
+
+
+
+
+/*********************************************
+*
+*	CSS DE LA PAGINA DE ASIENTOS
+*	asientos.html
+*
+*********************************************/
+.md-tabs asientos{
+	margin: 6px 8px 6px 8px;
+	min-width: 88px;
+	border-radius: 3px;
+	font-size: 14px;
+}
+
+
+
+
+
+/*********************************************
 *
 *	ICONS STYLESHEET
 *
-*/
+*********************************************/
 /* Rules for sizing the icon. */
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }

@@ -13,8 +13,6 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/default.css">
-  <link rel="stylesheet" href="css/asientos.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
@@ -31,21 +29,18 @@
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 
   <!-- Modulos cargados -->
-  <script src="scripts/asientos.js"></script>
   <script src="scripts/app.js"></script>
+  <script src="scripts/controladores.js"></script>
   <script src="scripts/database.js"></script>
 </head>
 
 <body>
-  <!-- ToolBar - BEGIN -->
-  <!-- <md-toolbar class="md-hue-2"> -->
   <md-toolbar class="md-toolbar-tools">
-    <!-- <md-button class="md-icon-button" ng-disabled="true"> -->
     <md-button class="md-icon-button" ng-disabled="false">
       <md-icon> menu </md-icon>
     </md-button>
     <h1>
-      <span>{{company}}</span>
+      <span>Entradas.com</span>
     </h1>
     <span flex></span>
     <md-button class="md-icon-button">
@@ -65,13 +60,14 @@
     <div class="md-title titulo">
       Seleccionar sesión y butacas
     </div>
-	
+
 <div>
 	<md-content>
-		<md-tabs md-dynamic-height md-border-bottom>
+		<md-tabs asientos md-dynamic-height
+      md-border-bottom>
 			<md-tab label="Sesión 1" >
 				<md-content class="md-padding">
-					<h1 class="md-display-2">Sesión 1</h1>            
+					<h1 class="md-display-2">Sesión 1</h1>
             <!--<div layout="column" ng-cloak>-->
         <div layout="column" ng-controller='asientos' ng-cloak>
               <p>Seleccíona el número de asientos</p>
@@ -92,7 +88,7 @@
 			<md-tab label="Sesión 2">
 				<md-content class="md-padding">
 				  <h1 class="md-display-2">Sesión 2</h1>
-				  
+
 				  <form>
             Selecciona el número de butacas &nbsp;&nbsp;<select ng-model="myVar">
               <option value="">
@@ -230,7 +226,7 @@
             </select>
           </form>
             </div>
-          </div> 
+          </div>
           <div ng-switch=" myVar == '3' || myVar == '4' || myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
             <div ng-switch-when="true">
                <h1>Asiento 3</h1>
@@ -352,7 +348,7 @@
             </select>
           </form>
             </div>
-          </div> 
+          </div>
           <div ng-switch="myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
             <div ng-switch-when="true">
                <h1>Asiento 5</h1>
@@ -718,49 +714,49 @@
             </select>
           </form>
             </div>
-          </div> 
+          </div>
           <!--<div ng-switch="myVar == '3' || myVar == '4'">
             <div ng-switch-when="true">
                <h1>Ha seleccionado 1 entrada</h1>
                <p>Bienvenido, forever alone</p>
             </div>
-          </div> 
+          </div>
           <div ng-switch="myVar == '4' || myVar == '5'">
             <div ng-switch-when="true">
                <h1>Ha seleccionado 1 entrada</h1>
                <p>Bienvenido, forever alone</p>
             </div>
-          </div> 
+          </div>
           <div ng-switch="myVar == '5' || myVar == '6'">
             <div ng-switch-when="true">
                <h1>Ha seleccionado 1 entrada</h1>
                <p>Bienvenido, forever alone</p>
             </div>
-          </div> 
+          </div>
           <div ng-switch="myVar == '6' || myVar == '7'">
             <div ng-switch-when="true">
                <h1>Ha seleccionado 1 entrada</h1>
                <p>Bienvenido, forever alone</p>
             </div>
-          </div> 
+          </div>
           <div ng-switch="myVar == '7' || myVar == '8'">
             <div ng-switch-when="true">
                <h1>Ha seleccionado 1 entrada</h1>
                <p>Bienvenido, forever alone</p>
             </div>
-          </div> 
+          </div>
           <div ng-switch="myVar == '8' || myVar == '9'">
             <div ng-switch-when="true">
                <h1>Ha seleccionado 1 entrada</h1>
                <p>Bienvenido, forever alone</p>
             </div>
-          </div> 
+          </div>
           <div ng-switch="myVar == '9' || myVar ='10'">
             <div ng-switch-when="true">
                <h1>Ha seleccionado 1 entrada</h1>
                <p>Bienvenido, forever alone</p>
             </div>
-          </div> 
+          </div>
           <div ng-switch="myVar ='10'">
             <div ng-switch-when="true">
                <h1>Ha seleccionado 10 entrada</h1>
@@ -773,7 +769,7 @@
 				<md-content class="md-padding">
 				  <h1 class="md-display-2">Sesión 3</h1>
 				  <p>SESIÓN 3</p>
-					  
+
 				</md-content>
 			</md-tab>
 		</md-tabs>
