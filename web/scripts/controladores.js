@@ -87,18 +87,17 @@
     // Controlador para los pagos de la aplicación
     ctrl.controller('DemoCtrl', function($scope) {
         $scope.user = {
-            nombre: 'Developer',
-            apellidos: 'Maximun Power ',
-            address: 'De la amargura 37 15ºH',
-            city: 'Leganes',
-            provincia: 'Madrid',
-            tarjeta: 'XXXXXXXXXXXXXXXX',
-            biography: 'Loves kittens, snowboarding, and can type at 130 WPM.\n\nAnd rumor has it she bouldered up Castle Craig!',
-            postalCode: '28013',
-            pago: 'PayPal',
-            ano: '2018',
-            mes: '1',
-            csc: 'XXX',
+            nombre: '',
+            apellidos: '',
+            address: '',
+            city: '',
+            provincia: '',
+            tarjeta: '',
+            postalCode: '',
+            pago: '',
+            ano: '',
+            mes: '',
+            csc: '',
         };
         $scope.provincias = ('Madrid,Asturias,Alicante,Badajoz,Ciudad Real, La Coruña,Huelva,Barcelona').split(',').map(function(provincia) {
             return {
