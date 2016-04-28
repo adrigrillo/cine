@@ -85,7 +85,7 @@
 
           </div>
         </md-content>
-        <md-content layout-padding>
+        <md-content layout-padding style="max-width:80%;">
           <div>
             <form name="userForm">
 
@@ -112,10 +112,8 @@
                   <input name="postalCode" ng-model="user.postalCode" placeholder="12345"
                          required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
                   <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
-                    <div ng-message="required" class="my-message">You must supply a postal code.</div>
-                    <div ng-message="pattern" class="my-message">That doesn't look like a valid postal
-                      code.
-                    </div>
+                    <div ng-message="required" class="my-message">Esto no es un código postal valido.</div>
+                    <div ng-message="pattern" class="my-message">Un código postal válido tiene 5 dígitos</div>
                   </div>
                   </md-input-container>
                 </div>
@@ -123,20 +121,23 @@
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Forma de pago</label>
                         <md-input-container>
-                            <md-switch ng-model="modopago">{{modopago ? "Tarjeta" : "PayPal"}}</md-switch>
-                            <div class="hint" ng-hide="modopago">Se redirigira a la pagina de PayPal para realizar el pago</div>
-                    </md-input-container>
+                            <md-radio-group ng-model="user.modopago">
+                              <md-radio-button value="tarjeta" class="md-primary">Tarjeta</md-radio-button>
+                              <md-radio-button value="paypal" class="md-primary"> PayPal </md-radio-button>
+                            </md-radio-group>
+                            <div class="hint" ng-show="user.modopago=='paypal'">Se redirigira a la pagina de PayPal para realizar el pago</div>
+                        </md-input-container>
 
                     </md-input-container>
 
-                <div ng-show="modopago">
+                <div ng-show="user.modopago=='tarjeta'">
                     <md-input-container class="md-block" flex-gt-sm>
                       <label>Número de Tarjeta</label>
                       <input name="postalCode" ng-model="user.tarjeta" placeholder="XXXXXXXXXXXXXXXX"
                              required ng-pattern="/^[0-9]{16}$/" md-maxlength="16">
                       <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
-                        <div ng-message="required" class="my-message">You must supply a card number.</div>
-                        <div ng-message="pattern" class="my-message">That doesn't look like a valid card number.</div>
+                        <div ng-message="required" class="my-message">Esto no es un numero de tarjeta valido.</div>
+                        <div ng-message="pattern" class="my-message">Un número de tarjeta tiene 16 dígitos.</div>
                       </div>
                     </md-input-container>
                     <div>
@@ -162,15 +163,16 @@
                     </div>
                     <md-input-container class="md-block" flex-gt-sm>
                       <label>CSC</label>
-                      <input name="CSC" ng-model="user.csc" placeholder=""
+                      <input name="CSC" ng-model="user.csc" placeholder="XXX"
                              required ng-pattern="/^[0-9]{3}$/" md-maxlength="3">
                       <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
-                        <div ng-message="required" class="my-message">You must supply a csc code.</div>
-                        <div ng-message="pattern" class="my-message">a valid card number is like XXX.</div>
+                        <div ng-message="required" class="my-message"> no es un csc valido.</div>
+                        <div ng-message="pattern" class="my-message">Un csc valido tiene 3 dígitos.</div>
                       </div>
                 </div>
 
             </form>
+            <md-button md-no-ink class="md-primary">Confirmar y pagar</md-button>
           </div>
         </md-content>
     </div>
