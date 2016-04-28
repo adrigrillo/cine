@@ -1,7 +1,7 @@
 (function() {
 
     // Declare app level module which depends on views, and components
-    var cine = angular.module("cine", ["ctrl"]);
+    var cine = angular.module("cine", ["ctrl", "multiStepForm"]);
 
     /* Configurar tema */
     cine.config(function($mdThemingProvider) {
@@ -12,6 +12,20 @@
             .backgroundPalette('indigo', {
                 'default': '50'
             });
+    });
+
+    /* Directiva de los steps */
+    cine.controller('steps', function($scope){
+        $scope.steps = [
+            {
+                templateUrl: 'pago.html',
+                title: '25'
+            },
+            {
+                templateUrl: 'asientos.html',
+                title: '50'
+            },
+        ];
     });
 
     /* Directiva para añadir la seccion peliculas a index */
