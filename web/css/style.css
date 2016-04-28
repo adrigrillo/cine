@@ -141,11 +141,27 @@
 *	asientos.html
 *
 *********************************************/
-.md-tabs asientos{
+/*.md-tabs asientos{
 	margin: 6px 8px 6px 8px;
 	min-width: 88px;
 	border-radius: 3px;
 	font-size: 14px;
+}*/
+.subrayado {
+	margin-top: 2px;
+	border: 1px solid #0288D1;
+	width: 335px;
+}
+.asiento1 {
+	padding-left: 20px;
+	background-color: #FFFFFF;
+	margin: auto;
+	position: static;
+}
+.asiento2 {
+	background-color: #9255B2;
+	margin: auto;
+	position: static; 
 }
 
 

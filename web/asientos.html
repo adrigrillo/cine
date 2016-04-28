@@ -33,8 +33,7 @@
   <script src="scripts/controladores.js"></script>
   <script src="scripts/database.js"></script>
 </head>
-
-<body>
+<!-- <body> -->
   <md-toolbar class="md-toolbar-tools">
     <md-button class="md-icon-button" ng-disabled="false">
       <md-icon> menu </md-icon>
@@ -60,36 +59,38 @@
     <div class="md-title titulo">
       Seleccionar sesión y butacas
     </div>
-
-<div>
 	<md-content>
 		<md-tabs asientos md-dynamic-height
       md-border-bottom>
 			<md-tab label="Sesión 1" >
+     
+			 <p> {{ pelicula.titulo }} </p>
+
+			</md-tab>
+
+			<md-tab label="SESIÓN 2">
 				<md-content class="md-padding">
-					<h1 class="md-display-2">Sesión 1</h1>
-            <!--<div layout="column" ng-cloak>-->
-        <div layout="column" ng-controller='asientos' ng-cloak>
-              <p>Seleccíona el número de asientos</p>
-              <div layout="column">
-              <md-select placeholder="asientos" ng-model="user" md-on-open="loadUsers()">
-              <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
-              </md-select>
-              <p class="md-caption">El número de asientos elegido es: {{ user ? user.name : 'No ha seleccionado ninguno' }}</p>
-
-
-              </div>
-            </div>
-
+				  <h1 class="md-display-2">Sesión 2</h1>
+          <!--<div class="prueba">-->
 
 				</md-content>
 			</md-tab>
-
-			<md-tab label="Sesión 2">
+			<md-tab label="Sesión 3">
 				<md-content class="md-padding">
-				  <h1 class="md-display-2">Sesión 2</h1>
+				  <h1 class="md-display-2">Sesión 3</h1>
+				  <p>SESIÓN 3</p>
 
-				  <form>
+				</md-content>
+			</md-tab>
+		</md-tabs>
+  
+    <!-- Tu código aquí - END-->
+  </md-content>
+
+<!--</body>-->
+  <div>
+          <form>
+          <img src="images/asiento.png" alt="icono de butaca" hspace=5>
             Selecciona el número de butacas &nbsp;&nbsp;<select ng-model="myVar">
               <option value="">
               <option value="1">1
@@ -104,10 +105,15 @@
               <option value="10">10
             </select>
           </form>
-
+          </div>
+          <div class="subrayado">
+          </div>
+          <br>
+          <div class="asiento1">
           <div ng-switch="myVar == '1' || myVar == '2' || myVar == '3' || myVar == '4' || myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
             <div ng-switch-when="true">
                <h2>Asiento 1</h2>
+        
                <form>
               Selecciona la fila &nbsp;&nbsp;<select ng-model="fila1">
               <option value="">
@@ -164,11 +170,14 @@
               <option value="15">30
             </select>
           </form>
+          </div>
             </div>
           </div>
+          <br>
+          <div class="asiento2">
           <div ng-switch="myVar == '2' || myVar == '3' || myVar == '4' || myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
             <div ng-switch-when="true">
-               <h1>Asiento 2</h1>
+               <h2>Asiento 2</h2>
                <form>
               Selecciona la fila &nbsp;&nbsp;<select ng-model="fila2">
               <option value="">
@@ -226,10 +235,11 @@
             </select>
           </form>
             </div>
+            </div>
           </div>
           <div ng-switch=" myVar == '3' || myVar == '4' || myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
             <div ng-switch-when="true">
-               <h1>Asiento 3</h1>
+               <h2>Asiento 3</h2>
                <form>
               Selecciona la fila &nbsp;&nbsp;<select ng-model="fila3">
               <option value="">
@@ -290,7 +300,7 @@
           </div>
           <div ng-switch="myVar == '4' || myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
             <div ng-switch-when="true">
-               <h1>Asiento 4</h1>
+               <h2>Asiento 4</h2>
                <form>
               Selecciona la fila &nbsp;&nbsp;<select ng-model="fila4">
               <option value="">
@@ -351,7 +361,7 @@
           </div>
           <div ng-switch="myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
             <div ng-switch-when="true">
-               <h1>Asiento 5</h1>
+               <h2>Asiento 5</h2>
                <form>
               Selecciona la fila &nbsp;&nbsp;<select ng-model="fila5">
               <option value="">
@@ -412,7 +422,7 @@
           </div>
           <div ng-switch="myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
             <div ng-switch-when="true">
-               <h1>Asiento 6</h1>
+               <h2>Asiento 6</h2>
                <form>
               Selecciona la fila &nbsp;&nbsp;<select ng-model="fila6">
               <option value="">
@@ -473,7 +483,7 @@
           </div>
           <div ng-switch="myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
             <div ng-switch-when="true">
-               <h1>Asiento 7</h1>
+               <h2>Asiento 7</h2>
                <form>
               Selecciona la fila &nbsp;&nbsp;<select ng-model="fila7">
               <option value="">
@@ -534,7 +544,7 @@
           </div>
           <div ng-switch="myVar == '8' || myVar == '9' || myVar == '10'">
             <div ng-switch-when="true">
-               <h1>Asiento 8</h1>
+               <h2>Asiento 8</h2>
                <form>
               Selecciona la fila &nbsp;&nbsp;<select ng-model="fila8">
               <option value="">
@@ -595,7 +605,7 @@
           </div>
           <div ng-switch="myVar == '9' || myVar == '10'">
             <div ng-switch-when="true">
-               <h1>Asiento 9</h1>
+               <h2>Asiento 9</h2>
                <form>
               Selecciona la fila &nbsp;&nbsp;<select ng-model="fila9">
               <option value="">
@@ -656,7 +666,7 @@
           </div>
           <div ng-switch="myVar == '10'">
             <div ng-switch-when="true">
-               <h1>Asiento 10</h1>
+               <h2>Asiento 10</h2>
                <form>
               Selecciona la fila &nbsp;&nbsp;<select ng-model="fila10">
               <option value="">
@@ -713,71 +723,7 @@
               <option value="15">30
             </select>
           </form>
-            </div>
           </div>
-          <!--<div ng-switch="myVar == '3' || myVar == '4'">
-            <div ng-switch-when="true">
-               <h1>Ha seleccionado 1 entrada</h1>
-               <p>Bienvenido, forever alone</p>
-            </div>
           </div>
-          <div ng-switch="myVar == '4' || myVar == '5'">
-            <div ng-switch-when="true">
-               <h1>Ha seleccionado 1 entrada</h1>
-               <p>Bienvenido, forever alone</p>
-            </div>
-          </div>
-          <div ng-switch="myVar == '5' || myVar == '6'">
-            <div ng-switch-when="true">
-               <h1>Ha seleccionado 1 entrada</h1>
-               <p>Bienvenido, forever alone</p>
-            </div>
-          </div>
-          <div ng-switch="myVar == '6' || myVar == '7'">
-            <div ng-switch-when="true">
-               <h1>Ha seleccionado 1 entrada</h1>
-               <p>Bienvenido, forever alone</p>
-            </div>
-          </div>
-          <div ng-switch="myVar == '7' || myVar == '8'">
-            <div ng-switch-when="true">
-               <h1>Ha seleccionado 1 entrada</h1>
-               <p>Bienvenido, forever alone</p>
-            </div>
-          </div>
-          <div ng-switch="myVar == '8' || myVar == '9'">
-            <div ng-switch-when="true">
-               <h1>Ha seleccionado 1 entrada</h1>
-               <p>Bienvenido, forever alone</p>
-            </div>
-          </div>
-          <div ng-switch="myVar == '9' || myVar ='10'">
-            <div ng-switch-when="true">
-               <h1>Ha seleccionado 1 entrada</h1>
-               <p>Bienvenido, forever alone</p>
-            </div>
-          </div>
-          <div ng-switch="myVar ='10'">
-            <div ng-switch-when="true">
-               <h1>Ha seleccionado 10 entrada</h1>
-               <p>Bienvenido, forever alone</p>
-            </div>
-          </div> -->
-				</md-content>
-			</md-tab>
-			<md-tab label="Sesión 3">
-				<md-content class="md-padding">
-				  <h1 class="md-display-2">Sesión 3</h1>
-				  <p>SESIÓN 3</p>
-
-				</md-content>
-			</md-tab>
-		</md-tabs>
-	</md-content>
-</div>
-    <!-- Tu código aquí - END-->
-  </md-content>
-
-</body>
-
+  <md-button class="md-raised md-primary">SIGUIENTE</md-button>
 </html>
