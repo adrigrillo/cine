@@ -27,12 +27,16 @@
     // Guarda un array de datos de todos los cines obtenidos
     ctrl.controller("verCines", ["$scope", "obtenerCines", function($scope, obtenerCines) {
         $scope.cines = obtenerCines;
+        $scope.selectedRow = null;
         //En caso de error se informa por consola
         $scope.cines.$loaded(function() {
             if ($scope.cines.length === 0) {
                 console.error("No se han obtenido datos");
             }
         });
+        $scope.setClickedRow = function(index){
+            $scope.selectedRow = index;
+        };
     }]);
 
     // Guarda en un objeto el cine requerido

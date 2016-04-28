@@ -7,17 +7,20 @@
 			</md-subheader>
 			<md-divider></md-divider>
 			<md-list ng-init="mostrar = 2">
-				<md-list-item class="secondary-button-padding" ng-click="mostrar = 1">
+				<md-list-item class="secondary-button-padding" ng-click="mostrar = 1"
+					ng-class="{'selected':$index == selectedRow}">
 					<i class="material-icons cine-ico">favorite</i>
 					<p>Favoritos</p>
 				</md-list-item>
 				<md-divider ng-if="!$last"></md-divider>
-				<md-list-item class="secondary-button-padding" ng-click="mostrar = 2">
+				<md-list-item class="secondary-button-padding" ng-click="mostrar = 2"
+					ng-class="{'selected':$index == selectedRow}">
 					<i class="material-icons cine-ico">near_me</i>
 					<p>Cercanos</p>
 				</md-list-item>
 				<md-divider ng-if="!$last"></md-divider>
-				<md-list-item class="secondary-button-padding" ng-click="mostrar = 3">
+				<md-list-item class="secondary-button-padding" ng-click="mostrar = 3"
+					ng-class="{'selected':$index == selectedRow}">
 					<i class="material-icons cine-ico">star_rate</i>
 					<p>Mejor valorados</p>
 				</md-list-item>
