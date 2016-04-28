@@ -92,7 +92,7 @@
             address: '',
             city: '',
             provincia: '',
-            tarjeta: '',
+            modopago: '',
             postalCode: '',
             pago: '',
             ano: '',
@@ -116,8 +116,6 @@
                 abbrev: meses
             };
         });
-
-        $scope.modopago = true;
 
         $scope.pagos = ('PayPal, Tarjeta').split(',').map(function(pago) {
             return {
