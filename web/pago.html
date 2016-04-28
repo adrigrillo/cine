@@ -90,13 +90,13 @@
             <form name="userForm">
 
               <md-input-container class="md-block">
-                <label>Address</label>
+                <label>Direccion</label>
                 <input ng-model="user.address">
               </md-input-container>
 
               <div layout-gt-sm="row">
                 <md-input-container class="md-block" flex-gt-sm>
-                  <label>City</label>
+                  <label>Ciudad</label>
                   <input ng-model="user.city">
                 </md-input-container>
                 <md-input-container class="md-block" flex-gt-sm>
@@ -108,7 +108,7 @@
                   </md-select>
                 </md-input-container>
                 <md-input-container class="md-block" flex-gt-sm>
-                  <label>Postal Code</label>
+                  <label>Código postal</label>
                   <input name="postalCode" ng-model="user.postalCode" placeholder="12345"
                          required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
                   <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
