@@ -18,12 +18,20 @@
     cine.controller('steps', function($scope){
         $scope.steps = [
             {
-                templateUrl: 'pago.html',
-                title: '25'
+                templateUrl: 'lista-peliculas.html',
+                title: '10'
             },
             {
-                templateUrl: 'asientos.html',
-                title: '50'
+                templateUrl: 'lista-cines.html',
+                title: '30'
+            },
+            {
+                template: 'tal',
+                title: '60'
+            },
+            {
+                template: 'bye',
+                title: '90'
             },
         ];
     });

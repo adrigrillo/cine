@@ -60,8 +60,9 @@
 	<!-- Tu código aquí - BEGIN-->
 	<multi-step-container steps="steps">
 		<header>
-		<md-progress-linear md-mode="determinate" value="{{$getActiveStep().title}}" class="md-warn">
+		<md-progress-linear ng-hide="$isFirst()" md-mode="determinate" value="{{$getActiveStep().title}}" class="md-warn">
 		</md-progress-linear>
+
 		<div>
 	        <button ng-disabled="$isFirst()" class="btn btn-default" ng-click="$previousStep()">
 	            <span class="fa fa-chevron-left"></span>
