@@ -16,6 +16,7 @@
 
     /* Directiva de los steps */
     cine.controller('steps', function($scope){
+        $scope.model = {};
         $scope.steps = [
             {
                 templateUrl: 'lista-peliculas.html',
@@ -35,6 +36,9 @@
             },
         ];
     });
+
+
+
 
     /* Directiva para añadir la seccion peliculas a index */
     cine.directive('listaPeliculas', function(){

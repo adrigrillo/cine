@@ -5,10 +5,13 @@
 	</div>
 	<div class="carrouselContainer">
 		<div class="horizontalScroll">
-			<div class="pelicula" ng-repeat="pelicula in peliculas">
+			<div class="pelicula" ng-repeat="pelicula in peliculas" >
 				<img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
 				<div class="infoPelicula" ng-controller="CuadroInfo" class="md-padding" id="popupContainer" ng-cloak>
 					<md-button class="md-icon-button" ng-click="showConfirm($event)">
+						<md-icon style="color: #ffffff">info</md-icon>
+					</md-button>
+					<md-button class="md-icon-button" ng-click="model.pelicula = pelicula.titulo; model.imagen = pelicula.imagen">
 						<md-icon style="color: #ffffff">info</md-icon>
 					</md-button>
 				</div>

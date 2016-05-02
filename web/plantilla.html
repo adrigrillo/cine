@@ -37,47 +37,51 @@
 </head>
 
 <body ng-cloak="">
-  <!-- ToolBar - BEGIN -->
-  <md-toolbar class="md-toolbar-tools">
-	<md-button class="md-icon-button" ng-disabled="false">
-	  <md-icon> menu </md-icon>
-	</md-button>
-	<h1>
-	  <span>{{company}}</span>
-	</h1>
-	<span flex></span>
-	<md-button class="md-icon-button">
-	  <md-icon>search</md-icon>
-	</md-button>
+	<!-- ToolBar - BEGIN -->
+	<md-toolbar class="md-toolbar-tools">
+		<!--
+		<md-button class="md-icon-button" ng-disabled="false">
+			<md-icon> menu </md-icon>
+		</md-button> -->
+		<h1>
+			<img ng-src="images/logo.png">
+		</h1>
+		<span flex></span>
+		<md-button class="md-icon-button">
+			<md-icon>search</md-icon>
+		</md-button>
 	</md-toolbar>
-  <!--
-   Barra de progreso valores: [0, 100]. Considerar seleccionar la pelicula completa un paso
-   1 - Selección Pelicula / Cine    25%
-   2 - Selección Cine / Película    50%
-   3 - Selección Sesión y Butacas   75%
-   4 - Pago                         100%-->
+	<!--
+	 Barra de progreso valores: [0, 100]. Considerar seleccionar la pelicula completa un paso
+	 1 - Selección Pelicula / Cine    25%
+	 2 - Selección Cine / Película    50%
+	 3 - Selección Sesión y Butacas   75%
+	 4 - Pago                         100%-->
 	<md-content class="cuerpo md-primary" ng-controller="steps">
 	<!-- Tu código aquí - BEGIN-->
 	<multi-step-container steps="steps">
 		<header>
-		<md-progress-linear ng-hide="$isFirst()" md-mode="determinate" value="{{$getActiveStep().title}}" class="md-warn">
-		</md-progress-linear>
+			<md-progress-linear ng-hide="$isFirst()" md-mode="determinate" value="{{$getActiveStep().title}}" class="md-warn">
+			</md-progress-linear>
+			<div>
+				<button ng-disabled="$isFirst()" class="btn btn-default" ng-click="$previousStep()">
+					<span class="fa fa-chevron-left"></span>
+					Previous
+				</button>
+				<strong ng-bind-template="{{$getActiveIndex()}}. {{$getActiveStep().title}}"></strong>
 
-		<div>
-	        <button ng-disabled="$isFirst()" class="btn btn-default" ng-click="$previousStep()">
-	            <span class="fa fa-chevron-left"></span>
-	            Previous
-	        </button>
-	        <strong ng-bind-template="{{$getActiveIndex()}}. {{$getActiveStep().title}}"></strong>
-
-	        <button ng-disabled="$isLast()" class="btn btn-default" ng-click="$nextStep()">
-	            Next
-	            <span class="fa fa-chevron-right"></span>
-	        </button>
-	    </div>
-    	</header>
-
-    <main step-container></main>
+				<button ng-disabled="$isLast()" class="btn btn-default" ng-click="$nextStep()">
+					Next
+					<span class="fa fa-chevron-right"></span>
+				</button>
+			</div>
+		</header>
+		<div layout-gt-xs="row" layout-xs="column">
+			<main step-container flex-gt-xs="80" flex-xs="100"></main>
+			<div layout-margin flex-gt-xs="20" flex-xs="100">
+				<strong ng-bind-template="{{model.pelicula}} {{model.cine}}"></strong>
+			</div>
+		</div>
 	</multi-step-container>
 	<!-- Tu código aquí - END-->
 	</md-content>
