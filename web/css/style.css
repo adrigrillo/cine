@@ -9,6 +9,10 @@
 	margin-left: 20px;
 	margin-right: 20px;
 }
+.tituloCines{
+	font-size: 20px;
+	margin-left: 5px;
+}
 .columnasCines{
 	width: 100%;
 	border: 1px solid #d3d3d3;
@@ -21,10 +25,6 @@
 }
 .columnaCategorias.active{
 	color: #ffff00;
-}
-.tituloCines{
-	font-size: 20px;
-	margin-left: 5px;
 }
 #cabeceraCines{
 	background-color: #ffffff
