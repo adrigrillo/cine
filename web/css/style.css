@@ -26,16 +26,20 @@
 .columnaCategorias.active{
 	color: #ffff00;
 }
-#cabeceraCines{
+.columnaLista{
 	background-color: #ffffff;
 }
-.activeElement{
+.columnaLista.active{
 	background-color: #add8e6;
+}
+.tarjetaInfo{
+	border-right: 1px solid #d3d3d3;
+	border-top:1px solid #d3d3d3;
+	border-bottom: 1px solid #d3d3d3;
 }
 .cine-ico{
 	padding-right: 10px;
 	max-width: 24px !important;
-	color: #ffffff;
 }
 .cine-fab{
 	padding-top: 10px;

@@ -1,4 +1,4 @@
-<div ng-cloak="">
+<md-content ng-cloak="">
 	<!-- COLUMNA DE DECISION DE CINES A MOSTRAR -->
 	<div layout="row" class="md-padding" ng-controller="verCines as cines">
 		<div flex="25" hide-xs class="columnaCategorias">
@@ -32,8 +32,8 @@
 		</div>
 
 		<!-- COLUMNA DE LISTA DE CINES DISPONIBLES -->
-		<div flex-xs="100" flex="40" class="columnasCines">
-			<md-subheader md-no-sticky class="tituloCines" id="cabeceraCines" >
+		<div flex-xs="100" flex="40" class="columnasCines columnaLista">
+			<md-subheader md-no-sticky class="tituloCines columnaLista" >
 				<span>Cines</span>
 				<span ng-show="mostrar === 1"> favoritos</span>
 				<span ng-show="mostrar === 2"> más cercanos</span>
@@ -43,16 +43,16 @@
 
 			<!-- LISTA DE CINES MAS CERCANOS -->
 			<md-list ng-show="mostrar === 2" ng-repeat="cine in cines" ng-init="i=$index;" layout-align="start center">
-				<md-list-item ng-click="$parent.detalle = i" class="md-3-line" layout="row" layout-xs="column"
-					ng-class="{'activeElement': detalle == i}">
+				<md-list-item class="md-3-line" layout="row"
+					ng-class="{'columnaLista active': detalle == i}">
 					<img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
 					<div class="md-list-item-text">
 						<h3>{{cine.nombre}}</h3>
 						<h4>{{cine.encuentra}}</h4>
 						<p>{{cine.direccion}}</p>
 					</div>
-					<md-button class="md-icon-button md-secondary" aria-label="info" hide-gt-xs ng-init="!card"
-					  ng-click="card=!card">
+					<md-button class="md-icon-button md-secondary" aria-label="info" ng-init="!card"
+					  ng-click="card=!card; $parent.detalle = i">
 						<i class="material-icons">info_outline</i>
 					</md-button>
 				</md-list-item>
@@ -83,11 +83,11 @@
 					<md-card-actions layout="row" layout-align="end center">
 						<md-button class="md-icon-button" aria-label="Favorite" ng-init="!liked"
 							ng-click="liked=!liked">
-							<i class="material-icons pink2 cine-fab mini" ng-show="liked">favorite</i>
-							<i class="material-icons pink2 cine-fab mini" ng-show="!liked">favorite_border</i>
+							<i class="material-icons pink2" ng-show="liked">favorite</i>
+							<i class="material-icons pink2" ng-show="!liked">favorite_border</i>
 						</md-button>
 						<md-button class="md-icon-button" aria-label="Llegar">
-							<i class="material-icons blue cine-fab mini">navigation</i>
+							<i class="material-icons blue">navigation</i>
 						</md-button>
 					</md-card-actions>
 				</md-card>
@@ -96,8 +96,8 @@
 			<!-- LISTA DE CINES MEJOR VALORADOS -->
 			<md-list ng-show="mostrar === 3" ng-repeat="cine in cines | orderBy:'-valoracion'" ng-init="i=$index+4;"
 				layout-align="start center">
-				<md-list-item ng-click="$parent.detalle = i" class="md-3-line" layout="row" layout-xs="column"
-					ng-class="{'activeElement': detalle == i}" >
+				<md-list-item ng-mouseover="$parent.detalle = i" class="md-3-line" layout="row" layout-xs="column"
+					ng-class="{'columnaLista active': detalle == i}" >
 					<img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
 					<div class="md-list-item-text">
 						<h3>{{cine.nombre}}</h3>
@@ -112,7 +112,7 @@
 		</div>
 
 		<!-- CONTENIDO DE LA INFORMACION -->
-		<md-content flex="40" hide-xs ng-init="detalle=0" class="columnasCines">
+		<md-content flex="40" hide-xs ng-init="detalle = -1" ng-show="detalle != -1" class="tarjetaInfo">
 			<div>
 				<img ng-show="detalle === 0 || detalle === 5" ng-src="{{cines[0].mapa}}" alt="mapa" class="mapa">
 				<img ng-show="detalle === 1 || detalle === 4" ng-src="{{cines[1].mapa}}" alt="mapa" class="mapa">
@@ -191,4 +191,4 @@
 			</div>
 		</md-content>
 	</div>
-</div>
+</md-content>
