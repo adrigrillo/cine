@@ -4,9 +4,35 @@
 *	lista-cines.html
 *
 *********************************************/
+.divisor{
+	border-top-color: #a9a9a9;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.columnasCines{
+	width: 100%;
+	border: 1px solid #d3d3d3;
+}
+.columnaCategorias{
+	background-color: #3f51b5;
+}
+.columnaCategorias.texto{
+	color: #ffffff;
+}
+.columnaCategorias.active{
+	color: #ffff00;
+}
+.tituloCines{
+	font-size: 20px;
+	margin-left: 5px;
+}
+#cabeceraCines{
+	background-color: #ffffff
+}
 .cine-ico{
 	padding-right: 10px;
 	max-width: 24px !important;
+	color: #ffffff;
 }
 .cine-fab{
 	padding-top: 10px;
@@ -17,6 +43,7 @@
 .mapa{
 	width: 100%;
 }
+
 
 
 

@@ -1,42 +1,46 @@
 <div ng-cloak="">
 	<!-- COLUMNA DE DECISION DE CINES A MOSTRAR -->
 	<div layout="row" class="md-padding" ng-controller="verCines as cines">
-		<div flex="25" hide-xs>
-			<md-subheader md-no-sticky>
+		<div flex="25" hide-xs class="columnaCategorias">
+			<md-subheader md-no-sticky class="columnaCategorias texto tituloCines">
 				<span>Categorias</span>
 			</md-subheader>
-			<md-divider></md-divider>
-			<md-list ng-init="mostrar = 2">
+			<md-divider class="divisor"></md-divider>
+			<md-list ng-init="mostrar = 2" class="columnaCategorias texto">
 				<md-list-item class="secondary-button-padding" ng-click="mostrar = 1"
-					ng-class="{'selected':$index == selectedRow}">
-					<i class="material-icons cine-ico">favorite</i>
+					ng-class="{'columnaCategorias active':mostrar === 1}">
+					<i class="material-icons cine-ico" ng-class="{'columnaCategorias active':mostrar == 1}">
+						favorite
+					</i>
 					<p>Favoritos</p>
 				</md-list-item>
-				<md-divider ng-if="!$last"></md-divider>
 				<md-list-item class="secondary-button-padding" ng-click="mostrar = 2"
-					ng-class="{'selected':$index == selectedRow}">
-					<i class="material-icons cine-ico">near_me</i>
+					ng-class="{'columnaCategorias active':mostrar === 2}">
+					<i class="material-icons cine-ico" ng-class="{'columnaCategorias active':mostrar == 2}">
+						near_me
+					</i>
 					<p>Cercanos</p>
 				</md-list-item>
-				<md-divider ng-if="!$last"></md-divider>
 				<md-list-item class="secondary-button-padding" ng-click="mostrar = 3"
-					ng-class="{'selected':$index == selectedRow}">
-					<i class="material-icons cine-ico">star_rate</i>
+					ng-class="{'columnaCategorias active':mostrar == 3}">
+					<i class="material-icons cine-ico" ng-class="{'columnaCategorias active':mostrar == 3}">
+						star_rate
+					</i>
 					<p>Mejor valorados</p>
 				</md-list-item>
 			</md-list>
 		</div>
 
 		<!-- COLUMNA DE LISTA DE CINES DISPONIBLES -->
-		<div flex-xs="100" flex="35">
-			<md-subheader md-no-sticky>
+		<div flex-xs="100" flex="35" class="columnasCines">
+			<md-subheader md-no-sticky class="tituloCines" id="cabeceraCines" >
 				<span>Cines</span>
 			</md-subheader>
-			<md-divider></md-divider>
+			<md-divider class="divisor"></md-divider>
 
 			<!-- LISTA DE CINES MAS CERCANOS -->
 			<md-list ng-show="mostrar === 2" ng-repeat="cine in cines" ng-init="i=$index;" layout-align="start center">
-				<md-list-item ng-click="$parent.detalle = i;" class="md-3-line" layout="row" layout-xs="column">
+				<md-list-item ng-mouseover="$parent.detalle = i;" class="md-3-line" layout="row" layout-xs="column">
 					<img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
 					<div class="md-list-item-text">
 						<h3>{{cine.nombre}}</h3>
@@ -103,7 +107,7 @@
 		</div>
 
 		<!-- CONTENIDO DE LA INFORMACION -->
-		<md-content flex="45" hide-xs ng-init="detalle=0">
+		<md-content flex="45" hide-xs ng-init="detalle=0" class="columnasCines">
 			<div>
 				<img ng-show="detalle === 0 || detalle === 5" ng-src="{{cines[0].mapa}}" alt="mapa" class="mapa">
 				<img ng-show="detalle === 1 || detalle === 4" ng-src="{{cines[1].mapa}}" alt="mapa" class="mapa">
