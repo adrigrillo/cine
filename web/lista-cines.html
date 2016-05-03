@@ -1,7 +1,7 @@
 <md-content ng-cloak="">
 	<!-- COLUMNA DE DECISION DE CINES A MOSTRAR -->
 	<div layout="row" class="md-padding" ng-controller="verCines as cines">
-		<div flex="25" hide-xs class="columnaCategorias">
+		<div md-whiteframe="2" flex="25" hide-xs class="columnaCategorias">
 			<md-subheader md-no-sticky class="columnaCategorias texto tituloCines">
 				<span>Categorias</span>
 			</md-subheader>
@@ -32,7 +32,7 @@
 		</div>
 
 		<!-- COLUMNA DE LISTA DE CINES DISPONIBLES -->
-		<div flex-xs="100" flex="40" class="columnasCines columnaLista">
+		<div md-whiteframe="2" flex-xs="100" flex="40" class="columnasCines columnaLista">
 			<md-subheader md-no-sticky class="tituloCines columnaLista" >
 				<span>Cines</span>
 				<span ng-show="mostrar === 1"> favoritos</span>
@@ -112,7 +112,7 @@
 		</div>
 
 		<!-- CONTENIDO DE LA INFORMACION -->
-		<md-content flex="40" hide-xs ng-init="detalle = -1" ng-show="detalle != -1" class="tarjetaInfo">
+		<md-content md-whiteframe="2" flex="40" hide-xs ng-init="detalle = -1" ng-show="detalle != -1" class="tarjetaInfo">
 			<div>
 				<img ng-show="detalle === 0 || detalle === 5" ng-src="{{cines[0].mapa}}" alt="mapa" class="mapa">
 				<img ng-show="detalle === 1 || detalle === 4" ng-src="{{cines[1].mapa}}" alt="mapa" class="mapa">
@@ -120,73 +120,77 @@
 				<img ng-show="detalle === 3 || detalle === 7" ng-src="{{cines[3].mapa}}" alt="mapa" class="mapa">
 			</div>
 			<md-toolbar class="tituloTarjeta">
-				<div class="md-toolbar-tools" layout="column" layout-align="center start">
-					<div id="tituloTarjeta">
-						<span ng-show="detalle === 0 || detalle === 5">{{cines[0].nombre}}</span>
-						<span ng-show="detalle === 1 || detalle === 4">{{cines[1].nombre}}</span>
-						<span ng-show="detalle === 2 || detalle === 6">{{cines[2].nombre}}</span>
-						<span ng-show="detalle === 3 || detalle === 7">{{cines[3].nombre}}</span>
+				<div class="md-toolbar-tools" layout-align="start center">
+					<div layout="column" layout-align="center start">
+						<div id="tituloTarjeta">
+							<span ng-show="detalle === 0 || detalle === 5">{{cines[0].nombre}}</span>
+							<span ng-show="detalle === 1 || detalle === 4">{{cines[1].nombre}}</span>
+							<span ng-show="detalle === 2 || detalle === 6">{{cines[2].nombre}}</span>
+							<span ng-show="detalle === 3 || detalle === 7">{{cines[3].nombre}}</span>
+						</div>
+						<div layout="row" layout-align="start center" id="subtituloTarjeta">
+							<md-button class="md-icon-button" aria-label="Favorito" ng-init="!liked"
+							ng-click="liked=!liked">
+								<i class="material-icons md-18 pink1" ng-show="liked">favorite</i>
+								<i class="material-icons md-18 pink1" ng-show="!liked">favorite_border</i>
+							</md-button>
+							<span>Marcar como favorito</span>
+						</div>
 					</div>
-					<div layout="row" layout-align="start center" id="subtituloTarjeta">
-						<md-button class="md-icon-button" aria-label="Favorito" ng-init="!liked"
-						ng-click="liked=!liked">
-							<i class="material-icons md-18 pink1" ng-show="liked">favorite</i>
-							<i class="material-icons md-18" ng-show="!liked">favorite_border</i>
-						</md-button>
-						<span>Marcar como favorito</span>
-					</div>
+					<span flex=""></span>
+					<md-button class="md-raised" aria-label="Learn More">
+          				SELECCIONAR
+        			</md-button>
 				</div>
 			</md-toolbar>
-			<div>
-				<md-content>
-					<md-subheader class="md-primary">
-						Información
-					</md-subheader>
-					<md-list>
-						<md-list-item>
-							<i class="material-icons cine-ico">place</i>
-							<a ng-show="detalle === 0 || detalle === 5" target="_blank" ng-href="{{cines[0].llegar}}">
-								{{cines[0].direccion}}
-							</a>
-							<a ng-show="detalle === 1 || detalle === 4" target="_blank" ng-href="{{cines[1].llegar}}">
-								{{cines[1].direccion}}
-							</a>
-							<a ng-show="detalle === 2 || detalle === 6" target="_blank" ng-href="{{cines[2].llegar}}">
-								{{cines[2].direccion}}
-							</a>
-							<a ng-show="detalle === 3 || detalle === 7" target="_blank" ng-href="{{cines[3].llegar}}">
-								{{cines[3].direccion}}
-							</a>
-						</md-list-item>
-						<md-list-item>
-							<i class="material-icons cine-ico">link</i>
-							<a ng-show="detalle === 0 || detalle === 5" target="_blank"
-								ng-href="{{cines[0].paginaweb}}">
-								{{cines[0].paginaweb}}
-							</a>
-							<a ng-show="detalle === 1 || detalle === 4" target="_blank"
-								ng-href="{{cines[0].paginaweb}}">
-								{{cines[1].paginaweb}}
-							</a>
-							<a ng-show="detalle === 2 || detalle === 6" target="_blank"
-								ng-href="{{cines[0].paginaweb}}">
-								{{cines[2].paginaweb}}
-							</a>
-							<a ng-show="detalle === 3 || detalle === 7" target="_blank"
-								ng-href="{{cines[0].paginaweb}}">
-								{{cines[3].paginaweb}}
-							</a>
-						</md-list-item>
-						<md-list-item>
-							<i class="material-icons cine-ico">phone</i>
-							<p ng-show="detalle === 0 || detalle === 5" >{{cines[0].telefono}}</p>
-							<p ng-show="detalle === 1 || detalle === 4" >{{cines[1].telefono}}</p>
-							<p ng-show="detalle === 2 || detalle === 6" >{{cines[2].telefono}}</p>
-							<p ng-show="detalle === 3 || detalle === 7" >{{cines[3].telefono}}</p>
-						</md-list-item>
-					</md-list>
-				</md-content>
-			</div>
+			<md-content>
+				<md-subheader class="md-primary">
+					Información
+				</md-subheader>
+				<md-list>
+					<md-list-item>
+						<i class="material-icons cine-ico">place</i>
+						<a ng-show="detalle === 0 || detalle === 5" target="_blank" ng-href="{{cines[0].llegar}}">
+							{{cines[0].direccion}}
+						</a>
+						<a ng-show="detalle === 1 || detalle === 4" target="_blank" ng-href="{{cines[1].llegar}}">
+							{{cines[1].direccion}}
+						</a>
+						<a ng-show="detalle === 2 || detalle === 6" target="_blank" ng-href="{{cines[2].llegar}}">
+							{{cines[2].direccion}}
+						</a>
+						<a ng-show="detalle === 3 || detalle === 7" target="_blank" ng-href="{{cines[3].llegar}}">
+							{{cines[3].direccion}}
+						</a>
+					</md-list-item>
+					<md-list-item>
+						<i class="material-icons cine-ico">link</i>
+						<a ng-show="detalle === 0 || detalle === 5" target="_blank"
+							ng-href="{{cines[0].paginaweb}}">
+							{{cines[0].paginaweb}}
+						</a>
+						<a ng-show="detalle === 1 || detalle === 4" target="_blank"
+							ng-href="{{cines[0].paginaweb}}">
+							{{cines[1].paginaweb}}
+						</a>
+						<a ng-show="detalle === 2 || detalle === 6" target="_blank"
+							ng-href="{{cines[0].paginaweb}}">
+							{{cines[2].paginaweb}}
+						</a>
+						<a ng-show="detalle === 3 || detalle === 7" target="_blank"
+							ng-href="{{cines[0].paginaweb}}">
+							{{cines[3].paginaweb}}
+						</a>
+					</md-list-item>
+					<md-list-item>
+						<i class="material-icons cine-ico">phone</i>
+						<p ng-show="detalle === 0 || detalle === 5" >{{cines[0].telefono}}</p>
+						<p ng-show="detalle === 1 || detalle === 4" >{{cines[1].telefono}}</p>
+						<p ng-show="detalle === 2 || detalle === 6" >{{cines[2].telefono}}</p>
+						<p ng-show="detalle === 3 || detalle === 7" >{{cines[3].telefono}}</p>
+					</md-list-item>
+				</md-list>
+			</md-content>
 		</md-content>
 	</div>
 </md-content>

@@ -37,17 +37,31 @@
 	border-top:1px solid #d3d3d3;
 	border-bottom: 1px solid #d3d3d3;
 }
+.tarjetaInfo md-content{
+	background-color: #f5f5f5;
+}
+.tarjetaInfo .md-subheader{
+	background-color: #f5f5f5;
+}
 .tituloTarjeta{
-	padding-top: 15px;
+	padding-top: 10px;
 	padding-bottom: 5px;
+}
+.tituloTarjeta .md-button.md-raised{
+	background-color: #ffffff;
 }
 #tituloTarjeta{
 	color:#ffffff;
 	font-size: 25px;
 }
 #subtituloTarjeta{
-	color:#ffffff;
-	font-size: 14px;
+	color: #ff99ff;
+	font-size: 12px;
+	margin-left: -15px;
+}
+#subtituloTarjeta span{
+	margin-left: -10px;
+	margin-top: -5px;
 }
 .cine-ico{
 	padding-right: 10px;
