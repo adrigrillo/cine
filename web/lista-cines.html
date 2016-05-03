@@ -8,21 +8,21 @@
 			<md-divider class="divisor"></md-divider>
 			<md-list ng-init="mostrar = 2" class="columnaCategorias texto">
 				<md-list-item class="secondary-button-padding" ng-click="mostrar = 1"
-					ng-class="{'columnaCategorias active':mostrar === 1}">
+					ng-class="{'columnaCategorias active': mostrar === 1}">
 					<i class="material-icons cine-ico" ng-class="{'columnaCategorias active':mostrar == 1}">
 						favorite
 					</i>
 					<p>Favoritos</p>
 				</md-list-item>
 				<md-list-item class="secondary-button-padding" ng-click="mostrar = 2"
-					ng-class="{'columnaCategorias active':mostrar === 2}">
+					ng-class="{'columnaCategorias active': mostrar === 2}">
 					<i class="material-icons cine-ico" ng-class="{'columnaCategorias active':mostrar == 2}">
 						near_me
 					</i>
 					<p>Cercanos</p>
 				</md-list-item>
 				<md-list-item class="secondary-button-padding" ng-click="mostrar = 3"
-					ng-class="{'columnaCategorias active':mostrar == 3}">
+					ng-class="{'columnaCategorias active': mostrar == 3}">
 					<i class="material-icons cine-ico" ng-class="{'columnaCategorias active':mostrar == 3}">
 						star_rate
 					</i>
@@ -32,7 +32,7 @@
 		</div>
 
 		<!-- COLUMNA DE LISTA DE CINES DISPONIBLES -->
-		<div flex-xs="100" flex="35" class="columnasCines">
+		<div flex-xs="100" flex="40" class="columnasCines">
 			<md-subheader md-no-sticky class="tituloCines" id="cabeceraCines" >
 				<span>Cines</span>
 				<span ng-show="mostrar === 1"> favoritos</span>
@@ -43,7 +43,8 @@
 
 			<!-- LISTA DE CINES MAS CERCANOS -->
 			<md-list ng-show="mostrar === 2" ng-repeat="cine in cines" ng-init="i=$index;" layout-align="start center">
-				<md-list-item ng-mouseover="$parent.detalle = i;" class="md-3-line" layout="row" layout-xs="column">
+				<md-list-item ng-click="$parent.detalle = i" class="md-3-line" layout="row" layout-xs="column"
+					ng-class="{'activeElement': detalle == i}">
 					<img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
 					<div class="md-list-item-text">
 						<h3>{{cine.nombre}}</h3>
@@ -95,7 +96,8 @@
 			<!-- LISTA DE CINES MEJOR VALORADOS -->
 			<md-list ng-show="mostrar === 3" ng-repeat="cine in cines | orderBy:'-valoracion'" ng-init="i=$index+4;"
 				layout-align="start center">
-				<md-list-item ng-click="$parent.detalle = i;" class="md-3-line" layout="row" layout-xs="column" >
+				<md-list-item ng-click="$parent.detalle = i" class="md-3-line" layout="row" layout-xs="column"
+					ng-class="{'activeElement': detalle == i}" >
 					<img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
 					<div class="md-list-item-text">
 						<h3>{{cine.nombre}}</h3>
@@ -110,7 +112,7 @@
 		</div>
 
 		<!-- CONTENIDO DE LA INFORMACION -->
-		<md-content flex="45" hide-xs ng-init="detalle=0" class="columnasCines">
+		<md-content flex="40" hide-xs ng-init="detalle=0" class="columnasCines">
 			<div>
 				<img ng-show="detalle === 0 || detalle === 5" ng-src="{{cines[0].mapa}}" alt="mapa" class="mapa">
 				<img ng-show="detalle === 1 || detalle === 4" ng-src="{{cines[1].mapa}}" alt="mapa" class="mapa">

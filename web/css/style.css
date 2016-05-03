@@ -27,7 +27,10 @@
 	color: #ffff00;
 }
 #cabeceraCines{
-	background-color: #ffffff
+	background-color: #ffffff;
+}
+.activeElement{
+	background-color: #add8e6;
 }
 .cine-ico{
 	padding-right: 10px;
