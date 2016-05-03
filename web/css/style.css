@@ -37,6 +37,18 @@
 	border-top:1px solid #d3d3d3;
 	border-bottom: 1px solid #d3d3d3;
 }
+.tituloTarjeta{
+	padding-top: 15px;
+	padding-bottom: 5px;
+}
+#tituloTarjeta{
+	color:#ffffff;
+	font-size: 25px;
+}
+#subtituloTarjeta{
+	color:#ffffff;
+	font-size: 14px;
+}
 .cine-ico{
 	padding-right: 10px;
 	max-width: 24px !important;
