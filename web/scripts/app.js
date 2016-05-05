@@ -1,7 +1,7 @@
 (function() {
 
     // Declare app level module which depends on views, and components
-    var cine = angular.module("cine", ["ctrl"]);
+    var cine = angular.module("cine", ["ctrl", "multiStepForm"]);
 
     /* Configurar tema */
     cine.config(function($mdThemingProvider) {
@@ -44,6 +44,10 @@
 		$scope.cancel = function () {
 			alert('Formulario cancelado, será redirigido a la página principal');
 			$location.path('/plantilla');
+		};
+		$scope.finish = function () {
+		    alert('Finish has been called. You are going to be redirected home!');
+		    $location.path('/home');
 		};
 	});
 

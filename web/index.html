@@ -17,11 +17,11 @@
 
     <!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/angular-multi-step-form/dist/browser/angular-multi-step-form.js"></script>
     <script src="bower_components/firebase/firebase.js"></script>
     <script src="bower_components/angularfire/dist/angularfire.js"></script>
@@ -55,13 +55,11 @@
     <div ng-controller="tabController">
         <md-tabs md-stretch-tabs="always" md-dynamic-height="" md-border-bottom="" class="indexTabs md-primary ">
             <!-- Que ocupen todo -->
-            <md-tab>
-                <md-tab-label><span ui-sref="{{tab1.link}}">{{tab1.label}}</span></md-tab-label>
+            <md-tab label="{{tab1}}">
                 <lista-peliculas></lista-peliculas>
             </md-tab>
             <!-- Pestaña de cines -->
-            <md-tab>
-                <md-tab-label><span ui-sref="{{tab2.link}}">{{tab2.label}}</span></md-tab-label>
+            <md-tab label="{{tab2}}">
                 <lista-cines></lista-cines>
             </md-tab>
         </md-tabs>

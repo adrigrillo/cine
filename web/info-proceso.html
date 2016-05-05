@@ -52,7 +52,12 @@
 		<span class="iva-precio">IVA INCLUIDO</span>
 	</md-card-content>
 	<md-card-actions layout="column" layout-align="start">
-		<md-button ng-click="cancel()" class="md-raised cancelar-proceso">CANCELAR PROCESO</md-button>
+		<md-button ng-click="finish()" ng-show="$getActiveIndex() == 4" class="md-raised pagar-proceso">
+			PAGAR Y FINALIZAR
+		</md-button>
+		<md-button ng-click="cancel()" class="md-raised cancelar-proceso">
+			CANCELAR PROCESO
+		</md-button>
 	</md-card-actions>
 </md-card>
 

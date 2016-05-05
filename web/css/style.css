@@ -274,8 +274,12 @@
 	font-size: 14px;
 	color: #727272;
 }
-.cancelar-proceso{
+.pagar-proceso{
 	background-color: #212121 !important;
+	color: #ffffff !important;
+}
+.cancelar-proceso{
+	background-color: #FF5252 !important;
 	color: #ffffff !important;
 }
 

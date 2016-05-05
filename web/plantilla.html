@@ -2,6 +2,13 @@
 <html lang="es" ng-app="cine">
 
 <head>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Cine | Entradas.com</title>
+	<link rel="icon" type="image/png" href="images/e_roboto.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<!-- CSS de la página -->
 	<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
 	<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
@@ -11,11 +18,11 @@
 
 	<!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
 	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/angular-material/angular-material.js"></script>
 	<script src="bower_components/angular-route/angular-route.js"></script>
 	<script src="bower_components/angular-animate/angular-animate.js"></script>
 	<script src="bower_components/angular-aria/angular-aria.js"></script>
 	<script src="bower_components/angular-messages/angular-messages.js"></script>
+	<script src="bower_components/angular-material/angular-material.js"></script>
 	<script src="bower_components/angular-multi-step-form/dist/browser/angular-multi-step-form.js"></script>
 	<script src="bower_components/firebase/firebase.js"></script>
 	<script src="bower_components/angularfire/dist/angularfire.js"></script>
@@ -53,22 +60,31 @@
 	 3 - Selección Sesión y Butacas   75%
 	 4 - Pago                         100%
 	-->
-	<md-progress-linear md-mode="determinate" value="25" class="md-warn"></md-progress-linear>
-	<md-content class="cuerpo md-primary">
-		<!-- Tu código aquí - BEGIN-->
-		<div class="md-title titulo">
-			Esto es un título
+	<md-content class="cuerpo md-primary" ng-controller="steps">
+	<!-- Tu código aquí - BEGIN-->
+	<multi-step-container steps="steps">
+		<header>
+			<md-progress-linear ng-hide="$isFirst()" md-mode="determinate" value="{{$getActiveStep().title}}" class="md-warn">
+			</md-progress-linear>
+			<div>
+				<button ng-disabled="$isFirst()" class="btn btn-default" ng-click="$previousStep()">
+					<span class="fa fa-chevron-left"></span>
+					Previous
+				</button>
+				<strong ng-bind-template="{{$getActiveIndex()}}. {{$getActiveStep().title}}"></strong>
+
+				<button ng-disabled="$isLast()" class="btn btn-default" ng-click="$nextStep()">
+					Next
+					<span class="fa fa-chevron-right"></span>
+				</button>
+			</div>
+		</header>
+		<div layout-gt-xs="row" layout-xs="column">
+			<main step-container flex-gt-xs="75" flex-xs="100"></main>
+			<info-proceso flex-gt-xs="25" flex-xs="100"></info-proceso>
 		</div>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nibh lectus, bibendum id eleifend et, tempus cursus urna. Cras cursus diam sed massa egestas molestie. In volutpat posuere mattis. Nullam non tellus magna. Nam molestie massa erat, a consectetur
-			felis ultrices ut. Fusce justo magna, interdum vel volutpat quis, consequat eget massa. Quisque elementum risus et leo porttitor, id bibendum purus tincidunt. Donec non tellus id nisl faucibus hendrerit eget id lacus. Maecenas sodales tristique
-			porta. Suspendisse nec odio eu ante vulputate aliquet. Quisque sodales, ex nec porttitor aliquam, lacus mi interdum ex, nec semper leo ante in ex. Praesent augue eros, egestas vel arcu nec, rhoncus elementum sem. In id semper turpis. Ut posuere
-			a augue id rutrum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec id nisl justo. Ut sit amet imperdiet eros. Nam vel tempor lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-			ridiculus mus. In malesuada ante a condimentum lacinia. Praesent non porttitor libero, sagittis sagittis nisi. Phasellus ipsum ipsum, vestibulum eget ante nec, fermentum elementum purus. Suspendisse potenti. Cum sociis natoque penatibus et magnis
-			dis parturient montes, nascetur ridiculus mus. Proin consectetur pretium leo eu varius. Nulla lobortis urna at dui consectetur, suscipit ultrices turpis finibus. Sed egestas ultricies hendrerit. Nam pulvinar, neque id fringilla pulvinar, eros tellus
-			vulputate purus, quis gravida libero erat vitae diam.
-		</p>
-		<!-- Tu código aquí - END-->
+	</multi-step-container>
+	<!-- Tu código aquí - END-->
 	</md-content>
 </body>
 

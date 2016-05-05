@@ -5,8 +5,8 @@
 
     /* Controlador de las tabs */
     ctrl.controller('tabController', function($scope){
-        $scope.tab1 = { link : '#/peliculas', label : 'Películas'};
-        $scope.tab2 = { link : '#/cines', label : 'Cines'};
+        $scope.tab1 = 'Películas';
+        $scope.tab2 = 'Cines';
     });
 
     /* Guarda como un array los datos de las películas obtenidas.
