@@ -55,11 +55,13 @@
     <div ng-controller="tabController">
         <md-tabs md-stretch-tabs="always" md-dynamic-height="" md-border-bottom="" class="indexTabs md-primary ">
             <!-- Que ocupen todo -->
-            <md-tab label="{{tab1}}">
+            <md-tab>
+                <md-tab-label><span ui-sref="{{tab1.link}}">{{tab1.label}}</span></md-tab-label>
                 <lista-peliculas></lista-peliculas>
             </md-tab>
             <!-- Pestaña de cines -->
-            <md-tab label="{{tab2}}">
+            <md-tab>
+                <md-tab-label><span ui-sref="{{tab2.link}}">{{tab2.label}}</span></md-tab-label>
                 <lista-cines></lista-cines>
             </md-tab>
         </md-tabs>
