@@ -1,0 +1,58 @@
+<md-card class="tarjeta-proceso">
+	<md-card-header class="titulo-proceso" layout="row" layout-align="end center">
+		<md-card-avatar>
+			<i class="material-icons md-36">credit_card</i>
+		</md-card-avatar>
+		<md-card-header-text layout-align="center center">
+			<span>Proceso de compra</span>
+		</md-card-header-text>
+	</md-card-header>
+	<md-card-title-media class="cartel-proceso">
+		<img ng-src="{{model.imagen}}">
+	</md-card-title-media>
+	<md-card-content class="lateral-proceso inferior-proceso">
+		<div layout="column" class="superior-proceso">
+			<label class="label-proceso">Título</label>
+			<span>
+				{{model.pelicula}}
+			</span>
+		</div>
+		<div layout="column" class="superior-proceso">
+			<label class="label-proceso">Cines</label>
+			<span>
+				{{model.cines}}
+			</span>
+		</div>
+		<div layout="column" class="superior-proceso">
+			<label class="label-proceso">Sesión</label>
+			<span>
+				{{model.sesion}}
+			</span>
+		</div>
+		<div layout="column" class="superior-proceso">
+			<label class="label-proceso">Asientos</label>
+			<span>
+				{{model.asientos}}
+			</span>
+		</div>
+	</md-card-content>
+</md-card>
+<md-card class="tarjeta-proceso">
+	<md-card-header class="titulo-precio" layout="row" layout-align="end center">
+		<md-card-avatar>
+			<i class="material-icons md-36">account_balance_wallet</i>
+		</md-card-avatar>
+		<md-card-header-text layout-align="center center">
+			<span>Precio</span>
+		</md-card-header-text>
+	</md-card-header>
+	<md-card-content layout="column" layout-align="center center"
+		class="lateral-proceso superior-proceso inferior-proceso">
+		<span class="cantidad-precio">{{model.precio}} €</span>
+		<span class="iva-precio">IVA INCLUIDO</span>
+	</md-card-content>
+	<md-card-actions layout="column" layout-align="start">
+		<md-button ng-click="cancel()" class="md-raised cancelar-proceso">CANCELAR PROCESO</md-button>
+	</md-card-actions>
+</md-card>
+

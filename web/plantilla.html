@@ -21,6 +21,7 @@
 	<script src="bower_components/angular-aria/angular-aria.js"></script>
 	<script src="bower_components/angular-messages/angular-messages.js"></script>
 	<script src="bower_components/angular-material/angular-material.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
 	<script src="bower_components/angular-multi-step-form/dist/browser/angular-multi-step-form.js"></script>
 	<script src="bower_components/firebase/firebase.js"></script>
 	<script src="bower_components/angularfire/dist/angularfire.js"></script>
@@ -77,10 +78,8 @@
 			</div>
 		</header>
 		<div layout-gt-xs="row" layout-xs="column">
-			<main step-container flex-gt-xs="80" flex-xs="100"></main>
-			<div layout-margin flex-gt-xs="20" flex-xs="100">
-				<strong ng-bind-template="{{model.pelicula}} {{model.cine}}"></strong>
-			</div>
+			<main step-container flex-gt-xs="75" flex-xs="100"></main>
+			<info-proceso flex-gt-xs="25" flex-xs="100"></info-proceso>
 		</div>
 	</multi-step-container>
 	<!-- Tu código aquí - END-->
