@@ -135,8 +135,14 @@
 .pelicula:hover .infoPelicula {
 	display: block;
 }
+.tarjetaPelicula{
+	background-color: #f5f5f5;
+}
 .pelicula > img {
 	width: inherit;
+}
+.binfo-pelicula{
+	margin-left: -5px !important;
 }
 .infoPelicula {
 	display: none;
@@ -152,6 +158,9 @@
 .herramientas {
 	padding: 0;
 	margin: 0;
+}
+.caratula{
+	border-radius: 2px;
 }
 
 

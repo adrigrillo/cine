@@ -4,19 +4,18 @@
 	</div>
 	<div class="carrouselContainer">
 		<div class="horizontalScroll">
-
-
 			<div class="pelicula" ng-repeat="pelicula in peliculas">
-				<md-card>
+				<md-card class="tarjetaPelicula">
 					<img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
-					<md-card-actions layout="row" layout-align="center center" ng-controller="CuadroInfo"
-						id="popupContainer" ng-cloak>
-						<md-button class="md-icon-button md-warn" aria-label="Favorite" ng-click="showConfirm($event)">
-				        	<md-icon>info</md-icon>
+					<md-card-actions layout="row" layout-align="center center" ng-controller="CuadroInfo">
+						<md-button aria-label="info" class="md-icon-button md-secondary binfo-pelicula"
+							ng-click="showConfirm($event)">
+				        	<i class="material-icons md-24">info_outline</i>
 				      	</md-button>
 						<md-button class="md-raised md-primary"
 							ng-click="model.pelicula = pelicula.titulo; model.imagen = pelicula.imagen; $nextStep()">
-							Seleccionar</md-button>
+							Seleccionar
+						</md-button>
 					</md-card-actions>
 				</md-card>
 			</div>
