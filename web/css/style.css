@@ -36,6 +36,7 @@
 	border-right: 1px solid #d3d3d3;
 	border-top:1px solid #d3d3d3;
 	border-bottom: 1px solid #d3d3d3;
+	background-color: #f5f5f5;
 }
 .tarjetaInfo md-content{
 	background-color: #f5f5f5;
@@ -52,12 +53,14 @@
 }
 #tituloTarjeta{
 	color:#ffffff;
-	font-size: 25px;
+	font-size: 20px;
+	padding-top: 10px;
 }
 #subtituloTarjeta{
 	color: #ff99ff;
 	font-size: 12px;
 	margin-left: -15px;
+	padding-bottom: 5px;
 }
 #subtituloTarjeta span{
 	margin-left: -10px;

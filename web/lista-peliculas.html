@@ -9,19 +9,15 @@
 			<div class="pelicula" ng-repeat="pelicula in peliculas">
 				<md-card>
 					<img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
-					<div class="infoPelicula" ng-controller="CuadroInfo" class="md-padding" id="popupContainer" ng-cloak>
-						<!-- <md-button class="md-icon-button" ng-click="showConfirm($event)">
-							<md-icon style="color: #ffffff">info</md-icon>
-						</md-button> -->
-					</div>
-					<!-- <div class="herramientas"> -->
-					<md-card-actions layout="row" layout-align="end center" ng-controller="CuadroInfo" id="popupContainer" ng-cloak>
+					<md-card-actions layout="row" layout-align="center center" ng-controller="CuadroInfo"
+						id="popupContainer" ng-cloak>
 						<md-button class="md-icon-button md-warn" aria-label="Favorite" ng-click="showConfirm($event)">
-			        <md-icon >info</md-icon>
-			      </md-button>
-						<md-button class="md-raised md-primary">Seleccionar</md-button>
+				        	<md-icon>info</md-icon>
+				      	</md-button>
+						<md-button class="md-raised md-primary"
+							ng-click="model.pelicula = pelicula.titulo; model.imagen = pelicula.imagen; $nextStep()">
+							Seleccionar</md-button>
 					</md-card-actions>
-					<!-- </div> -->
 				</md-card>
 			</div>
 

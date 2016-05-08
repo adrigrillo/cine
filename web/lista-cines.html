@@ -1,7 +1,7 @@
 <md-content ng-cloak="">
 	<!-- COLUMNA DE DECISION DE CINES A MOSTRAR -->
 	<div layout="row" class="md-padding" ng-controller="verCines as cines">
-		<div md-whiteframe="2" flex="25" hide-xs class="columnaCategorias">
+		<div md-whiteframe="2" flex="20" hide-xs class="columnaCategorias">
 			<md-subheader md-no-sticky class="columnaCategorias texto tituloCines">
 				<span>Categorias</span>
 			</md-subheader>
@@ -32,7 +32,7 @@
 		</div>
 
 		<!-- COLUMNA DE LISTA DE CINES DISPONIBLES -->
-		<div md-whiteframe="2" flex-xs="100" flex="40" class="columnasCines columnaLista">
+		<div md-whiteframe="2" flex-xs="100" flex="" class="columnasCines columnaLista">
 			<md-subheader md-no-sticky class="tituloCines columnaLista" >
 				<span>Cines</span>
 				<span ng-show="mostrar === 1"> favoritos</span>
@@ -43,68 +43,30 @@
 
 			<!-- LISTA DE CINES MAS CERCANOS -->
 			<md-list ng-show="mostrar === 2" ng-repeat="cine in cines" ng-init="i=$index;" layout-align="start center">
-				<md-list-item class="md-3-line" layout="row"
-					ng-class="{'columnaLista active': detalle == i}">
+				<md-list-item class="md-3-line" layout="row" ng-class="{'columnaLista active': detalle == i}">
 					<img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
 					<div class="md-list-item-text">
 						<h3>{{cine.nombre}}</h3>
 						<h4>{{cine.encuentra}}</h4>
 						<p>{{cine.direccion}}</p>
 					</div>
-					<md-button class="md-icon-button md-secondary" aria-label="info" ng-init="!card"
-					  ng-click="card=!card; $parent.detalle = i">
+					<md-button class="md-icon-button md-secondary" aria-label="info" ng-click="$parent.detalle = i">
 						<i class="material-icons">info_outline</i>
 					</md-button>
 				</md-list-item>
-
-				<!-- DIV DE INFORMACION -->
-				<md-card hide-gt-xs ng-show="card">
-					<img ng-src="{{cine.mapa}}" alt="mapa" class="md-card-image">
-					<md-card-content layout="row" layout-align="start center">
-						<md-list>
-							<md-list-item>
-								<i class="material-icons cine-ico">place</i>
-								<a target="_blank" ng-href="{{cines[0].llegar}}">
-									{{cine.direccion}}
-								</a>
-							</md-list-item>
-							<md-list-item>
-								<i class="material-icons cine-ico">link</i>
-								<a target="_blank" ng-href="{{cines[0].paginaweb}}">
-									{{cine.paginaweb}}
-								</a>
-							</md-list-item>
-							<md-list-item>
-								<i class="material-icons cine-ico">phone</i>
-								<p>{{cine.telefono}}</p>
-							</md-list-item>
-						</md-list>
-					</md-card-content>
-					<md-card-actions layout="row" layout-align="end center">
-						<md-button class="md-icon-button" aria-label="Favorite" ng-init="!liked"
-							ng-click="liked=!liked">
-							<i class="material-icons pink2" ng-show="liked">favorite</i>
-							<i class="material-icons pink2" ng-show="!liked">favorite_border</i>
-						</md-button>
-						<md-button class="md-icon-button" aria-label="Llegar">
-							<i class="material-icons blue">navigation</i>
-						</md-button>
-					</md-card-actions>
-				</md-card>
 			</md-list>
 
 			<!-- LISTA DE CINES MEJOR VALORADOS -->
 			<md-list ng-show="mostrar === 3" ng-repeat="cine in cines | orderBy:'-valoracion'" ng-init="i=$index+4;"
 				layout-align="start center">
-				<md-list-item ng-mouseover="$parent.detalle = i" class="md-3-line" layout="row" layout-xs="column"
-					ng-class="{'columnaLista active': detalle == i}" >
+				<md-list-item class="md-3-line" layout="row" ng-class="{'columnaLista active': detalle == i}" >
 					<img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
 					<div class="md-list-item-text">
 						<h3>{{cine.nombre}}</h3>
 						<h4>{{cine.encuentra}}</h4>
 						<p>{{cine.direccion}}</p>
 					</div>
-					<md-button class="md-icon-button" aria-label="info" hide-gt-xs>
+					<md-button class="md-icon-button md-secondary" aria-label="info" ng-click="$parent.detalle = i">
 						<i class="material-icons">info_outline</i>
 					</md-button>
 				</md-list-item>
@@ -112,7 +74,7 @@
 		</div>
 
 		<!-- CONTENIDO DE LA INFORMACION -->
-		<md-content md-whiteframe="2" flex="40" hide-xs ng-init="detalle = -1" ng-show="detalle != -1" class="tarjetaInfo">
+		<md-content md-whiteframe="2" flex="45" hide-xs ng-init="detalle = -1" ng-show="detalle != -1" class="tarjetaInfo">
 			<div>
 				<img ng-show="detalle === 0 || detalle === 5" ng-src="{{cines[0].mapa}}" alt="mapa" class="mapa">
 				<img ng-show="detalle === 1 || detalle === 4" ng-src="{{cines[1].mapa}}" alt="mapa" class="mapa">

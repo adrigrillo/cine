@@ -39,7 +39,7 @@
 		};
 		$scope.steps = [
 			{
-				templateUrl: 'lista-peliculas.html',
+				templateUrl: 'principal.html',
 				title: '10'
 			},
 			{
