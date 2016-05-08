@@ -145,7 +145,11 @@
 	border-radius: 20%;
 	opacity: 0.8;
 }
-
+/* Botones */
+.herramientas {
+	padding: 0;
+	margin: 0;
+}
 
 
 

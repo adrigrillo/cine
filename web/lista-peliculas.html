@@ -1,18 +1,30 @@
-<md-content class="md-padding noOverflow" layout="row" ng-controller="verPeliculas as peliculas"
-	layout-wrap>
+<md-content class="md-padding noOverflow" layout="row" ng-controller="verPeliculas as peliculas" layout-wrap>
 	<div class="md-title lp-titulo">
 		Destacados
 	</div>
 	<div class="carrouselContainer">
 		<div class="horizontalScroll">
+
+
 			<div class="pelicula" ng-repeat="pelicula in peliculas">
-				<img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
-				<div class="infoPelicula" ng-controller="CuadroInfo" class="md-padding" id="popupContainer" ng-cloak>
-					<md-button class="md-icon-button" ng-click="showConfirm($event)">
-						<md-icon style="color: #ffffff">info</md-icon>
-					</md-button>
-				</div>
+				<md-card>
+					<img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
+					<div class="infoPelicula" ng-controller="CuadroInfo" class="md-padding" id="popupContainer" ng-cloak>
+						<!-- <md-button class="md-icon-button" ng-click="showConfirm($event)">
+							<md-icon style="color: #ffffff">info</md-icon>
+						</md-button> -->
+					</div>
+					<!-- <div class="herramientas"> -->
+					<md-card-actions layout="row" layout-align="end center" ng-controller="CuadroInfo" id="popupContainer" ng-cloak>
+						<md-button class="md-icon-button md-warn" aria-label="Favorite" ng-click="showConfirm($event)">
+			        <md-icon >info</md-icon>
+			      </md-button>
+						<md-button class="md-raised md-primary">Seleccionar</md-button>
+					</md-card-actions>
+					<!-- </div> -->
+				</md-card>
 			</div>
+
 		</div>
 	</div>
 
