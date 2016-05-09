@@ -17,10 +17,12 @@
 
   <!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>
   <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-multi-step-form/dist/browser/angular-multi-step-form.js"></script>
   <script src="bower_components/firebase/firebase.js"></script>
   <script src="bower_components/angularfire/dist/angularfire.js"></script>
   <script src="components/version/version.js"></script>
@@ -81,661 +83,341 @@
     <!-- Tu código aquí - END-->
   </md-content>
 
+
 <!--</body>-->
-        <div class="fondocolor">
+        <div class="fondocolor" ng-controller="SelectedTextController">
+          <!--SELECCIONAR NUMERO DE ASIENTOS-->
           <div>
-            <form>
-            <img src="images/asiento.png" alt="icono de butaca" hspace=5>
-              Selecciona el número de butacas &nbsp;&nbsp;
-              <select ng-model="myVar">
-                <option value="">
-                <option value="1">1
-                <option value="2">2
-                <option value="3">3
-                <option value="4">4
-                <option value="5">5
-                <option value="6">6
-                <option value="7">7
-                <option value="8">8
-                <option value="9">9
-                <option value="10">10
-              </select>
-            </form>
-          </div>
-          <div class="subrayado"></div>
-          <br>
-          <div class="asiento">
-          <div ng-switch="myVar == '1' || myVar == '2' || myVar == '3' || myVar == '4' || myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
-            <div ng-switch-when="true">
-               <h2>Asiento 1</h2>
-        
-               <form>
-              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila1">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-            </select>
-          </form>
-          <br>
-          <form>
-              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna1">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-              <option value="11">16
-              <option value="12">17
-              <option value="13">18
-              <option value="14">19
-              <option value="15">20
-              <option value="11">21
-              <option value="12">22
-              <option value="13">23
-              <option value="14">24
-              <option value="15">25
-              <option value="11">26
-              <option value="12">27
-              <option value="13">28
-              <option value="14">29
-              <option value="15">30
-            </select>
-          </form>
-          </div>
-          </div>
-          </div>
-          <br>
-          <div class="asiento">
-          <div ng-switch="myVar == '2' || myVar == '3' || myVar == '4' || myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
-            <div ng-switch-when="true">
-               <h2>Asiento 2</h2>
-               <form>
-              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila2">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-            </select>
-          </form>
-          <br>
-          <form>
-              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna2">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-              <option value="11">16
-              <option value="12">17
-              <option value="13">18
-              <option value="14">19
-              <option value="15">20
-              <option value="11">21
-              <option value="12">22
-              <option value="13">23
-              <option value="14">24
-              <option value="15">25
-              <option value="11">26
-              <option value="12">27
-              <option value="13">28
-              <option value="14">29
-              <option value="15">30
-            </select>
-          </form>
+            <h1 class="md-title">Selecciona un número de butacas</h1>
+            <div layout="row">
+              <md-input-container>
+                <label>Butacas</label>
+                <md-select ng-model="selectedItem" md-selected-text="getSelectedText()">
+                  <md-optgroup label="Butacas">
+                    <md-option ng-value="item" ng-repeat="item in items">{{item}} butaca/s</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
             </div>
+          <!--FIN SELECCIONAR NUMERO DE ASIENTOS-->
+          </div>
+          <!--AQUI SE HACE LA SELECCION DE ASIENTOS-->
+          <br>
+
+            <!--SELECCION DE FILA Y COLUMNA-->
+           <!--<div>
+            <h1 class="md-title">Selecciona la posición de la butaca 1</h1>
+            <div layout="row">
+              <md-input-container>
+                <label>Fila butaca 1</label>
+                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+                  <md-optgroup label="Fila butaca 1">
+                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+            <br>
+            <div layout="row">
+              <md-input-container>
+                <label>Columna butaca 1</label>
+                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+                  <md-optgroup label="Columna butaca 1">
+                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+          </div> -->
+          <!--TERMINA SELECCION DE FILA Y COLUMNA-->
+
+          <div class="asiento">
+          <div ng-switch="selectedItem == '1' || selectedItem == '2' || selectedItem == '3' || selectedItem == '4' || selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
+
+
+            <div ng-switch-when="true">
+            <h1 class="md-title">Selecciona la posición de la butaca 1</h1>
+            <div layout="row">
+              <md-input-container>
+                <label>Fila butaca 1</label>
+                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+                  <md-optgroup label="Fila butaca 1">
+                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+            <br>
+            <div layout="row">
+              <md-input-container>
+                <label>Columna butaca 1</label>
+                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+                  <md-optgroup label="Columna butaca 1">
+                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+          </div>
+
+
+
+          </div>
+          </div>
+          <br>
+          <div class="asiento">
+          <div ng-switch="selectedItem == '2' || selectedItem == '3' || selectedItem == '4' || selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
+            <div ng-switch-when="true">
+            <h1 class="md-title">Selecciona la posición de la butaca 2</h1>
+            <div layout="row">
+              <md-input-container>
+                <label>Fila butaca 2</label>
+                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+                  <md-optgroup label="Fila butaca 2">
+                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+            <br>
+            <div layout="row">
+              <md-input-container>
+                <label>Columna butaca 2</label>
+                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+                  <md-optgroup label="Columna butaca 2">
+                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+          </div>
             </div>
           </div>
           <div class="asiento">
-          <div ng-switch=" myVar == '3' || myVar == '4' || myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
+          <div ng-switch=" selectedItem == '3' || selectedItem == '4' || selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
             <div ng-switch-when="true">
-               <h2>Asiento 3</h2>
-               <form>
-              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila3">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-            </select>
-          </form>
-          <br>
-          <form>
-              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna3">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-              <option value="11">16
-              <option value="12">17
-              <option value="13">18
-              <option value="14">19
-              <option value="15">20
-              <option value="11">21
-              <option value="12">22
-              <option value="13">23
-              <option value="14">24
-              <option value="15">25
-              <option value="11">26
-              <option value="12">27
-              <option value="13">28
-              <option value="14">29
-              <option value="15">30
-            </select>
-          </form>
+            <h1 class="md-title">Selecciona la posición de la butaca 3</h1>
+            <div layout="row">
+              <md-input-container>
+                <label>Fila butaca 3</label>
+                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+                  <md-optgroup label="Fila butaca 3">
+                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+            <br>
+            <div layout="row">
+              <md-input-container>
+                <label>Columna butaca 3</label>
+                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+                  <md-optgroup label="Columna butaca 3">
+                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
             </div>
           </div>
           </div>
+          </div>
           <div class="asiento">
-          <div ng-switch="myVar == '4' || myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
+          <div ng-switch="selectedItem == '4' || selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
             <div ng-switch-when="true">
-               <h2>Asiento 4</h2>
-               <form>
-              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila4">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-            </select>
-          </form>
-          <br>
-          <form>
-              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna4">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-              <option value="11">16
-              <option value="12">17
-              <option value="13">18
-              <option value="14">19
-              <option value="15">20
-              <option value="11">21
-              <option value="12">22
-              <option value="13">23
-              <option value="14">24
-              <option value="15">25
-              <option value="11">26
-              <option value="12">27
-              <option value="13">28
-              <option value="14">29
-              <option value="15">30
-            </select>
-          </form>
+            <h1 class="md-title">Selecciona la posición de la butaca 4</h1>
+            <div layout="row">
+              <md-input-container>
+                <label>Fila butaca 4</label>
+                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+                  <md-optgroup label="Fila butaca 4">
+                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+            <br>
+            <div layout="row">
+              <md-input-container>
+                <label>Columna butaca 4</label>
+                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+                  <md-optgroup label="Columna butaca 4">
+                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+          </div>
+
+          </div>
+          </div>
+          <div class="asiento">
+          <div ng-switch="selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
+            <div ng-switch-when="true">
+            <h1 class="md-title">Selecciona la posición de la butaca 5</h1>
+            <div layout="row">
+              <md-input-container>
+                <label>Fila butaca 5</label>
+                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+                  <md-optgroup label="Fila butaca 5">
+                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+            <br>
+            <div layout="row">
+              <md-input-container>
+                <label>Columna butaca 5</label>
+                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+                  <md-optgroup label="Columna butaca 5">
+                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
             </div>
           </div>
           </div>
+          </div>
           <div class="asiento">
-          <div ng-switch="myVar == '5' || myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
+          <div ng-switch="selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
             <div ng-switch-when="true">
-               <h2>Asiento 5</h2>
-               <form>
-              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila5">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-            </select>
-          </form>
-          <br>
-          <form>
-              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna5">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-              <option value="11">16
-              <option value="12">17
-              <option value="13">18
-              <option value="14">19
-              <option value="15">20
-              <option value="11">21
-              <option value="12">22
-              <option value="13">23
-              <option value="14">24
-              <option value="15">25
-              <option value="11">26
-              <option value="12">27
-              <option value="13">28
-              <option value="14">29
-              <option value="15">30
-            </select>
-          </form>
+            <h1 class="md-title">Selecciona la posición de la butaca 6</h1>
+            <div layout="row">
+              <md-input-container>
+                <label>Fila butaca 6</label>
+                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+                  <md-optgroup label="Fila butaca 6">
+                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+            <br>
+            <div layout="row">
+              <md-input-container>
+                <label>Columna butaca 6</label>
+                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+                  <md-optgroup label="Columna butaca 6">
+                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
             </div>
           </div>
           </div>
+          </div>
           <div class="asiento">
-          <div ng-switch="myVar == '6' || myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
+          <div ng-switch="selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
             <div ng-switch-when="true">
-               <h2>Asiento 6</h2>
-               <form>
-              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila6">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-            </select>
-          </form>
-          <br>
-          <form>
-              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna6">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-              <option value="11">16
-              <option value="12">17
-              <option value="13">18
-              <option value="14">19
-              <option value="15">20
-              <option value="11">21
-              <option value="12">22
-              <option value="13">23
-              <option value="14">24
-              <option value="15">25
-              <option value="11">26
-              <option value="12">27
-              <option value="13">28
-              <option value="14">29
-              <option value="15">30
-            </select>
-          </form>
+            <h1 class="md-title">Selecciona la posición de la butaca 7</h1>
+            <div layout="row">
+              <md-input-container>
+                <label>Fila butaca 7</label>
+                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+                  <md-optgroup label="Fila butaca 7">
+                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+            <br>
+            <div layout="row">
+              <md-input-container>
+                <label>Columna butaca 7</label>
+                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+                  <md-optgroup label="Columna butaca 7">
+                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
             </div>
           </div>
           </div>
+          </div>
           <div class="asiento">
-          <div ng-switch="myVar == '7' || myVar == '8' || myVar == '9' || myVar == '10'">
+          <div ng-switch="selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
             <div ng-switch-when="true">
-               <h2>Asiento 7</h2>
-               <form>
-              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila7">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-            </select>
-          </form>
-          <br>
-          <form>
-              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna7">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-              <option value="11">16
-              <option value="12">17
-              <option value="13">18
-              <option value="14">19
-              <option value="15">20
-              <option value="11">21
-              <option value="12">22
-              <option value="13">23
-              <option value="14">24
-              <option value="15">25
-              <option value="11">26
-              <option value="12">27
-              <option value="13">28
-              <option value="14">29
-              <option value="15">30
-            </select>
-          </form>
+            <h1 class="md-title">Selecciona la posición de la butaca 8</h1>
+            <div layout="row">
+              <md-input-container>
+                <label>Fila butaca 8</label>
+                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+                  <md-optgroup label="Fila butaca 8">
+                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+            <br>
+            <div layout="row">
+              <md-input-container>
+                <label>Columna butaca 8</label>
+                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+                  <md-optgroup label="Columna butaca 8">
+                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
             </div>
           </div>
           </div>
+          </div>
           <div class="asiento">
-          <div ng-switch="myVar == '8' || myVar == '9' || myVar == '10'">
+          <div ng-switch="selectedItem == '9' || selectedItem == '10'">
             <div ng-switch-when="true">
-               <h2>Asiento 8</h2>
-               <form>
-              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila8">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-            </select>
-          </form>
-          <br>
-          <form>
-              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna8">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-              <option value="11">16
-              <option value="12">17
-              <option value="13">18
-              <option value="14">19
-              <option value="15">20
-              <option value="11">21
-              <option value="12">22
-              <option value="13">23
-              <option value="14">24
-              <option value="15">25
-              <option value="11">26
-              <option value="12">27
-              <option value="13">28
-              <option value="14">29
-              <option value="15">30
-            </select>
-          </form>
+            <h1 class="md-title">Selecciona la posición de la butaca 9</h1>
+            <div layout="row">
+              <md-input-container>
+                <label>Fila butaca 9</label>
+                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+                  <md-optgroup label="Fila butaca 9">
+                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+            <br>
+            <div layout="row">
+              <md-input-container>
+                <label>Columna butaca 9</label>
+                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+                  <md-optgroup label="Columna butaca 9">
+                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
             </div>
           </div>
           </div>
+          </div>
           <div class="asiento">
-          <div ng-switch="myVar == '9' || myVar == '10'">
+          <div ng-switch="selectedItem == '10'">
             <div ng-switch-when="true">
-               <h2>Asiento 9</h2>
-               <form>
-              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila9">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-            </select>
-          </form>
-          <br>
-          <form>
-              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna9">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-              <option value="11">16
-              <option value="12">17
-              <option value="13">18
-              <option value="14">19
-              <option value="15">20
-              <option value="11">21
-              <option value="12">22
-              <option value="13">23
-              <option value="14">24
-              <option value="15">25
-              <option value="11">26
-              <option value="12">27
-              <option value="13">28
-              <option value="14">29
-              <option value="15">30
-            </select>
-          </form>
+            <h1 class="md-title">Selecciona la posición de la butaca 10</h1>
+            <div layout="row">
+              <md-input-container>
+                <label>Fila butaca 10</label>
+                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+                  <md-optgroup label="Fila butaca 10">
+                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+            <br>
+            <div layout="row">
+              <md-input-container>
+                <label>Columna butaca 10</label>
+                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+                  <md-optgroup label="Columna butaca 10">
+                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
             </div>
           </div>
           </div>
-          <div class="asiento">
-          <div ng-switch="myVar == '10'">
-            <div ng-switch-when="true">
-               <h2>Asiento 10</h2>
-               <form>
-              Selecciona la fila &nbsp;&nbsp;<select ng-model="fila10">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-            </select>
-          </form>
-          <br>
-          <form>
-              Selecciona la columna &nbsp;&nbsp;<select ng-model="columna10">
-              <option value="">
-              <option value="1">1
-              <option value="2">2
-              <option value="3">3
-              <option value="4">4
-              <option value="5">5
-              <option value="6">6
-              <option value="7">7
-              <option value="8">8
-              <option value="9">9
-              <option value="10">10
-              <option value="11">11
-              <option value="12">12
-              <option value="13">13
-              <option value="14">14
-              <option value="15">15
-              <option value="11">16
-              <option value="12">17
-              <option value="13">18
-              <option value="14">19
-              <option value="15">20
-              <option value="11">21
-              <option value="12">22
-              <option value="13">23
-              <option value="14">24
-              <option value="15">25
-              <option value="11">26
-              <option value="12">27
-              <option value="13">28
-              <option value="14">29
-              <option value="15">30
-            </select>
-          </form>
           </div>
-          </div>
-          </div>
-  <center><md-button class="md-raised md-primary">SIGUIENTE</md-button></center>
-  </div>
+  <center><md-button class="md-raised md-primary">Siguiente</md-button></center>
+</div>
 </html>
