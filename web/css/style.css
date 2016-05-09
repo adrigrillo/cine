@@ -235,16 +235,16 @@
 .messagePanel {
 	border: solid 1px black;
 	width: 320px;
-	height: 330px; 
+	height: 330px;
 }
 .seat {
     width: 20px;
     height: 20px;
     margin: 5px;
     border: solid 1px black;
-    float: left; 
+    float: left;
 }
-.clearfix { 
+.clearfix {
 	clear: both;
 }
 .available {
@@ -327,30 +327,14 @@
 *	CSS Resumen
 *
 *********************************************/
-
-.resumen{
-	background: white;
-  height: 100%;
-  /*IMPORTANTE*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.cuadro-resumen{
+	border-radius: 2px;
+	background-color: #f5f5f5;
 }
-
-.resumen-hijo{
-	border: 1px solid black;
-	height: 20em;
-	width: 28em;
-}
-
-.resumen-parrafo1{
-	text-align: center;
-}
-
-.resumen-parrafo{
-	text-align: center;
-	display: flex;
-	padding-left: 3em;
+.imagen-resumen{
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	max-width: 100%;
 }
 
 /*********************************************
@@ -374,3 +358,5 @@
 .material-icons.pink1{ color: #ff99ff; }
 .material-icons.pink2{ color: #E91E63; }
 .material-icons.blue{ color: #3F51B5; }
+.material-icons.green{ color: #4CAF50; padding: 0 12px; margin-bottom: 8px;}
+

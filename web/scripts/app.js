@@ -38,6 +38,7 @@
 			"cines": "-",
 			"sesion": "-",
 			"asientos": "-",
+			"numero": 0,
 			"precio": 0.0
 		};
 		$scope.steps = [
@@ -50,21 +51,18 @@
 				title: '30'
 			},
 			{
-				template: 'tal',
-				title: '60'
-			},
-			{
-				template: 'bye',
-				title: '90'
-			},
+				templateUrl: 'resumen.html',
+				title: '100'
+			}
 		];
 		$scope.cancel = function () {
-			alert('Formulario cancelado, será redirigido a la página principal');
+			alert('Compra cancelada, será redirigido a la página principal');
 			$location.path('/home');
+			$route.reload();
 		};
 		$scope.finish = function () {
-			alert('Finish has been called. You are going to be redirected home!');
 			$location.path('/home');
+			$route.reload();
 		};
 	});
 
