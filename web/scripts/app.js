@@ -23,6 +23,9 @@
 			.when("/home", {
 				templateUrl: "formulario.html"
 			})
+			.when("/resumen", {
+				templateUrl: "resumen.html"
+			})
 			.otherwise({
 				redirectTo: "/"
 			});

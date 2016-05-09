@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="cine">
+
+<head>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Cine | Entradas.com</title>
+	<link rel="icon" type="image/png" href="images/e_roboto.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS de la página -->
+	<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+	<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.js"></script>
+	<script src="bower_components/angular-messages/angular-messages.js"></script>
+	<script src="bower_components/angular-material/angular-material.js"></script>
+	<script src="bower_components/angular-multi-step-form/dist/browser/angular-multi-step-form.js"></script>
+	<script src="bower_components/firebase/firebase.js"></script>
+	<script src="bower_components/angularfire/dist/angularfire.js"></script>
+	<script src="components/version/version.js"></script>
+	<script src="components/version/version-directive.js"></script>
+	<script src="components/version/interpolate-filter.js"></script>
+	<script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+	<!-- Modulos cargados -->
+	<script src="scripts/app.js"></script>
+	<script src="scripts/controladores.js"></script>
+	<script src="scripts/database.js"></script>
+</head>
+
+<body>
+  <div class="resumen">
+    <div class="resumen-hijo">
+      <p class="resumen-parrafo1">Su compra ha sido registrada satisfactoriamente. A continuación un resumen de la misma:</p>
+      <p class="resumen-parrafo">Película: *Insertar película*</p>
+      <p class="resumen-parrafo">Cine: *Insertar cine*</p>
+      <p class="resumen-parrafo">Sesión: *Insertar sesión*</p>
+      <p class="resumen-parrafo">Asientos: *Insertar asientos*</p>
+    </div>
+  </div>
+</body>
+
+<!--Te comento lo de abajo por si te vale de algo-->
+<!-- <body ng-cloak="">
+	<md-toolbar class="md-toolbar-tools">
+		<md-button class="md-icon-button" ng-disabled="false">
+			<md-icon>menu</md-icon>
+		</md-button>
+		<img ng-src="images/logo.png">
+		<span flex></span>
+		<md-button class="md-icon-button">
+			<md-icon>search</md-icon>
+		</md-button>
+	</md-toolbar>
+	<div ng-view></div>
+</body> -->
+
+</html>
