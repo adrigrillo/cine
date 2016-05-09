@@ -290,7 +290,36 @@
 	color: #ffffff !important;
 }
 
+/*********************************************
+*
+*	CSS Resumen
+*
+*********************************************/
 
+.resumen{
+	background: white;
+  height: 100%;
+  /*IMPORTANTE*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resumen-hijo{
+	border: 1px solid black;
+	height: 20em;
+	width: 28em;
+}
+
+.resumen-parrafo1{
+	text-align: center;
+}
+
+.resumen-parrafo{
+	text-align: center;
+	display: flex;
+	padding-left: 3em;
+}
 
 /*********************************************
 *
