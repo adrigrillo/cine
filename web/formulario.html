@@ -5,7 +5,7 @@
 	 3 - Selección Sesión y Butacas   75%
 	 4 - Pago                         100%
 	-->
-<md-content class="cuerpo md-primary" ng-controller="steps" search-id="step">
+<md-content class="cuerpo md-primary" ng-controller="steps" search-id="step" style="whith: 10em;">
 	<multi-step-container steps="steps">
 		<header>
 			<md-progress-linear ng-hide="$isFirst()" md-mode="determinate" value="{{$getActiveStep().title}}" class="md-warn">
