@@ -110,7 +110,7 @@
 .horizontalScroll {
 	width: auto;
 	height: auto;
-	overflow-x: scroll;
+	overflow-x: visible;
 	overflow-y: hidden;
 	white-space: nowrap;
 	box-sizing: border-box;
@@ -359,4 +359,3 @@
 .material-icons.pink2{ color: #E91E63; }
 .material-icons.blue{ color: #3F51B5; }
 .material-icons.green{ color: #4CAF50; padding: 0 12px; margin-bottom: 8px;}
-
