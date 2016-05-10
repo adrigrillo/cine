@@ -44,11 +44,23 @@
 		$scope.steps = [
 			{
 				templateUrl: 'principal.html',
-				title: '10'
+				title: '0'
+			},
+			{
+				templateUrl: 'lista-peliculas.html',
+				title: '33'
 			},
 			{
 				templateUrl: 'lista-cines.html',
-				title: '30'
+				title: '33'
+			},
+			{
+				templateUrl: 'asientos.html',
+				title: '66'
+			},
+			{
+				templateUrl: 'pago.html',
+				title: '100'
 			},
 			{
 				templateUrl: 'resumen.html',

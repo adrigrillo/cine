@@ -42,35 +42,74 @@
 			<md-divider class="divisor"></md-divider>
 
 			<!-- LISTA DE CINES MAS CERCANOS -->
-			<md-list ng-show="mostrar === 2" ng-repeat="cine in cines" ng-init="i=$index;" layout-align="start center">
-				<md-list-item class="md-3-line" layout="row" ng-class="{'columnaLista active': detalle == i}">
-					<img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
-					<div class="md-list-item-text">
-						<h3>{{cine.nombre}}</h3>
-						<h4>{{cine.encuentra}}</h4>
-						<p>{{cine.direccion}}</p>
-					</div>
-					<md-button class="md-icon-button md-secondary" aria-label="info" ng-click="$parent.detalle = i">
-						<i class="material-icons">info_outline</i>
-					</md-button>
-				</md-list-item>
-			</md-list>
+			<div ng-show="model.pelicula == '-'">
+				<md-list ng-show="mostrar === 2" ng-repeat="cine in cines" ng-init="i=$index;" layout-align="start center">
+					<md-list-item class="md-3-line" layout="row" ng-class="{'columnaLista active': detalle == i}"
+						ng-click="model.cines = cine.nombre; $setActiveIndex(2)">
+						<img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
+						<div class="md-list-item-text">
+							<h3>{{cine.nombre}}</h3>
+							<h4>{{cine.encuentra}}</h4>
+							<p>{{cine.direccion}}</p>
+						</div>
+						<md-button class="md-icon-button md-secondary" aria-label="info" ng-click="$parent.detalle = i">
+							<i class="material-icons">info_outline</i>
+						</md-button>
+					</md-list-item>
+				</md-list>
+			</div>
+			<div ng-show="model.pelicula != '-'">
+				<md-list ng-show="mostrar === 2" ng-repeat="cine in cines" ng-init="i=$index;" layout-align="start center">
+					<md-list-item class="md-3-line" layout="row" ng-class="{'columnaLista active': detalle == i}"
+						ng-click="model.cines = cine.nombre; $nextStep()">
+						<img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
+						<div class="md-list-item-text">
+							<h3>{{cine.nombre}}</h3>
+							<h4>{{cine.encuentra}}</h4>
+							<p>{{cine.direccion}}</p>
+						</div>
+						<md-button class="md-icon-button md-secondary" aria-label="info" ng-click="$parent.detalle = i">
+							<i class="material-icons">info_outline</i>
+						</md-button>
+					</md-list-item>
+				</md-list>
+			</div>
 
 			<!-- LISTA DE CINES MEJOR VALORADOS -->
-			<md-list ng-show="mostrar === 3" ng-repeat="cine in cines | orderBy:'-valoracion'" ng-init="i=$index+4;"
-				layout-align="start center">
-				<md-list-item class="md-3-line" layout="row" ng-class="{'columnaLista active': detalle == i}" >
-					<img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
-					<div class="md-list-item-text">
-						<h3>{{cine.nombre}}</h3>
-						<h4>{{cine.encuentra}}</h4>
-						<p>{{cine.direccion}}</p>
-					</div>
-					<md-button class="md-icon-button md-secondary" aria-label="info" ng-click="$parent.detalle = i">
-						<i class="material-icons">info_outline</i>
-					</md-button>
-				</md-list-item>
-			</md-list>
+			<div ng-show="model.pelicula == '-'">
+				<md-list ng-show="mostrar === 3" ng-repeat="cine in cines | orderBy:'-valoracion'" ng-init="i=$index+4;"
+					layout-align="start center">
+					<md-list-item class="md-3-line" layout="row" ng-class="{'columnaLista active': detalle == i}"
+						ng-click="model.cines = cine.nombre; $setActiveIndex(2)">
+						<img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
+						<div class="md-list-item-text">
+							<h3>{{cine.nombre}}</h3>
+							<h4>{{cine.encuentra}}</h4>
+							<p>{{cine.direccion}}</p>
+						</div>
+						<md-button class="md-icon-button md-secondary" aria-label="info" ng-click="$parent.detalle = i">
+							<i class="material-icons">info_outline</i>
+						</md-button>
+					</md-list-item>
+				</md-list>
+			</div>
+			<div ng-show="model.pelicula != '-'">
+				<md-list ng-show="mostrar === 3" ng-repeat="cine in cines | orderBy:'-valoracion'" ng-init="i=$index+4;"
+					layout-align="start center">
+					<md-list-item class="md-3-line" layout="row" ng-class="{'columnaLista active': detalle == i}"
+						ng-click="model.cines = cine.nombre; $nextStep()">
+						<img ng-src="{{cine.imagen}}" class="md-avatar" alt="Foto cine"/>
+						<div class="md-list-item-text">
+							<h3>{{cine.nombre}}</h3>
+							<h4>{{cine.encuentra}}</h4>
+							<p>{{cine.direccion}}</p>
+						</div>
+						<md-button class="md-icon-button md-secondary" aria-label="info" ng-click="$parent.detalle = i">
+							<i class="material-icons">info_outline</i>
+						</md-button>
+					</md-list-item>
+				</md-list>
+			</div>
 		</div>
 
 		<!-- CONTENIDO DE LA INFORMACION -->
@@ -85,10 +124,22 @@
 				<div class="md-toolbar-tools" layout-align="start center">
 					<div layout="column" layout-align="center start">
 						<div id="tituloTarjeta">
-							<span ng-show="detalle === 0 || detalle === 5">{{cines[0].nombre}}</span>
-							<span ng-show="detalle === 1 || detalle === 4">{{cines[1].nombre}}</span>
-							<span ng-show="detalle === 2 || detalle === 6">{{cines[2].nombre}}</span>
-							<span ng-show="detalle === 3 || detalle === 7">{{cines[3].nombre}}</span>
+							<span ng-show="detalle === 0 || detalle === 5">
+								{{cines[0].nombre}}
+
+							</span>
+							<span ng-show="detalle === 1 || detalle === 4">
+								{{cines[1].nombre}}
+
+							</span>
+							<span ng-show="detalle === 2 || detalle === 6">
+								{{cines[2].nombre}}
+
+							</span>
+							<span ng-show="detalle === 3 || detalle === 7">
+								{{cines[3].nombre}}
+
+							</span>
 						</div>
 						<div layout="row" layout-align="start center" id="subtituloTarjeta">
 							<md-button class="md-icon-button" aria-label="Favorito" ng-init="!liked"
@@ -100,7 +151,12 @@
 						</div>
 					</div>
 					<span flex=""></span>
-					<md-button class="md-raised" aria-label="Learn More">
+					<md-button class="md-raised" aria-label="Learn More" ng-show="model.pelicula != '-'"
+							ng-click="$nextStep()">
+          				SELECCIONAR
+        			</md-button>
+        			<md-button class="md-raised" aria-label="Learn More" ng-show="model.pelicula == '-'"
+							ng-click="model.pelicula = pelicula.titulo; model.imagen = pelicula.imagen; $setActiveIndex(2)">
           				SELECCIONAR
         			</md-button>
 				</div>
