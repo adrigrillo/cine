@@ -9,37 +9,66 @@
 			<div class="pelicula" ng-repeat="pelicula in peliculas">
 				<md-card class="tarjetaPelicula">
 					<img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
-					<div class="infoPelicula" ng-controller="CuadroInfo" class="md-padding" id="popupContainer" ng-cloak>
-						<!-- <md-button class="md-icon-button" ng-click="showConfirm($event)">
-							<md-icon style="color: #ffffff">info</md-icon>
-						</md-button> -->
-					</div>
-					<!-- <div class="herramientas"> -->
-					<md-card-actions layout="row" layout-align="end center" ng-controller="CuadroInfo" id="popupContainer" ng-cloak>
-						<md-button class="md-icon-button md-warn" aria-label="Favorite" ng-click="showConfirm($event)">
-			        <md-icon >info</md-icon>
-			      </md-button>
-						<md-button class="md-raised md-primary">Seleccionar</md-button>
+					<div class="infoPelicula" ng-controller="CuadroInfo" class="md-padding" id="popupContainer" ng-cloak></div>
+					<md-card-actions layout="row" layout-align="center center" ng-controller="CuadroInfo">
+						<md-button aria-label="info" class="md-icon-button md-secondary binfo-pelicula"
+							ng-click="showConfirm($event)">
+				       		<i class="material-icons md-24">info_outline</i>
+				    	</md-button>
+						<md-button class="md-raised md-primary"
+							ng-click="model.pelicula = pelicula.titulo; model.imagen = pelicula.imagen; $nextStep()">
+							Seleccionar
+						</md-button>
 					</md-card-actions>
-					<!-- </div> -->
 				</md-card>
 			</div>
 		</div>
 	</div>
 
 	<div class="md-title lp-titulo">
-		Recomendados
+		Acción
 	</div>
 	<div class="carrouselContainer">
 		<div class="horizontalScroll">
-			<div class="pelicula" ng-repeat="pelicula in peliculas">
-				<img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
-				<!-- Info button -->
-				<div class="infoPelicula" ng-controller="CuadroInfo" class="md-padding" id="popupContainer" ng-cloak>
-					<md-button class="md-icon-button" ng-click="showConfirm($event)">
-						<md-icon style="color: #ffffff">info</md-icon>
-					</md-button>
-				</div>
+			<div class="pelicula" ng-repeat="pelicula in peliculas | filter:{genero:'acción'}">
+				<md-card class="tarjetaPelicula">
+					<img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
+					<div class="infoPelicula" ng-controller="CuadroInfo" class="md-padding" id="popupContainer" ng-cloak></div>
+					<md-card-actions layout="row" layout-align="center center" ng-controller="CuadroInfo">
+						<md-button aria-label="info" class="md-icon-button md-secondary binfo-pelicula"
+							ng-click="showConfirm($event)">
+				       		<i class="material-icons md-24">info_outline</i>
+				    	</md-button>
+						<md-button class="md-raised md-primary"
+							ng-click="model.pelicula = pelicula.titulo; model.imagen = pelicula.imagen; $nextStep()">
+							Seleccionar
+						</md-button>
+					</md-card-actions>
+				</md-card>
+			</div>
+		</div>
+	</div>
+
+	<div class="md-title lp-titulo">
+		Familiar
+	</div>
+	<div class="carrouselContainer">
+		<div class="horizontalScroll">
+			<div class="pelicula" ng-repeat="pelicula in peliculas | filter:{genero:'familiar'}">
+				<md-card class="tarjetaPelicula">
+					<img src="{{pelicula.imagen}}" class="caratula md-whiteframe-2dp" alt="{{pelicula.titulo}}">
+					<div class="infoPelicula" ng-controller="CuadroInfo" class="md-padding" id="popupContainer" ng-cloak></div>
+					<md-card-actions layout="row" layout-align="center center" ng-controller="CuadroInfo">
+						<md-button aria-label="info" class="md-icon-button md-secondary binfo-pelicula"
+							ng-click="showConfirm($event)">
+				       		<i class="material-icons md-24">info_outline</i>
+				    	</md-button>
+						<md-button class="md-raised md-primary"
+							ng-click="model.pelicula = pelicula.titulo; model.imagen = pelicula.imagen; $nextStep()">
+							Seleccionar
+						</md-button>
+					</md-card-actions>
+				</md-card>
 			</div>
 		</div>
 	</div>
