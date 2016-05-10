@@ -1,10 +1,10 @@
 <md-card class="tarjeta-proceso">
 	<md-card-header class="titulo-proceso" layout="row" layout-align="end center">
 		<md-card-avatar>
-			<i class="material-icons md-36">credit_card</i>
+			<i class="material-icons md-36 md-light">credit_card</i>
 		</md-card-avatar>
 		<md-card-header-text layout-align="center center">
-			<span>Proceso de compra</span>
+			<span class="letras-proceso">Proceso de compra</span>
 		</md-card-header-text>
 	</md-card-header>
 	<md-card-title-media class="cartel-proceso">
@@ -40,10 +40,10 @@
 <md-card class="tarjeta-proceso">
 	<md-card-header class="titulo-precio" layout="row" layout-align="end center">
 		<md-card-avatar>
-			<i class="material-icons md-36">account_balance_wallet</i>
+			<i class="material-icons md-36 md-light">account_balance_wallet</i>
 		</md-card-avatar>
 		<md-card-header-text layout-align="center center">
-			<span>Precio</span>
+			<span class="letras-proceso">Precio</span>
 		</md-card-header-text>
 	</md-card-header>
 	<md-card-content layout="column" layout-align="center center"
@@ -52,9 +52,6 @@
 		<span class="iva-precio">IVA INCLUIDO</span>
 	</md-card-content>
 	<md-card-actions layout="column" layout-align="start">
-		<md-button ng-click="finish()" ng-show="$getActiveIndex() == 4" class="md-raised pagar-proceso">
-			PAGAR Y FINALIZAR
-		</md-button>
 		<md-button ng-click="cancel()" class="md-raised cancelar-proceso">
 			CANCELAR PROCESO
 		</md-button>

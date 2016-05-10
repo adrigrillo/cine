@@ -51,7 +51,7 @@
     //Controlador para controlar numero de asientos, sus filas y sus columnas
     ctrl.controller('SelectedTextController', function($scope) {
       $scope.items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-      $scope.selectedItem;
+      $scope.selectedItem = 0;
       $scope.filas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
       $scope.selectedFila;
       $scope.columnas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
@@ -123,7 +123,7 @@
             address: '',
             city: '',
             provincia: '',
-            modopago: '',
+            modopago: '-',
             postalCode: '',
             pago: '',
             ano: '',

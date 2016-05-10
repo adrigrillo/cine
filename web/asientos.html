@@ -1,423 +1,364 @@
-<!DOCTYPE html>
-<html lang="es" ng-app="cine">
+<md-content class="cuerpo md-primary md-padding">
+	<div class="md-title titulo">Seleccionar sesión y butacas</div>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Cine | Entradas.com</title>
-  <link rel="icon" type="image/gif" href="images/e_roboto.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+			<md-tabs md-dynamic-height md-border-bottom>
+				<md-tab label="17:40" >
+					<md-content>
+					 <h1 class="md-display-2">Sesión 1</h1>
+					</md-content>
+				</md-tab>
 
-  <!-- CSS de la página -->
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <!-- Script de la página, aqui va el angular y el material y cosas para que funcione en red -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-animate/angular-animate.js"></script>
-  <script src="bower_components/angular-aria/angular-aria.js"></script>
-  <script src="bower_components/angular-messages/angular-messages.js"></script>
-  <script src="bower_components/angular-material/angular-material.js"></script>
-  <script src="bower_components/angular-multi-step-form/dist/browser/angular-multi-step-form.js"></script>
-  <script src="bower_components/firebase/firebase.js"></script>
-  <script src="bower_components/angularfire/dist/angularfire.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-
-  <!-- Modulos cargados -->
-  <script src="scripts/app.js"></script>
-  <script src="scripts/controladores.js"></script>
-  <script src="scripts/database.js"></script>
-</head>
-<!-- <body> -->
-  <md-toolbar class="md-toolbar-tools">
-    <md-button class="md-icon-button" ng-disabled="false">
-      <md-icon> menu </md-icon>
-    </md-button>
-    <h1>
-      <span>Entradas.com</span>
-    </h1>
-    <span flex></span>
-    <md-button class="md-icon-button">
-      <md-icon>search</md-icon>
-    </md-button>
-  </md-toolbar>
-  <!--
-   Barra de progreso valores: [0, 100]. Considerar seleccionar la pelicula completa un paso
-   1 - Selección Pelicula / Cine    25%
-   2 - Selección Cine / Película    50%
-   3 - Selección Sesión y Butacas   75%
-   4 - Pago                         100%
-  -->
-  <md-progress-linear md-mode="determinate" value="75" class="md-warn"></md-progress-linear>
-  <md-content class="cuerpo md-primary">
-    <!-- Tu código aquí - BEGIN-->
-  <div class="md-title titulo">Seleccionar sesión y butacas</div>
-	
-  		<md-tabs md-dynamic-height md-border-bottom>
-  			<md-tab label="17:40" >
-          <md-content>
-           <h1 class="md-display-2">Sesión 1</h1>
-          </md-content>
-  			</md-tab>
-      
 			<md-tab label="20:30">
 				<md-content class="md-padding">
-				  <h1 class="md-display-2">Sesión 2</h1>
+					<h1 class="md-display-2">Sesión 2</h1>
 				</md-content>
 			</md-tab>
 
 			<md-tab label="22:45">
 				<md-content class="md-padding">
-				  <h1 class="md-display-2">Sesión 3</h1>
+					<h1 class="md-display-2">Sesión 3</h1>
 				</md-content>
 			</md-tab>
 		</md-tabs>
-  
-    <!-- Tu código aquí - END-->
-  </md-content>
+	</md-content>
+				<div class="fondocolor" ng-controller="SelectedTextController">
+					<!--SELECCIONAR NUMERO DE ASIENTOS-->
+					<div>
+						<h1 class="md-title">Selecciona un número de butacas</h1>
+						<div layout="row">
+							<md-input-container>
+								<label>Butacas</label>
+								<md-select ng-model="selectedItem" md-selected-text="getSelectedText()">
+									<md-optgroup label="Butacas">
+										<md-option ng-value="item" ng-repeat="item in items">{{item}} butaca/s</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+					<!--FIN SELECCIONAR NUMERO DE ASIENTOS-->
+					</div>
+					<!--AQUI SE HACE LA SELECCION DE ASIENTOS-->
+					<br>
+
+						<!--SELECCION DE FILA Y COLUMNA-->
+					 <!--<div>
+						<h1 class="md-title">Selecciona la posición de la butaca 1</h1>
+						<div layout="row">
+							<md-input-container>
+								<label>Fila butaca 1</label>
+								<md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+									<md-optgroup label="Fila butaca 1">
+										<md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+						<br>
+						<div layout="row">
+							<md-input-container>
+								<label>Columna butaca 1</label>
+								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+									<md-optgroup label="Columna butaca 1">
+										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+					</div> -->
+					<!--TERMINA SELECCION DE FILA Y COLUMNA-->
+
+					<div class="asiento">
+					<div ng-switch="selectedItem == '1' || selectedItem == '2' || selectedItem == '3' || selectedItem == '4' || selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
 
 
-<!--</body>-->
-        <div class="fondocolor" ng-controller="SelectedTextController">
-          <!--SELECCIONAR NUMERO DE ASIENTOS-->
-          <div>
-            <h1 class="md-title">Selecciona un número de butacas</h1>
-            <div layout="row">
-              <md-input-container>
-                <label>Butacas</label>
-                <md-select ng-model="selectedItem" md-selected-text="getSelectedText()">
-                  <md-optgroup label="Butacas">
-                    <md-option ng-value="item" ng-repeat="item in items">{{item}} butaca/s</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-          <!--FIN SELECCIONAR NUMERO DE ASIENTOS-->
-          </div>
-          <!--AQUI SE HACE LA SELECCION DE ASIENTOS-->
-          <br>
-
-            <!--SELECCION DE FILA Y COLUMNA-->
-           <!--<div>
-            <h1 class="md-title">Selecciona la posición de la butaca 1</h1>
-            <div layout="row">
-              <md-input-container>
-                <label>Fila butaca 1</label>
-                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
-                  <md-optgroup label="Fila butaca 1">
-                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-            <br>
-            <div layout="row">
-              <md-input-container>
-                <label>Columna butaca 1</label>
-                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-                  <md-optgroup label="Columna butaca 1">
-                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-          </div> -->
-          <!--TERMINA SELECCION DE FILA Y COLUMNA-->
-
-          <div class="asiento">
-          <div ng-switch="selectedItem == '1' || selectedItem == '2' || selectedItem == '3' || selectedItem == '4' || selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
-
-
-            <div ng-switch-when="true">
-            <h1 class="md-title">Selecciona la posición de la butaca 1</h1>
-            <div layout="row">
-              <md-input-container>
-                <label>Fila butaca 1</label>
-                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
-                  <md-optgroup label="Fila butaca 1">
-                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-            <br>
-            <div layout="row">
-              <md-input-container>
-                <label>Columna butaca 1</label>
-                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-                  <md-optgroup label="Columna butaca 1">
-                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-          </div>
+						<div ng-switch-when="true">
+						<h1 class="md-title">Selecciona la posición de la butaca 1</h1>
+						<div layout="row">
+							<md-input-container>
+								<label>Fila butaca 1</label>
+								<md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+									<md-optgroup label="Fila butaca 1">
+										<md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+						<br>
+						<div layout="row">
+							<md-input-container>
+								<label>Columna butaca 1</label>
+								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+									<md-optgroup label="Columna butaca 1">
+										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+					</div>
 
 
 
-          </div>
-          </div>
-          <br>
-          <div class="asiento">
-          <div ng-switch="selectedItem == '2' || selectedItem == '3' || selectedItem == '4' || selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
-            <div ng-switch-when="true">
-            <h1 class="md-title">Selecciona la posición de la butaca 2</h1>
-            <div layout="row">
-              <md-input-container>
-                <label>Fila butaca 2</label>
-                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
-                  <md-optgroup label="Fila butaca 2">
-                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-            <br>
-            <div layout="row">
-              <md-input-container>
-                <label>Columna butaca 2</label>
-                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-                  <md-optgroup label="Columna butaca 2">
-                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-          </div>
-            </div>
-          </div>
-          <div class="asiento">
-          <div ng-switch=" selectedItem == '3' || selectedItem == '4' || selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
-            <div ng-switch-when="true">
-            <h1 class="md-title">Selecciona la posición de la butaca 3</h1>
-            <div layout="row">
-              <md-input-container>
-                <label>Fila butaca 3</label>
-                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
-                  <md-optgroup label="Fila butaca 3">
-                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-            <br>
-            <div layout="row">
-              <md-input-container>
-                <label>Columna butaca 3</label>
-                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-                  <md-optgroup label="Columna butaca 3">
-                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-          </div>
-          </div>
-          </div>
-          <div class="asiento">
-          <div ng-switch="selectedItem == '4' || selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
-            <div ng-switch-when="true">
-            <h1 class="md-title">Selecciona la posición de la butaca 4</h1>
-            <div layout="row">
-              <md-input-container>
-                <label>Fila butaca 4</label>
-                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
-                  <md-optgroup label="Fila butaca 4">
-                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-            <br>
-            <div layout="row">
-              <md-input-container>
-                <label>Columna butaca 4</label>
-                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-                  <md-optgroup label="Columna butaca 4">
-                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-          </div>
+					</div>
+					</div>
+					<br>
+					<div class="asiento">
+					<div ng-switch="selectedItem == '2' || selectedItem == '3' || selectedItem == '4' || selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
+						<div ng-switch-when="true">
+						<h1 class="md-title">Selecciona la posición de la butaca 2</h1>
+						<div layout="row">
+							<md-input-container>
+								<label>Fila butaca 2</label>
+								<md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+									<md-optgroup label="Fila butaca 2">
+										<md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+						<br>
+						<div layout="row">
+							<md-input-container>
+								<label>Columna butaca 2</label>
+								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+									<md-optgroup label="Columna butaca 2">
+										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+					</div>
+						</div>
+					</div>
+					<div class="asiento">
+					<div ng-switch=" selectedItem == '3' || selectedItem == '4' || selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
+						<div ng-switch-when="true">
+						<h1 class="md-title">Selecciona la posición de la butaca 3</h1>
+						<div layout="row">
+							<md-input-container>
+								<label>Fila butaca 3</label>
+								<md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+									<md-optgroup label="Fila butaca 3">
+										<md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+						<br>
+						<div layout="row">
+							<md-input-container>
+								<label>Columna butaca 3</label>
+								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+									<md-optgroup label="Columna butaca 3">
+										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+					</div>
+					</div>
+					</div>
+					<div class="asiento">
+					<div ng-switch="selectedItem == '4' || selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
+						<div ng-switch-when="true">
+						<h1 class="md-title">Selecciona la posición de la butaca 4</h1>
+						<div layout="row">
+							<md-input-container>
+								<label>Fila butaca 4</label>
+								<md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+									<md-optgroup label="Fila butaca 4">
+										<md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+						<br>
+						<div layout="row">
+							<md-input-container>
+								<label>Columna butaca 4</label>
+								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+									<md-optgroup label="Columna butaca 4">
+										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+					</div>
 
-          </div>
-          </div>
-          <div class="asiento">
-          <div ng-switch="selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
-            <div ng-switch-when="true">
-            <h1 class="md-title">Selecciona la posición de la butaca 5</h1>
-            <div layout="row">
-              <md-input-container>
-                <label>Fila butaca 5</label>
-                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
-                  <md-optgroup label="Fila butaca 5">
-                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-            <br>
-            <div layout="row">
-              <md-input-container>
-                <label>Columna butaca 5</label>
-                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-                  <md-optgroup label="Columna butaca 5">
-                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-          </div>
-          </div>
-          </div>
-          <div class="asiento">
-          <div ng-switch="selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
-            <div ng-switch-when="true">
-            <h1 class="md-title">Selecciona la posición de la butaca 6</h1>
-            <div layout="row">
-              <md-input-container>
-                <label>Fila butaca 6</label>
-                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
-                  <md-optgroup label="Fila butaca 6">
-                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-            <br>
-            <div layout="row">
-              <md-input-container>
-                <label>Columna butaca 6</label>
-                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-                  <md-optgroup label="Columna butaca 6">
-                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-          </div>
-          </div>
-          </div>
-          <div class="asiento">
-          <div ng-switch="selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
-            <div ng-switch-when="true">
-            <h1 class="md-title">Selecciona la posición de la butaca 7</h1>
-            <div layout="row">
-              <md-input-container>
-                <label>Fila butaca 7</label>
-                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
-                  <md-optgroup label="Fila butaca 7">
-                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-            <br>
-            <div layout="row">
-              <md-input-container>
-                <label>Columna butaca 7</label>
-                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-                  <md-optgroup label="Columna butaca 7">
-                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-          </div>
-          </div>
-          </div>
-          <div class="asiento">
-          <div ng-switch="selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
-            <div ng-switch-when="true">
-            <h1 class="md-title">Selecciona la posición de la butaca 8</h1>
-            <div layout="row">
-              <md-input-container>
-                <label>Fila butaca 8</label>
-                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
-                  <md-optgroup label="Fila butaca 8">
-                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-            <br>
-            <div layout="row">
-              <md-input-container>
-                <label>Columna butaca 8</label>
-                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-                  <md-optgroup label="Columna butaca 8">
-                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-          </div>
-          </div>
-          </div>
-          <div class="asiento">
-          <div ng-switch="selectedItem == '9' || selectedItem == '10'">
-            <div ng-switch-when="true">
-            <h1 class="md-title">Selecciona la posición de la butaca 9</h1>
-            <div layout="row">
-              <md-input-container>
-                <label>Fila butaca 9</label>
-                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
-                  <md-optgroup label="Fila butaca 9">
-                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-            <br>
-            <div layout="row">
-              <md-input-container>
-                <label>Columna butaca 9</label>
-                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-                  <md-optgroup label="Columna butaca 9">
-                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-          </div>
-          </div>
-          </div>
-          <div class="asiento">
-          <div ng-switch="selectedItem == '10'">
-            <div ng-switch-when="true">
-            <h1 class="md-title">Selecciona la posición de la butaca 10</h1>
-            <div layout="row">
-              <md-input-container>
-                <label>Fila butaca 10</label>
-                <md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
-                  <md-optgroup label="Fila butaca 10">
-                    <md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-            <br>
-            <div layout="row">
-              <md-input-container>
-                <label>Columna butaca 10</label>
-                <md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-                  <md-optgroup label="Columna butaca 10">
-                    <md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
-            </div>
-          </div>
-          </div>
-          </div>
-  <center><md-button class="md-raised md-primary">Siguiente</md-button></center>
+					</div>
+					</div>
+					<div class="asiento">
+					<div ng-switch="selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
+						<div ng-switch-when="true">
+						<h1 class="md-title">Selecciona la posición de la butaca 5</h1>
+						<div layout="row">
+							<md-input-container>
+								<label>Fila butaca 5</label>
+								<md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+									<md-optgroup label="Fila butaca 5">
+										<md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+						<br>
+						<div layout="row">
+							<md-input-container>
+								<label>Columna butaca 5</label>
+								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+									<md-optgroup label="Columna butaca 5">
+										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+					</div>
+					</div>
+					</div>
+					<div class="asiento">
+					<div ng-switch="selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
+						<div ng-switch-when="true">
+						<h1 class="md-title">Selecciona la posición de la butaca 6</h1>
+						<div layout="row">
+							<md-input-container>
+								<label>Fila butaca 6</label>
+								<md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+									<md-optgroup label="Fila butaca 6">
+										<md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+						<br>
+						<div layout="row">
+							<md-input-container>
+								<label>Columna butaca 6</label>
+								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+									<md-optgroup label="Columna butaca 6">
+										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+					</div>
+					</div>
+					</div>
+					<div class="asiento">
+					<div ng-switch="selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
+						<div ng-switch-when="true">
+						<h1 class="md-title">Selecciona la posición de la butaca 7</h1>
+						<div layout="row">
+							<md-input-container>
+								<label>Fila butaca 7</label>
+								<md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+									<md-optgroup label="Fila butaca 7">
+										<md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+						<br>
+						<div layout="row">
+							<md-input-container>
+								<label>Columna butaca 7</label>
+								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+									<md-optgroup label="Columna butaca 7">
+										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+					</div>
+					</div>
+					</div>
+					<div class="asiento">
+					<div ng-switch="selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
+						<div ng-switch-when="true">
+						<h1 class="md-title">Selecciona la posición de la butaca 8</h1>
+						<div layout="row">
+							<md-input-container>
+								<label>Fila butaca 8</label>
+								<md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+									<md-optgroup label="Fila butaca 8">
+										<md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+						<br>
+						<div layout="row">
+							<md-input-container>
+								<label>Columna butaca 8</label>
+								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+									<md-optgroup label="Columna butaca 8">
+										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+					</div>
+					</div>
+					</div>
+					<div class="asiento">
+					<div ng-switch="selectedItem == '9' || selectedItem == '10'">
+						<div ng-switch-when="true">
+						<h1 class="md-title">Selecciona la posición de la butaca 9</h1>
+						<div layout="row">
+							<md-input-container>
+								<label>Fila butaca 9</label>
+								<md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+									<md-optgroup label="Fila butaca 9">
+										<md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+						<br>
+						<div layout="row">
+							<md-input-container>
+								<label>Columna butaca 9</label>
+								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+									<md-optgroup label="Columna butaca 9">
+										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+					</div>
+					</div>
+					</div>
+					<div class="asiento">
+					<div ng-switch="selectedItem == '10'">
+						<div ng-switch-when="true">
+						<h1 class="md-title">Selecciona la posición de la butaca 10</h1>
+						<div layout="row">
+							<md-input-container>
+								<label>Fila butaca 10</label>
+								<md-select ng-model="selectedFila" md-selected-text="getSelectedFila()">
+									<md-optgroup label="Fila butaca 10">
+										<md-option ng-value="fila" ng-repeat="fila in filas">Fila {{fila}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+						<br>
+						<div layout="row">
+							<md-input-container>
+								<label>Columna butaca 10</label>
+								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
+									<md-optgroup label="Columna butaca 10">
+										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+						</div>
+					</div>
+					</div>
+					</div>
+	<center>
+		<md-button class="md-raised md-primary" ng-show="selectedItem != 0"ng-click="model.asientos = selectedItem;
+			model.precio = (9 * selectedItem); $nextStep()">
+			Siguiente
+		</md-button>
+	</center>
 </div>
 </html>
