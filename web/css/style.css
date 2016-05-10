@@ -334,6 +334,9 @@
 	border-radius: 2px;
 	background-color: #f5f5f5;
 }
+.fondo-resumen{
+	background-color: #ffffff;
+}
 .imagen-resumen{
 	border-top-left-radius: 2px;
 	border-top-right-radius: 2px;
