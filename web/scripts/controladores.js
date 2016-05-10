@@ -48,6 +48,37 @@
             });
         }
     }]);
+    //Controlador para controlar numero de asientos, sus filas y sus columnas
+    ctrl.controller('SelectedTextController', function($scope) {
+      $scope.items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      $scope.selectedItem;
+      $scope.filas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+      $scope.selectedFila;
+      $scope.columnas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+      $scope.selectedColumna;
+      $scope.getSelectedText = function() {
+        if ($scope.selectedItem !== undefined) {
+          return "Has seleccionado: Item " + $scope.selectedItem;
+        } else {
+          return "Por favor, selecciona un número de butacas.";
+        }
+      };
+      $scope.getSelectedFila = function() {
+        if ($scope.selectedFila !== undefined) {
+          return "Has seleccionado la fila: Item " + $scope.selectedFila;
+        } else {
+          return "Por favor, selecciona una fila";
+        }
+      };
+      $scope.getSelectedColumna = function() {
+        if ($scope.selectedColumna !== undefined) {
+          return "Has seleccionado la columna: Item " + $scope.selectedColumna;
+        } else {
+          return "Por favor, selecciona una columna";
+        }
+      };
+
+    });
 
     // Controlador que muestra la ventana emergente con la informacion de la pelicula
     ctrl.controller("CuadroInfo", function($scope, $mdDialog, $mdMedia) {

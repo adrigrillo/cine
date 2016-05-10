@@ -1,0 +1,24 @@
+<md-content layout="column" layout-align="center center" class="md-padding">
+	<div class="md-whiteframe-6dp cuadro-resumen">
+		<img ng-src="images/resumen.png" class="imagen-resumen" alt="cabecera">
+		<md-toolbar class="">
+			<div class="md-toolbar-tools" layout="row" layout-align="center center">
+				<h1>
+					¡Su compra se ha realizado con exito!
+				</h1>
+				<i class="material-icons md-48 green">check</i>
+			</div>
+		</md-toolbar>
+		<div class="md-padding" layout="column" layout-align="center center">
+			<p>
+				<span ng-show='model.numero == 1'>Tu entrada</span><span ng-show='model.numero != 1'>Tus entradas</span>
+				para ver "{{model.pelicula}}" en {{model.cines}} serán enviadas a tu correo.
+			</p>
+			<span>PRECIO:</span>
+			<span class="cantidad-precio">{{model.precio}}</span>
+			<md-button ng-click="finish()" class="md-raised md-primary">
+				VOLVER A LA PAGINA DE INICIO
+			</md-button>
+		</div>
+	</div>
+</md-content>
