@@ -16,7 +16,12 @@
                         <div class="pop-imagen">
                             <img style="margin: auto; max-width: 100%;" alt="Lush mango tree" src="{{ pelicula.imagen }}">
                         </div>
-                        <md-button class="md-raised md-warn pop-botonCompra">
+                        <md-button class="md-raised md-warn pop-botonCompra" ng-show="model.cines == '-'"
+                            ng-click="model.pelicula = pelicula.titulo; model.imagen = pelicula.imagen; $setActiveIndex(3)">
+                            Comprar entradas
+                        </md-button>
+                        <md-button class="md-raised md-warn pop-botonCompra" ng-show="model.cines != '-'"
+                            ng-click="model.pelicula = pelicula.titulo; model.imagen = pelicula.imagen; $setActiveIndex(4)">
                             Comprar entradas
                         </md-button>
                     </div>
