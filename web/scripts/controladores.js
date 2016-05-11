@@ -78,6 +78,10 @@
         }
       };
 
+      $scope.myClickEvent1 = function() {
+        alert('one selected');
+      };
+
     });
 
     // Controlador que muestra la ventana emergente con la informacion de la pelicula

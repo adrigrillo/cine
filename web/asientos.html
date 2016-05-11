@@ -2,30 +2,30 @@
 	<div class="md-title titulo">Seleccionar sesión y butacas</div>
 
 			<md-tabs md-dynamic-height md-border-bottom>
-				<md-tab label="17:40" >
-					<md-content>
-					 <h1 class="md-display-2">Sesión 1</h1>
+				<md-tab label="17:40" md-on-select="model.sesion = '17:40';">
+					<md-content style="padding-left: 5px">
+					 <h1 class="md-display-1">Sesión de las {{ model.sesion }}</h1>
 					</md-content>
 				</md-tab>
 
-			<md-tab label="20:30">
-				<md-content class="md-padding">
-					<h1 class="md-display-2">Sesión 2</h1>
-				</md-content>
-			</md-tab>
+				<md-tab label="20:30" md-on-select="model.sesion = '20:30';">
+					<md-content style="padding-left: 5px">
+						<h1 class="md-display-1">Sesión de las {{ model.sesion }}</h1>
+					</md-content>
+				</md-tab>
 
-			<md-tab label="22:45">
-				<md-content class="md-padding">
-					<h1 class="md-display-2">Sesión 3</h1>
-				</md-content>
-			</md-tab>
-		</md-tabs>
+				<md-tab label="22:45" md-on-select="model.sesion = '22:45';">
+					<md-content style="padding-left: 5px">
+						<h1 class="md-display-1">Sesión de las {{ model.sesion }}</h1>
+					</md-content>
+				</md-tab>
+			</md-tabs>
 	</md-content>
 				<div class="fondocolor" ng-controller="SelectedTextController">
 					<!--SELECCIONAR NUMERO DE ASIENTOS-->
 					<div>
-						<h1 class="md-title">Selecciona un número de butacas</h1>
-						<div layout="row">
+						<h1 class="md-title" style="padding-left: 20px">Selecciona un número de butacas</h1>
+						<div layout="row" style="padding-left:20px">
 							<md-input-container>
 								<label>Butacas</label>
 								<md-select ng-model="selectedItem" md-selected-text="getSelectedText()">
@@ -56,9 +56,9 @@
 						<br>
 						<div layout="row">
 							<md-input-container>
-								<label>Columna butaca 1</label>
+								<label>Butaca 1</label>
 								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-									<md-optgroup label="Columna butaca 1">
+									<md-optgroup label="Butaca 1">
 										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
 									</md-optgroup>
 								</md-select>
@@ -73,6 +73,7 @@
 
 						<div ng-switch-when="true">
 						<h1 class="md-title">Selecciona la posición de la butaca 1</h1>
+						<br>
 						<div layout="row">
 							<md-input-container>
 								<label>Fila butaca 1</label>
@@ -86,17 +87,15 @@
 						<br>
 						<div layout="row">
 							<md-input-container>
-								<label>Columna butaca 1</label>
+								<label>Butaca 1</label>
 								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-									<md-optgroup label="Columna butaca 1">
+									<md-optgroup label="Butaca 1">
 										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
 									</md-optgroup>
 								</md-select>
 							</md-input-container>
 						</div>
 					</div>
-
-
 
 					</div>
 					</div>
@@ -105,6 +104,7 @@
 					<div ng-switch="selectedItem == '2' || selectedItem == '3' || selectedItem == '4' || selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
 						<div ng-switch-when="true">
 						<h1 class="md-title">Selecciona la posición de la butaca 2</h1>
+						<br>
 						<div layout="row">
 							<md-input-container>
 								<label>Fila butaca 2</label>
@@ -118,9 +118,9 @@
 						<br>
 						<div layout="row">
 							<md-input-container>
-								<label>Columna butaca 2</label>
+								<label>Butaca 2</label>
 								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-									<md-optgroup label="Columna butaca 2">
+									<md-optgroup label="Butaca 2">
 										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
 									</md-optgroup>
 								</md-select>
@@ -133,6 +133,7 @@
 					<div ng-switch=" selectedItem == '3' || selectedItem == '4' || selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
 						<div ng-switch-when="true">
 						<h1 class="md-title">Selecciona la posición de la butaca 3</h1>
+						<br>
 						<div layout="row">
 							<md-input-container>
 								<label>Fila butaca 3</label>
@@ -146,9 +147,9 @@
 						<br>
 						<div layout="row">
 							<md-input-container>
-								<label>Columna butaca 3</label>
+								<label>Butaca 3</label>
 								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-									<md-optgroup label="Columna butaca 3">
+									<md-optgroup label="Butaca 3">
 										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
 									</md-optgroup>
 								</md-select>
@@ -161,6 +162,7 @@
 					<div ng-switch="selectedItem == '4' || selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
 						<div ng-switch-when="true">
 						<h1 class="md-title">Selecciona la posición de la butaca 4</h1>
+						<br>
 						<div layout="row">
 							<md-input-container>
 								<label>Fila butaca 4</label>
@@ -174,9 +176,9 @@
 						<br>
 						<div layout="row">
 							<md-input-container>
-								<label>Columna butaca 4</label>
+								<label>Butaca 4</label>
 								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-									<md-optgroup label="Columna butaca 4">
+									<md-optgroup label="Butaca 4">
 										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
 									</md-optgroup>
 								</md-select>
@@ -190,6 +192,7 @@
 					<div ng-switch="selectedItem == '5' || selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
 						<div ng-switch-when="true">
 						<h1 class="md-title">Selecciona la posición de la butaca 5</h1>
+						<br>
 						<div layout="row">
 							<md-input-container>
 								<label>Fila butaca 5</label>
@@ -203,9 +206,9 @@
 						<br>
 						<div layout="row">
 							<md-input-container>
-								<label>Columna butaca 5</label>
+								<label>Butaca 5</label>
 								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-									<md-optgroup label="Columna butaca 5">
+									<md-optgroup label="Butaca 5">
 										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
 									</md-optgroup>
 								</md-select>
@@ -218,6 +221,7 @@
 					<div ng-switch="selectedItem == '6' || selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
 						<div ng-switch-when="true">
 						<h1 class="md-title">Selecciona la posición de la butaca 6</h1>
+						<br>
 						<div layout="row">
 							<md-input-container>
 								<label>Fila butaca 6</label>
@@ -231,9 +235,9 @@
 						<br>
 						<div layout="row">
 							<md-input-container>
-								<label>Columna butaca 6</label>
+								<label>Butaca 6</label>
 								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-									<md-optgroup label="Columna butaca 6">
+									<md-optgroup label="Butaca 6">
 										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
 									</md-optgroup>
 								</md-select>
@@ -246,6 +250,7 @@
 					<div ng-switch="selectedItem == '7' || selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
 						<div ng-switch-when="true">
 						<h1 class="md-title">Selecciona la posición de la butaca 7</h1>
+						<br>
 						<div layout="row">
 							<md-input-container>
 								<label>Fila butaca 7</label>
@@ -259,9 +264,9 @@
 						<br>
 						<div layout="row">
 							<md-input-container>
-								<label>Columna butaca 7</label>
+								<label>Butaca 7</label>
 								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-									<md-optgroup label="Columna butaca 7">
+									<md-optgroup label="Butaca 7">
 										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
 									</md-optgroup>
 								</md-select>
@@ -274,6 +279,7 @@
 					<div ng-switch="selectedItem == '8' || selectedItem == '9' || selectedItem == '10'">
 						<div ng-switch-when="true">
 						<h1 class="md-title">Selecciona la posición de la butaca 8</h1>
+						<br>
 						<div layout="row">
 							<md-input-container>
 								<label>Fila butaca 8</label>
@@ -287,9 +293,9 @@
 						<br>
 						<div layout="row">
 							<md-input-container>
-								<label>Columna butaca 8</label>
+								<label>Butaca 8</label>
 								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-									<md-optgroup label="Columna butaca 8">
+									<md-optgroup label="Butaca 8">
 										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
 									</md-optgroup>
 								</md-select>
@@ -302,6 +308,7 @@
 					<div ng-switch="selectedItem == '9' || selectedItem == '10'">
 						<div ng-switch-when="true">
 						<h1 class="md-title">Selecciona la posición de la butaca 9</h1>
+						<br>
 						<div layout="row">
 							<md-input-container>
 								<label>Fila butaca 9</label>
@@ -315,9 +322,9 @@
 						<br>
 						<div layout="row">
 							<md-input-container>
-								<label>Columna butaca 9</label>
+								<label>Butaca 9</label>
 								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-									<md-optgroup label="Columna butaca 9">
+									<md-optgroup label="Butaca 9">
 										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
 									</md-optgroup>
 								</md-select>
@@ -330,6 +337,7 @@
 					<div ng-switch="selectedItem == '10'">
 						<div ng-switch-when="true">
 						<h1 class="md-title">Selecciona la posición de la butaca 10</h1>
+						<br>
 						<div layout="row">
 							<md-input-container>
 								<label>Fila butaca 10</label>
@@ -343,9 +351,9 @@
 						<br>
 						<div layout="row">
 							<md-input-container>
-								<label>Columna butaca 10</label>
+								<label>Butaca 10</label>
 								<md-select ng-model="selectedColumna" md-selected-text="getSelectedColumna()">
-									<md-optgroup label="Columna butaca 10">
+									<md-optgroup label="Butaca 10">
 										<md-option ng-value="columna" ng-repeat="columna in columnas">Columna {{columna}}</md-option>
 									</md-optgroup>
 								</md-select>
