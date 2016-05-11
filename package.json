@@ -18,7 +18,7 @@
     "shelljs": "^0.2.6"
   },
   "scripts": {
-    "postinstall": "bower install",
+    "postinstall": "./node_modules/bower/bin/bower install",
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1",
     "pretest": "npm install",
@@ -41,6 +41,8 @@
     "angular-route": "^1.5.5",
     "angular-sanitize": "^1.5.5",
     "angularfire": "^1.2.0",
+    "bower": "^1.7.9",
+    "express": "^4.13.4",
     "firebase": "^2.4.2"
   }
 }
