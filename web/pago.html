@@ -31,7 +31,11 @@
                               <md-radio-button value="tarjeta" class="md-primary">Tarjeta</md-radio-button>
                               <md-radio-button value="paypal" class="md-primary"> PayPal </md-radio-button>
                             </md-radio-group>
-                            <div class="hint" ng-show="user.modopago=='paypal'">Se redirigira a la pagina de PayPal para realizar el pago</div>
+                            <div class="hint" ng-show="user.modopago=='paypal'">Se redirigira a la pagina de PayPal para realizar el pago
+                                <div layout="row" layout-sm="column" layout-align="space-around">
+                                    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                                </div>
+                            </div>
                         </md-input-container>
 
                     </md-input-container>
@@ -46,35 +50,40 @@
                         <div ng-message="pattern" class="my-message">Un número de tarjeta tiene 16 dígitos.</div>
                       </div>
                     </md-input-container>
-                    <div>
+
                         <label>Fecha de vencimiento</label>
-                        <md-input-container class="md-block" flex-gt-sm>
-                          <label>Año</label>
-                          <md-select ng-model="user.ano">
-                            <md-option ng-repeat="ano in anos" value="{{ano.abbrev}}">
-                              {{ano.abbrev}}
-                            </md-option>
-                          </md-select>
-                        </md-input-container>
+                        <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding >
+                            <div>
+                                <md-input-container class="md-block" flex-gt-sm>
+                                  <label>Año</label>
+                                  <md-select ng-model="user.ano">
+                                    <md-option ng-repeat="ano in anos" value="{{ano.abbrev}}">
+                                      {{ano.abbrev}}
+                                    </md-option>
+                                  </md-select>
+                                </md-input-container>
 
 
-                        <md-input-container class="md-block" flex-gt-sm>
-                            <label>Mes</label>
-                            <md-select ng-model="user.mes">
-                              <md-option ng-repeat="mes in meses" value="{{mes.abbrev}}">
-                                {{mes.abbrev}}
-                              </md-option>
-                            </md-select>
-                        </md-input-container>
-                    </div>
-                    <md-input-container class="md-block" flex-gt-sm>
-                      <label>CSC</label>
-                      <input name="CSC" ng-model="user.csc" placeholder="XXX"
-                             required ng-pattern="/^[0-9]{3}$/" md-maxlength="3">
-                      <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
-                        <div ng-message="required" class="my-message"> no es un csc valido.</div>
-                        <div ng-message="pattern" class="my-message">Un csc valido tiene 3 dígitos.</div>
-                      </div>
+                                <md-input-container class="md-block" flex-gt-sm>
+                                    <label>Mes</label>
+                                    <md-select ng-model="user.mes">
+                                      <md-option ng-repeat="mes in meses" value="{{mes.abbrev}}">
+                                        {{mes.abbrev}}
+                                      </md-option>
+                                    </md-select>
+                                </md-input-container>
+
+                                <md-input-container class="md-block" flex-gt-sm>
+                                  <label>CVC</label>
+                                  <input name="CVC" ng-model="user.cvc" placeholder="XXX"
+                                         required ng-pattern="/^[0-9]{3}$/" md-maxlength="3">
+                                  <div ng-messages="userForm.cvc.$error" role="alert" multiple>
+                                    <div ng-message="required" class="my-message"> no es un csc valido.</div>
+                                    <div ng-message="pattern" class="my-message">Un csc valido tiene 3 dígitos.</div>
+                                  </div>
+                                </md-input-container>
+                            </div>
+                        </md-content>
                 </div>
 
             </form>
