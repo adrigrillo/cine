@@ -286,6 +286,13 @@
 .inferior-proceso{
 	padding-bottom: 16px;
 }
+.boton-atras{
+	background-color: #FF5252 !important;
+	color: #ffffff !important;
+}
+.supinf-proceso{
+	margin: 8px 0;
+}
 .titulo-proceso{
 	padding:16px;
 	font-size: 20px;

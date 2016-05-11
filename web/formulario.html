@@ -10,18 +10,6 @@
 		<header>
 			<md-progress-linear ng-hide="$isFirst()" md-mode="determinate" value="{{$getActiveStep().title}}" class="md-warn">
 			</md-progress-linear>
-			<div>
-				<button ng-disabled="$isFirst()" class="btn btn-default" ng-click="$previousStep()">
-					<span class="fa fa-chevron-left"></span>
-					Previous
-				</button>
-				<strong ng-bind-template="{{$getActiveIndex()}}. {{$getActiveStep().title}}"></strong>
-
-				<button ng-disabled="$isLast()" class="btn btn-default" ng-click="$nextStep()">
-					Next
-					<span class="fa fa-chevron-right"></span>
-				</button>
-			</div>
 		</header>
 		<div layout-gt-xs="row" layout-xs="column">
 			<main step-container flex-gt-xs="" flex-xs="100"></main>
