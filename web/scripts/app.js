@@ -24,7 +24,7 @@
 				templateUrl: "formulario.html"
 			})
 			.when("/a", {
-				templateUrl: "asientos.html"
+				templateUrl: "pago.html"
 			})
 			.otherwise({
 				redirectTo: "/"

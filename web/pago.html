@@ -1,101 +1,90 @@
-<md-content class="cuerpo md-primary" style="max-width:75%; height:100%;">
-    <!-- Tu código aquí - BEGIN-->
-    <header class="md-title titulo">
-      Datos de pago
-    </header>
-    <section>
-    <div ng-controller="DemoCtrl" layout="column" ng-cloak class="md-inline-form" >
-        <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding >
-          <div>
-            <md-input-container>
-              <label>Nombre</label>
-              <input ng-model="user.nombre">
-            </md-input-container>
-            <md-input-container>
-              <label>Apellidos</label>
-              <input ng-model="user.apellidos">
-            </md-input-container>
-            <md-input-container>
-            <label>Email</label>
-            <input ng-model="user.email" type="email">
-            </md-input-container>
+<md-content class="md-padding" flex="100" layout="row">
+	<div flex="100" layout="column" class="md-whiteframe-6dp cuadro-resumen">
+		<!-- Tu código aquí - BEGIN-->
+		<md-toolbar class="titulo-asientos">
+			<div class="md-toolbar-tools" layout="row" layout-align="center center">
+				<h1 class="lateral-proceso">
+					Datos de pago
+					</h1>
+				<i class="material-icons md-48 md-light lateral-proceso">payment</i>
+			</div>
+		</md-toolbar>
+		<div ng-controller="DemoCtrl" layout="column" layout-align="center center" class="md-inline-form" >
+			<div md-theme="docs-dark" layout-gt-sm="row" layout-padding >
+				<div>
+					<md-input-container>
+						<label>Nombre</label>
+						<input ng-model="user.nombre">
+					</md-input-container>
+					<md-input-container>
+						<label>Apellidos</label>
+						<input ng-model="user.apellidos">
+					</md-input-container>
+					<md-input-container>
+					<label>Email</label>
+					<input ng-model="user.email" type="email">
+					</md-input-container>
+				</div>
+			</div>
+			<div class="md-padding">
+				<md-input-container class="md-block" flex-gt-sm>
+					<label>Forma de pago</label>
+					<md-input-container>
+						<md-radio-group ng-model="user.modopago">
+							<md-radio-button value="tarjeta" class="md-primary">Tarjeta</md-radio-button>
+								<md-radio-button value="paypal" class="md-primary"> PayPal </md-radio-button>
+						</md-radio-group>
+						<div class="hint" ng-show="user.modopago=='paypal'">Se redirigira a la pagina de PayPal para realizar el pago
+							<div layout="row" layout-sm="column" layout-align="space-around">
+								<md-progress-circular md-mode="indeterminate"></md-progress-circular>
+							</div>
+						</div>
+					</md-input-container>
+				</md-input-container>
+				<div ng-show="user.modopago=='tarjeta'">
+					<md-input-container class="md-block" flex-gt-sm>
+						<label>Número de Tarjeta</label>
+						<input name="numTarjeta" ng-model="user.tarjeta" placeholder="XXXXXXXXXXXXXXXX"
+							required ng-pattern="/^[0-9]{16}$/" md-maxlength="16">
+						<div ng-messages="userForm.postalCode.$error" role="alert" multiple>
+							<div ng-message="required" class="my-message">Esto no es un numero de tarjeta valido.</div>
+							<div ng-message="pattern" class="my-message">Un número de tarjeta tiene 16 dígitos.</div>
+						</div>
+					</md-input-container>
+					<label>Fecha de vencimiento</label>
+					<div md-theme="docs-dark" layout-gt-sm="row" layout-padding >
+						<md-input-container class="md-block" flex-gt-sm>
+							<label>Año</label>
+							<md-select ng-model="user.ano">
+								<md-option ng-repeat="ano in anos" value="{{ano.abbrev}}">
+									{{ano.abbrev}}
+								</md-option>
+							</md-select>
+						</md-input-container>
+						<md-input-container class="md-block" flex-gt-sm>
+							<label>Mes</label>
+							<md-select ng-model="user.mes">
+								<md-option ng-repeat="mes in meses" value="{{mes.abbrev}}">
+									{{mes.abbrev}}
+								</md-option>
+							</md-select>
+						</md-input-container>
+						<md-input-container class="md-block" flex-gt-sm>
+							<label>CVC</label>
+							<input name="CVC" ng-model="user.cvc" placeholder="XXX"
+								required ng-pattern="/^[0-9]{3}$/" md-maxlength="3">
+							<div ng-messages="userForm.cvc.$error" role="alert" multiple>
+								<div ng-message="required" class="my-message"> no es un csc valido.</div>
+								<div ng-message="pattern" class="my-message">Un csc valido tiene 3 dígitos.</div>
+							</div>
+						</md-input-container>
+					</div>
+				</div>
+				<md-button class="md-raised md-primary" ng-show="user.modopago != '-'" ng-click="$nextStep()">
+					Confirmar y pagar
+				</md-button>
+			</div>
+		</div>
+	</div>
+</md-content>
 
-          </div>
-        </md-content>
-        <md-content layout-padding >
-          <div>
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>Forma de pago</label>
-                        <md-input-container>
-                            <md-radio-group ng-model="user.modopago">
-                              <md-radio-button value="tarjeta" class="md-primary">Tarjeta</md-radio-button>
-                              <md-radio-button value="paypal" class="md-primary"> PayPal </md-radio-button>
-                            </md-radio-group>
-                            <div class="hint" ng-show="user.modopago=='paypal'">Se redirigira a la pagina de PayPal para realizar el pago
-                                <div layout="row" layout-sm="column" layout-align="space-around">
-                                    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-                                </div>
-                            </div>
-                        </md-input-container>
-
-                    </md-input-container>
-
-                <div ng-show="user.modopago=='tarjeta'">
-                    <md-input-container class="md-block" flex-gt-sm>
-                      <label>Número de Tarjeta</label>
-                      <input name="numTarjeta" ng-model="user.tarjeta" placeholder="XXXXXXXXXXXXXXXX"
-                             required ng-pattern="/^[0-9]{16}$/" md-maxlength="16">
-                      <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
-                        <div ng-message="required" class="my-message">Esto no es un numero de tarjeta valido.</div>
-                        <div ng-message="pattern" class="my-message">Un número de tarjeta tiene 16 dígitos.</div>
-                      </div>
-                    </md-input-container>
-
-                        <label>Fecha de vencimiento</label>
-                        <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding >
-                            
-                                <md-input-container class="md-block" flex-gt-sm>
-                                  <label>Año</label>
-                                  <md-select ng-model="user.ano">
-                                    <md-option ng-repeat="ano in anos" value="{{ano.abbrev}}">
-                                      {{ano.abbrev}}
-                                    </md-option>
-                                  </md-select>
-                                </md-input-container>
-
-
-                                <md-input-container class="md-block" flex-gt-sm>
-                                    <label>Mes</label>
-                                    <md-select ng-model="user.mes">
-                                      <md-option ng-repeat="mes in meses" value="{{mes.abbrev}}">
-                                        {{mes.abbrev}}
-                                      </md-option>
-                                    </md-select>
-                                </md-input-container>
-
-                                <md-input-container class="md-block" flex-gt-sm>
-                                  <label>CVC</label>
-                                  <input name="CVC" ng-model="user.cvc" placeholder="XXX"
-                                         required ng-pattern="/^[0-9]{3}$/" md-maxlength="3">
-                                  <div ng-messages="userForm.cvc.$error" role="alert" multiple>
-                                    <div ng-message="required" class="my-message"> no es un csc valido.</div>
-                                    <div ng-message="pattern" class="my-message">Un csc valido tiene 3 dígitos.</div>
-                                  </div>
-                                </md-input-container>
-                            
-                        </md-content>
-                </div>
-
-            </form>
-            <md-button class="md-raised md-primary" ng-show="user.modopago != '-'" ng-click="$nextStep()">
-                Confirmar y pagar
-            </md-button>
-          </div>
-        </md-content>
-    </div>
-  </section>
-
-  </md-content>
-</body>
-
-</html>
