@@ -23,6 +23,9 @@
 			.when("/home", {
 				templateUrl: "formulario.html"
 			})
+			.when("/a", {
+				templateUrl: "asientos.html"
+			})
 			.otherwise({
 				redirectTo: "/"
 			});
@@ -97,6 +100,14 @@
 		return{
 			restrict: 'E',
 			templateUrl: 'lista-peliculas.html'
+		};
+	});
+
+	/* Directiva elegir asientos */
+	cine.directive('selAsientos', function(){
+		return{
+			restrict: 'E',
+			templateUrl: 'sel-asientos.html'
 		};
 	});
 
