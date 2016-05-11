@@ -128,7 +128,7 @@
             pago: '',
             ano: '',
             mes: '',
-            csc: '',
+            cvc: '',
         };
         $scope.provincias = ('Madrid,Asturias,Alicante,Badajoz,Ciudad Real, La Coruña,Huelva,Barcelona').split(',').map(function(provincia) {
             return {
