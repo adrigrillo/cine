@@ -1,15 +1,32 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
-  "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "name": "cinedsi",
+  "homepage": "https://github.com/adrigrillo/cine",
+  "authors": [
+    "Adrian Rodriguez Grillo <100316457@alumnos.uc3m.es>"
+  ],
+  "description": "rediseño entradas.com",
+  "main": "index.html",
+  "keywords": [
+    "entradas",
+    "cine"
+  ],
   "license": "MIT",
   "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "angular": "~1.4.0",
-    "angular-route": "~1.4.0",
     "angular-loader": "~1.4.0",
+    "angular-material": "^1.0.7",
     "angular-mocks": "~1.4.0",
+    "angular-multi-step-form": "^1.2.8",
+    "angular-route": "~1.4.0",
+    "angularfire": "^1.2.0",
+    "firebase": "^2.4.2",
     "html5-boilerplate": "~5.2.0"
   }
 }
