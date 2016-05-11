@@ -20,12 +20,17 @@ Por otro lado, para la inicialización del proyecto será necesario __node.js__ 
 Para el primer inicio de la aplicación necesitará ejecutar el siguiente comando en la raíz del proyecto.
   ``` npm install ```
 
+>Es posible que para ejecutar este comando se necesite una cuenta de superusuario (Depende del S.O).
+
 Para posteriormente ejecutar el siguiente:
   ``` npm start ```
+
+>Nunca ejecute este comando con superusuario, dañaría la instalación.
 
 ##### Tras el primer inicio
 Tras la instalación del proyecto, solo será necesario el segundo comando para poner en marcha el servidor, es decir, habrá que ejecutar:
   ``` npm start ```
+>Nunca ejecute este comando con superusuario, dañaría la instalación.
 
 ##### Servidor iniciado
 Tras poner en marcha el servidor, una instancia de la aplicación estará corriendo en la dirección _localhost_. Para ir a la página principal de la web, diríjase a la dirección [http://localhost:8000/web/#/](http://localhost:8000/web/#/)
